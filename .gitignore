@@ -1,0 +1,30 @@
+# Git ignore for Bazi App project
+
+# Node.js
+/frontend/node_modules
+/frontend/dist
+/frontend/npm-debug.log*
+/frontend/npm-error.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Python
+/backend/venv/
+/backend/__pycache__/
+/backend/.pytest_cache/
+/backend/*.pyc
+/backend/*.pyo
+/backend/pip-log.txt
+
+# Environment variables
+/backend/.env # <-- 确保这一行是 /backend/.env 而不是 .env
+.env.*.local
+
+# macOS
+.DS_Store
+
+# VS Code (optional)
+.vscode/
+
+# Other
+*.log
