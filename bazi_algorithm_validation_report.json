@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-07-04T16:44:49.688611",
+  "validation_type": "comprehensive_algorithm_review",
+  "issues_found": [],
+  "recommendations": [],
+  "test_cases": [],
+  "compatibility_check": {},
+  "summary": {
+    "total_algorithms": 7,
+    "passed_algorithms": 6,
+    "failed_algorithms": 1,
+    "total_issues": 1,
+    "overall_status": "需要修正"
+  },
+  "detailed_validations": [
+    {
+      "algorithm": "真太阳时校正",
+      "status": "有问题",
+      "issues": [
+        {
+          "location": "北京",
+          "longitude": 116.46,
+          "calculated": -14.160000000000025,
+          "expected": -13.84,
+          "error": "真太阳时校正计算错误"
+        }
+      ],
+      "recommendation": "实现公式: 时差(分钟) = (当地经度 - 120) × 4"
+    },
+    {
+      "algorithm": "年柱计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "使用公式: 年干=(年份-4)%10, 年支=(年份-4)%12，注意立春分界"
+    },
+    {
+      "algorithm": "月柱计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "实现五虎遁公式，注意节气分界而非公历月份"
+    },
+    {
+      "algorithm": "日柱计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "使用蔡勒公式计算日柱，同时保留lunar_python作为校验"
+    },
+    {
+      "algorithm": "时柱计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "实现五鼠遁公式，注意时辰精确分界"
+    },
+    {
+      "algorithm": "大运计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "实现精确大运算法：1天=4个月，顺逆排根据年干性别决定"
+    },
+    {
+      "algorithm": "神煞计算",
+      "status": "通过",
+      "issues": [],
+      "recommendation": "完善神煞规则库，实现更多传统神煞"
+    }
+  ],
+  "all_issues": [
+    {
+      "location": "北京",
+      "longitude": 116.46,
+      "calculated": -14.160000000000025,
+      "expected": -13.84,
+      "error": "真太阳时校正计算错误"
+    }
+  ],
+  "all_recommendations": [
+    "实现公式: 时差(分钟) = (当地经度 - 120) × 4",
+    "使用公式: 年干=(年份-4)%10, 年支=(年份-4)%12，注意立春分界",
+    "实现五虎遁公式，注意节气分界而非公历月份",
+    "使用蔡勒公式计算日柱，同时保留lunar_python作为校验",
+    "实现五鼠遁公式，注意时辰精确分界",
+    "实现精确大运算法：1天=4个月，顺逆排根据年干性别决定",
+    "完善神煞规则库，实现更多传统神煞"
+  ]
+}

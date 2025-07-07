@@ -1,0 +1,714 @@
+{
+  "total_cases": 100,
+  "validation_time": "2025-07-04T12:00:48.232661",
+  "cases": {
+    "1": {
+      "case_id": "1",
+      "name": "黄金荣（历史人物：上海滩大亨）",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "2": {
+      "case_id": "2",
+      "name": "李清照",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "3": {
+      "case_id": "3",
+      "name": "康熙皇帝",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "4": {
+      "case_id": "4",
+      "name": "乾隆皇帝",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "5": {
+      "case_id": "5",
+      "name": "朱元璋",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "6": {
+      "case_id": "6",
+      "name": "成吉思汗",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "7": {
+      "case_id": "7",
+      "name": "曾国藩",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "8": {
+      "case_id": "8",
+      "name": "武则天",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "9": {
+      "case_id": "9",
+      "name": "诸葛亮",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "10": {
+      "case_id": "10",
+      "name": "慈禧太后",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "11": {
+      "case_id": "11",
+      "name": "陈浩民",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "12": {
+      "case_id": "12",
+      "name": "高梦泽",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "13": {
+      "case_id": "13",
+      "name": "王雅琳",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "14": {
+      "case_id": "14",
+      "name": "高泽兮",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "15": {
+      "case_id": "15",
+      "name": "陈道明",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "16": {
+      "case_id": "16",
+      "name": "李小龙",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "17": {
+      "case_id": "17",
+      "name": "梅兰芳",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "18": {
+      "case_id": "18",
+      "name": "孟小冬",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "19": {
+      "case_id": "19",
+      "name": "乔治·布什",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "20": {
+      "case_id": "20",
+      "name": "孔子",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "21": {
+      "case_id": "21",
+      "name": "侯先生",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "22": {
+      "case_id": "22",
+      "name": "毛泽东",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "23": {
+      "case_id": "23",
+      "name": "邓小平",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "24": {
+      "case_id": "24",
+      "name": "周恩来",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "25": {
+      "case_id": "25",
+      "name": "朱元璋",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "26": {
+      "case_id": "26",
+      "name": "武则天",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "27": {
+      "case_id": "27",
+      "name": "李世民",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "28": {
+      "case_id": "28",
+      "name": "孙中山",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "29": {
+      "case_id": "29",
+      "name": "袁世凯",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "30": {
+      "case_id": "30",
+      "name": "诸葛亮",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "31": {
+      "case_id": "31",
+      "name": "曹操",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "32": {
+      "case_id": "32",
+      "name": "刘备",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "33": {
+      "case_id": "33",
+      "name": "关羽",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "34": {
+      "case_id": "34",
+      "name": "张飞",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "35": {
+      "case_id": "35",
+      "name": "赵云",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "36": {
+      "case_id": "36",
+      "name": "马超",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "37": {
+      "case_id": "37",
+      "name": "孔子",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "38": {
+      "case_id": "38",
+      "name": "老子",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "39": {
+      "case_id": "39",
+      "name": "孟子",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "40": {
+      "case_id": "40",
+      "name": "庄子",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "41": {
+      "case_id": "41",
+      "name": "董仒舒",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "42": {
+      "case_id": "42",
+      "name": "司马迁",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "43": {
+      "case_id": "43",
+      "name": "李白",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "44": {
+      "case_id": "44",
+      "name": "杜甫",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "45": {
+      "case_id": "45",
+      "name": "白居易",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "46": {
+      "case_id": "46",
+      "name": "苏轼",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "47": {
+      "case_id": "47",
+      "name": "达芬奇",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "48": {
+      "case_id": "48",
+      "name": "特斯拉",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "49": {
+      "case_id": "49",
+      "name": "爱因斯坦",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "50": {
+      "case_id": "50",
+      "name": "牛顿",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "51": {
+      "case_id": "51",
+      "name": "杨贵妃",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "52": {
+      "case_id": "52",
+      "name": "谢安",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "53": {
+      "case_id": "53",
+      "name": "陶渊明",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "54": {
+      "case_id": "54",
+      "name": "王羽之",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "55": {
+      "case_id": "55",
+      "name": "范仲淹",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "56": {
+      "case_id": "56",
+      "name": "包拯",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "57": {
+      "case_id": "57",
+      "name": "岳飞",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "58": {
+      "case_id": "58",
+      "name": "辛弃疾",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "59": {
+      "case_id": "59",
+      "name": "文天祥",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "60": {
+      "case_id": "60",
+      "name": "芝玛拉干",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "61": {
+      "case_id": "61",
+      "name": "忽必烈",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "62": {
+      "case_id": "62",
+      "name": "麻哲伦",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "63": {
+      "case_id": "63",
+      "name": "哥伦布",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "64": {
+      "case_id": "64",
+      "name": "李时珍",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "65": {
+      "case_id": "65",
+      "name": "郑和",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "66": {
+      "case_id": "66",
+      "name": "汤显祖",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "67": {
+      "case_id": "67",
+      "name": "香奈儿",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "68": {
+      "case_id": "68",
+      "name": "贝多芬",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "69": {
+      "case_id": "69",
+      "name": "莫扎特",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "70": {
+      "case_id": "70",
+      "name": "林徹",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "71": {
+      "case_id": "71",
+      "name": "宫本武藏",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "72": {
+      "case_id": "72",
+      "name": "罗斯福",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "73": {
+      "case_id": "73",
+      "name": "丘吉尔",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "74": {
+      "case_id": "74",
+      "name": "甘地",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "75": {
+      "case_id": "75",
+      "name": "邓世昌",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "76": {
+      "case_id": "76",
+      "name": "蒂拉夫",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "77": {
+      "case_id": "77",
+      "name": "比尔·盖茨",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "78": {
+      "case_id": "78",
+      "name": "史蒂夫·乔布斯",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "79": {
+      "case_id": "79",
+      "name": "马云",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "80": {
+      "case_id": "80",
+      "name": "杨振宁",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "81": {
+      "case_id": "81",
+      "name": "邓稼先",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "82": {
+      "case_id": "82",
+      "name": "钱学森",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "83": {
+      "case_id": "83",
+      "name": "鲁迅",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "84": {
+      "case_id": "84",
+      "name": "胡适",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "85": {
+      "case_id": "85",
+      "name": "徐志摩",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "86": {
+      "case_id": "86",
+      "name": "李嘉诚",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "87": {
+      "case_id": "87",
+      "name": "李小龙",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "88": {
+      "case_id": "88",
+      "name": "成龙",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "89": {
+      "case_id": "89",
+      "name": "周恩来",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "90": {
+      "case_id": "90",
+      "name": "乔丹",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "91": {
+      "case_id": "91",
+      "name": "李白",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "92": {
+      "case_id": "92",
+      "name": "混凄",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "93": {
+      "case_id": "93",
+      "name": "颜真卿",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "94": {
+      "case_id": "94",
+      "name": "林则徐",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "95": {
+      "case_id": "95",
+      "name": "没吃草",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "96": {
+      "case_id": "96",
+      "name": "曹雪芹",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "97": {
+      "case_id": "97",
+      "name": "蒲松龄",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "98": {
+      "case_id": "98",
+      "name": "梅兰芳",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "99": {
+      "case_id": "99",
+      "name": "齐白石",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    },
+    "100": {
+      "case_id": "100",
+      "name": "老舍",
+      "is_100_percent": true,
+      "missing_fields": [],
+      "issues": []
+    }
+  },
+  "summary": {
+    "total_100_percent": 100,
+    "front_50_100_percent": 50,
+    "back_50_100_percent": 50,
+    "total_accuracy": 100.0,
+    "front_50_accuracy": 100.0,
+    "back_50_accuracy": 100.0
+  }
+}

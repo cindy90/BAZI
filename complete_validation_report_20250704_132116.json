@@ -1,0 +1,1374 @@
+{
+  "total_cases": 104,
+  "validation_time": "2025-07-04T13:21:16.625813",
+  "summary": {
+    "total_complete": 97,
+    "front_50_complete": 48,
+    "back_50_complete": 49,
+    "pillar_complete": 97,
+    "element_complete": 104,
+    "strength_complete": 104,
+    "dayun_complete": 103,
+    "total_accuracy": 93.26923076923077,
+    "front_50_accuracy": 96.0,
+    "back_50_accuracy": 90.74074074074075,
+    "pillar_accuracy": 93.26923076923077,
+    "element_accuracy": 100.0,
+    "strength_accuracy": 100.0,
+    "dayun_accuracy": 99.03846153846155
+  },
+  "cases": {
+    "1": {
+      "name": "黄金荣（历史人物：上海滩大亨）",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "2": {
+      "name": "李清照",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "3": {
+      "name": "康熙皇帝",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "4": {
+      "name": "乾隆皇帝",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "5": {
+      "name": "朱元璋",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "6": {
+      "name": "成吉思汗",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "7": {
+      "name": "曾国藩",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "8": {
+      "name": "武则天",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "9": {
+      "name": "诸葛亮",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "10": {
+      "name": "慈禧太后",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "11": {
+      "name": "陈浩民",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "12": {
+      "name": "高梦泽",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "13": {
+      "name": "王雅琳",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "14": {
+      "name": "高泽兮",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "15": {
+      "name": "陈道明",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "16": {
+      "name": "李小龙",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "17": {
+      "name": "梅兰芳",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "18": {
+      "name": "孟小冬",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "19": {
+      "name": "乔治·布什",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "20": {
+      "name": "孔子",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "21": {
+      "name": "侯先生",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "22": {
+      "name": "毛泽东",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "23": {
+      "name": "邓小平",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "24": {
+      "name": "周恩来",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "25": {
+      "name": "朱元璋",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "26": {
+      "name": "武则天",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "27": {
+      "name": "李世民",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "28": {
+      "name": "孙中山",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "29": {
+      "name": "袁世凯",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "30": {
+      "name": "诸葛亮",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "31": {
+      "name": "曹操",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "32": {
+      "name": "刘备",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "33": {
+      "name": "关羽",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "34": {
+      "name": "张飞",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "35": {
+      "name": "赵云",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "36": {
+      "name": "马超",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "37": {
+      "name": "孔子",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "38": {
+      "name": "老子",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "39": {
+      "name": "孟子",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "40": {
+      "name": "庄子",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "41": {
+      "name": "董仒舒",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "42": {
+      "name": "司马迁",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "43": {
+      "name": "李白",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "44": {
+      "name": "杜甫",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "45": {
+      "name": "白居易",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "46": {
+      "name": "苏轼",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "47": {
+      "name": "达芬奇",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "48": {
+      "name": "特斯拉",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "49": {
+      "name": "爱因斯坦",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "50": {
+      "name": "牛顿",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "51": {
+      "name": "杨贵妃",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "52": {
+      "name": "谢安",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "53": {
+      "name": "陶渊明",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "54": {
+      "name": "王羽之",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "55": {
+      "name": "范仲淹",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "56": {
+      "name": "包拯",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "57": {
+      "name": "岳飞",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "58": {
+      "name": "辛弃疾",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "59": {
+      "name": "文天祥",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "60": {
+      "name": "芝玛拉干",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "61": {
+      "name": "忽必烈",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "62": {
+      "name": "麻哲伦",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "63": {
+      "name": "哥伦布",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "64": {
+      "name": "李时珍",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "65": {
+      "name": "郑和",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "66": {
+      "name": "汤显祖",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "67": {
+      "name": "香奈儿",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "68": {
+      "name": "贝多芬",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "69": {
+      "name": "莫扎特",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "70": {
+      "name": "林徹",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "71": {
+      "name": "宫本武藏",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "72": {
+      "name": "罗斯福",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "73": {
+      "name": "丘吉尔",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "74": {
+      "name": "甘地",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "75": {
+      "name": "邓世昌",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "76": {
+      "name": "蒂拉夫",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "77": {
+      "name": "比尔·盖茨",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "78": {
+      "name": "史蒂夫·乔布斯",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "79": {
+      "name": "马云",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "80": {
+      "name": "杨振宁",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "81": {
+      "name": "邓稼先",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "82": {
+      "name": "钱学森",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "83": {
+      "name": "鲁迅",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "84": {
+      "name": "胡适",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "85": {
+      "name": "徐志摩",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "86": {
+      "name": "李嘉诚",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "87": {
+      "name": "李小龙",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "88": {
+      "name": "成龙",
+      "completeness": {
+        "pillars": false,
+        "elements": true,
+        "strength": true,
+        "dayun": false,
+        "birth_info": true,
+        "basic_info": true,
+        "total": false
+      },
+      "is_complete": false
+    },
+    "89": {
+      "name": "周恩来",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "90": {
+      "name": "乔丹",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "91": {
+      "name": "李白",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "92": {
+      "name": "混凄",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "93": {
+      "name": "颜真卿",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "94": {
+      "name": "林则徐",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "95": {
+      "name": "没吃草",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "96": {
+      "name": "曹雪芹",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "97": {
+      "name": "蒲松龄",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "98": {
+      "name": "梅兰芳",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "99": {
+      "name": "齐白石",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "100": {
+      "name": "老舍",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "101": {
+      "name": "蔡贵妃",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "102": {
+      "name": "滴天髓案例1",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "103": {
+      "name": "穷通宝鉴案例1",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    },
+    "104": {
+      "name": "三命通会案例1",
+      "completeness": {
+        "pillars": true,
+        "elements": true,
+        "strength": true,
+        "dayun": true,
+        "birth_info": true,
+        "basic_info": true,
+        "total": true
+      },
+      "is_complete": true
+    }
+  }
+}

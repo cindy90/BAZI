@@ -5,7 +5,7 @@ import { ElMessage } from 'element-plus'; // 假设 Element Plus 已经安装
 // 创建 Axios 实例
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8000/api/v1', // 后端 API 的基础 URL
-    timeout: 10000, // 请求超时时间
+    timeout: 60000, // 请求超时时间（60秒，支持AI分析）
     headers: {
         'Content-Type': 'application/json',
     },

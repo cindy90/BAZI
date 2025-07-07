@@ -1,0 +1,12 @@
+{
+  "include": ["backend/app"],
+  "extraPaths": [
+    "backend/app",
+    "backend/app/services/bazi_lib",
+    "backend/app/services"
+  ],
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "pythonVersion": "3.10",
+  "typeCheckingMode": "basic"
+}

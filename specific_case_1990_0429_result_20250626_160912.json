@@ -1,0 +1,218 @@
+{
+  "bazi_characters": {
+    "year_stem": "庚",
+    "year_branch": "午",
+    "month_stem": "庚",
+    "month_branch": "辰",
+    "day_stem": "甲",
+    "day_branch": "子",
+    "hour_stem": "己",
+    "hour_branch": "巳"
+  },
+  "five_elements_score": {
+    "金": "19%",
+    "木": "14%",
+    "水": "14%",
+    "火": "20%",
+    "土": "34%"
+  },
+  "day_master_strength": "极弱",
+  "day_master_element": "甲",
+  "zodiac_sign": "马",
+  "major_cycles": [
+    {
+      "gan_zhi": "己卯",
+      "start_age": "20天",
+      "start_year": "1996",
+      "end_year": "2005",
+      "ten_gods_gan": "正财",
+      "hidden_stems_zhi": "乙",
+      "interaction_with_mingju": "大运己卯与命局的互动分析",
+      "phase_analysis": "青少年期",
+      "age_range": "0-9",
+      "description": "大运己卯期间，正财当运，青少年期阶段"
+    },
+    {
+      "gan_zhi": "戊寅",
+      "start_age": "10",
+      "start_year": "2006",
+      "end_year": "2015",
+      "ten_gods_gan": "偏财",
+      "hidden_stems_zhi": "甲,丙,戊",
+      "interaction_with_mingju": "大运戊寅与命局的互动分析",
+      "phase_analysis": "青少年期",
+      "age_range": "10-19",
+      "description": "大运戊寅期间，偏财当运，青少年期阶段"
+    },
+    {
+      "gan_zhi": "丁丑",
+      "start_age": "20",
+      "start_year": "2016",
+      "end_year": "2025",
+      "ten_gods_gan": "伤官",
+      "hidden_stems_zhi": "己,癸,辛",
+      "interaction_with_mingju": "大运丁丑与命局的互动分析",
+      "phase_analysis": "青年期",
+      "age_range": "20-29",
+      "description": "大运丁丑期间，伤官当运，青年期阶段"
+    },
+    {
+      "gan_zhi": "丙子",
+      "start_age": "30",
+      "start_year": "2026",
+      "end_year": "2035",
+      "ten_gods_gan": "食神",
+      "hidden_stems_zhi": "癸",
+      "interaction_with_mingju": "大运丙子与命局的互动分析",
+      "phase_analysis": "青年期",
+      "age_range": "30-39",
+      "description": "大运丙子期间，食神当运，青年期阶段"
+    },
+    {
+      "gan_zhi": "乙亥",
+      "start_age": "40",
+      "start_year": "2036",
+      "end_year": "2045",
+      "ten_gods_gan": "劫财",
+      "hidden_stems_zhi": "壬,甲",
+      "interaction_with_mingju": "大运乙亥与命局的互动分析",
+      "phase_analysis": "中年期",
+      "age_range": "40-49",
+      "description": "大运乙亥期间，劫财当运，中年期阶段"
+    },
+    {
+      "gan_zhi": "甲戌",
+      "start_age": "50",
+      "start_year": "2046",
+      "end_year": "2055",
+      "ten_gods_gan": "比肩",
+      "hidden_stems_zhi": "戊,辛,丁",
+      "interaction_with_mingju": "大运甲戌与命局的互动分析",
+      "phase_analysis": "中年期",
+      "age_range": "50-59",
+      "description": "大运甲戌期间，比肩当运，中年期阶段"
+    },
+    {
+      "gan_zhi": "癸酉",
+      "start_age": "60",
+      "start_year": "2056",
+      "end_year": "2065",
+      "ten_gods_gan": "正印",
+      "hidden_stems_zhi": "辛",
+      "interaction_with_mingju": "大运癸酉与命局的互动分析",
+      "phase_analysis": "老年期",
+      "age_range": "60-69",
+      "description": "大运癸酉期间，正印当运，老年期阶段"
+    },
+    {
+      "gan_zhi": "壬申",
+      "start_age": "70",
+      "start_year": "2066",
+      "end_year": "2075",
+      "ten_gods_gan": "偏印",
+      "hidden_stems_zhi": "庚,壬,戊",
+      "interaction_with_mingju": "大运壬申与命局的互动分析",
+      "phase_analysis": "老年期",
+      "age_range": "70-79",
+      "description": "大运壬申期间，偏印当运，老年期阶段"
+    },
+    {
+      "gan_zhi": "辛未",
+      "start_age": "80",
+      "start_year": "2076",
+      "end_year": "2085",
+      "ten_gods_gan": "正官",
+      "hidden_stems_zhi": "己,丁,乙",
+      "interaction_with_mingju": "大运辛未与命局的互动分析",
+      "phase_analysis": "老年期",
+      "age_range": "80-89",
+      "description": "大运辛未期间，正官当运，老年期阶段"
+    },
+    {
+      "gan_zhi": "庚午",
+      "start_age": "90",
+      "start_year": "2086",
+      "end_year": "2095",
+      "ten_gods_gan": "七杀",
+      "hidden_stems_zhi": "丁,己",
+      "interaction_with_mingju": "大运庚午与命局的互动分析",
+      "phase_analysis": "老年期",
+      "age_range": "90-99",
+      "description": "大运庚午期间，七杀当运，老年期阶段"
+    }
+  ],
+  "current_year_fortune": {
+    "year": "2025",
+    "gan_zhi": "乙巳",
+    "analysis": "流年 乙巳 运势简析，年龄 35。",
+    "age": "35",
+    "detailed_analysis": {
+      "overall_fortune": "2025年流年乙巳，劫财当运，整体运势需要根据命局综合分析。",
+      "career_wealth": "事业财运方面，需要稳扎稳打，避免过于冒进。",
+      "love_marriage": "感情婚姻方面，适合加强沟通，维护和谐关系。",
+      "health": "健康方面，注意劳逸结合，保持良好的作息习惯。",
+      "strategic_guidance": "劫财当运的年份，建议采取相应的策略。",
+      "practical_advice": "在日常生活中，可以多关注五行调节，保持身心平衡。",
+      "key_timeframes": "重要时间节点需要特别关注春分、夏至、秋分、冬至等节气变化。",
+      "personal_agency": "发挥主观能动性，积极面对机遇和挑战。"
+    },
+    "special_combinations": {
+      "sui_yun_bing_lin": false,
+      "tian_ke_di_chong": false,
+      "sui_yun_xiang_chong": false,
+      "special_warnings": [],
+      "favorable_combinations": [],
+      "critical_analysis": ""
+    },
+    "liunian_gan": "乙",
+    "liunian_zhi": "巳",
+    "ten_god_relation": "劫财",
+    "current_dayun": "待计算"
+  },
+  "gan_zhi_info": {
+    "year_pillar": {
+      "gan": "庚",
+      "zhi": "午",
+      "ten_god": "七杀",
+      "hidden_stems": "丁,己"
+    },
+    "month_pillar": {
+      "gan": "庚",
+      "zhi": "辰",
+      "ten_god": "七杀",
+      "hidden_stems": "戊,乙,癸"
+    },
+    "day_pillar": {
+      "gan": "甲",
+      "zhi": "子",
+      "ten_god": "日主",
+      "hidden_stems": "癸"
+    },
+    "hour_pillar": {
+      "gan": "己",
+      "zhi": "巳",
+      "ten_god": "正财",
+      "hidden_stems": "丙,戊,庚"
+    }
+  },
+  "na_yin": {
+    "year_na_yin": "路旁土",
+    "month_na_yin": "白蜡金",
+    "day_na_yin": "海中金",
+    "hour_na_yin": "大林木"
+  },
+  "palace_info": {
+    "tai_yuan": "辛未",
+    "ming_gong": "甲申",
+    "shen_gong": "丙戌",
+    "tai_xi": "己丑"
+  },
+  "birth_place": "广东省韶关市新丰县",
+  "location_info": {
+    "city_name": "广东省韶关市新丰县",
+    "longitude": null,
+    "latitude": null,
+    "found": false,
+    "solar_time_offset_minutes": 0
+  }
+}

@@ -52,13 +52,13 @@ def login_for_access_token(
     用户登录并获取 JWT 访问令牌。
     """
     user = crud_user.get_user_by_username(db, username=form_data.username)
-    if not user or not verify_password(form_data.password, user.hashed_password):
+    if not user or not getattr(user, "hashed_password", None) or not verify_password(form_data.password, getattr(user, "hashed_password", "")):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="用户名或密码不正确",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    if not user.is_active:
+    if user.is_active is False:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="用户已被禁用",

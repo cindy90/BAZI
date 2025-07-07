@@ -1,0 +1,139 @@
+{
+  "issues": {
+    "四柱计算": [
+      "四柱准确率为31.7%，低于期望的90%",
+      "当前算法使用简化的线性计算，未考虑真正的节气换月",
+      "建议实现精确的节气计算系统",
+      "建议加入农历转公历的精确算法",
+      "需要考虑时辰的精确划分（23-1点为子时等）"
+    ],
+    "五行分析": [
+      "五行准确率为73.4%，需要改进",
+      "当前算法只考虑天干地支本气，未考虑地支藏干",
+      "建议实现地支藏干的权重计算",
+      "需要考虑季节调候对五行强弱的影响",
+      "应该加入刑冲合害对五行力量的修正"
+    ],
+    "旺衰判断": [
+      "旺衰准确率为13.3%，亟需改进",
+      "当前旺衰判断过于简化，仅基于日主五行比例",
+      "建议实现得令、得地、得生、得助的综合分析",
+      "需要考虑月令司权对日主强弱的决定性影响",
+      "应该分析日主在年月日时各柱的受生受克情况",
+      "建议加入格局分析来辅助旺衰判断"
+    ],
+    "算法框架": []
+  },
+  "improvement_plan": {
+    "priority_1_critical": {
+      "title": "紧急改进项（影响核心功能）",
+      "tasks": [
+        {
+          "task": "实现精确的节气计算系统",
+          "description": "基于天文算法计算准确的24节气时间",
+          "implementation": "集成solar_terms库或实现自己的天文计算",
+          "estimated_hours": 16
+        },
+        {
+          "task": "完善时柱计算逻辑",
+          "description": "正确处理子时跨日问题和时辰边界",
+          "implementation": "实现23-1点为子时的正确逻辑",
+          "estimated_hours": 8
+        },
+        {
+          "task": "加入农历公历转换",
+          "description": "支持农历生日的准确转换",
+          "implementation": "集成中华万年历算法",
+          "estimated_hours": 12
+        },
+        {
+          "task": "实现月令司权分析",
+          "description": "准确判断日主在月令中的旺衰状态",
+          "implementation": "基于十二月令的旺相休囚死理论",
+          "estimated_hours": 10
+        },
+        {
+          "task": "完善得令得地得生得助分析",
+          "description": "全面分析日主的支持力量",
+          "implementation": "分别计算天干地支对日主的帮扶情况",
+          "estimated_hours": 14
+        }
+      ],
+      "estimated_days": 8
+    },
+    "priority_2_important": {
+      "title": "重要改进项（提升准确率）",
+      "tasks": [
+        {
+          "task": "实现地支藏干计算",
+          "description": "准确计算地支中隐藏天干的力量",
+          "implementation": "按照传统命理的藏干表和权重计算",
+          "estimated_hours": 12
+        },
+        {
+          "task": "加入季节调候",
+          "description": "根据出生季节调整五行力量",
+          "implementation": "实现春夏秋冬对各五行的增减效应",
+          "estimated_hours": 8
+        },
+        {
+          "task": "实现刑冲合害计算",
+          "description": "计算地支间的相互作用对五行的影响",
+          "implementation": "基于传统合冲理论实现力量修正",
+          "estimated_hours": 16
+        }
+      ],
+      "estimated_days": 5
+    },
+    "priority_3_enhancement": {
+      "title": "功能增强项（完善细节）",
+      "tasks": [],
+      "estimated_days": 0
+    }
+  },
+  "specific_fixes": [
+    {
+      "issue": "四柱计算不准确",
+      "root_cause": "未使用真正的节气来换月",
+      "fix_description": "实现基于天文计算的精确节气",
+      "code_location": "simple_bazi_calculator.py -> _calculate_pillars",
+      "implementation_steps": [
+        "1. 安装或实现solar_terms计算库",
+        "2. 根据出生年份计算该年的24节气时间",
+        "3. 根据出生日期确定正确的月柱",
+        "4. 更新月柱计算逻辑"
+      ],
+      "test_case": "验证康熙皇帝案例 - 1654年5月4日应该正确计算月柱",
+      "expected_improvement": "四柱准确率从31.7%提升到80%+"
+    },
+    {
+      "issue": "五行得分偏差较大",
+      "root_cause": "只计算天干地支本气，未考虑地支藏干",
+      "fix_description": "加入地支藏干的权重计算",
+      "code_location": "simple_bazi_calculator.py -> calculate_five_elements",
+      "implementation_steps": [
+        "1. 添加地支藏干映射表（已存在于constants.py）",
+        "2. 为每个地支的藏干分配正确的权重",
+        "3. 在五行计算中加入藏干贡献",
+        "4. 根据月令调整藏干的力量"
+      ],
+      "test_case": "验证李清照案例 - 正确计算地支藏干对五行的贡献",
+      "expected_improvement": "五行准确率从73.4%提升到85%+"
+    },
+    {
+      "issue": "旺衰判断准确率过低",
+      "root_cause": "过度简化的旺衰判断逻辑",
+      "fix_description": "实现传统命理的旺衰分析方法",
+      "code_location": "simple_bazi_calculator.py -> _analyze_strength",
+      "implementation_steps": [
+        "1. 实现月令司权判断（旺相休囚死）",
+        "2. 分析日主得令、得地、得生、得助",
+        "3. 计算同党异党力量对比",
+        "4. 考虑特殊格局的影响"
+      ],
+      "test_case": "验证多个历史人物案例的旺衰判断",
+      "expected_improvement": "旺衰准确率从13.3%提升到70%+"
+    }
+  ],
+  "generation_time": "2025-07-04T09:59:51.100037"
+}

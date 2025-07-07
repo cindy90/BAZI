@@ -1,0 +1,388 @@
+{
+  "bazi_characters": {
+    "year_stem": "庚",
+    "year_branch": "午",
+    "month_stem": "庚",
+    "month_branch": "辰",
+    "day_stem": "甲",
+    "day_branch": "子",
+    "hour_stem": "己",
+    "hour_branch": "巳"
+  },
+  "five_elements_score": {
+    "木": "25%",
+    "火": "20%",
+    "土": "20%",
+    "金": "15%",
+    "水": "20%"
+  },
+  "day_master_strength": "身强",
+  "day_master_element": "木",
+  "zodiac_sign": "马",
+  "major_cycles": [
+    {
+      "gan_zhi": "甲子",
+      "start_age": "8",
+      "start_year": "1998",
+      "end_year": "2007",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运1与命局的互动分析",
+      "phase_analysis": "人生第1阶段",
+      "age_range": "8-17",
+      "description": "大运1期间的运势特点",
+      "big_cs": {
+        "index": 1,
+        "char": "沐浴"
+      }
+    },
+    {
+      "gan_zhi": "庚午",
+      "start_age": "18",
+      "start_year": "2008",
+      "end_year": "2017",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运2与命局的互动分析",
+      "phase_analysis": "人生第2阶段",
+      "age_range": "18-27",
+      "description": "大运2期间的运势特点",
+      "big_cs": {
+        "index": 7,
+        "char": "死"
+      }
+    },
+    {
+      "gan_zhi": "丙子",
+      "start_age": "28",
+      "start_year": "2018",
+      "end_year": "2027",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运3与命局的互动分析",
+      "phase_analysis": "人生第3阶段",
+      "age_range": "28-37",
+      "description": "大运3期间的运势特点",
+      "big_cs": {
+        "index": 1,
+        "char": "沐浴"
+      }
+    },
+    {
+      "gan_zhi": "壬午",
+      "start_age": "38",
+      "start_year": "2028",
+      "end_year": "2037",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运4与命局的互动分析",
+      "phase_analysis": "人生第4阶段",
+      "age_range": "38-47",
+      "description": "大运4期间的运势特点",
+      "big_cs": {
+        "index": 7,
+        "char": "死"
+      }
+    },
+    {
+      "gan_zhi": "戊子",
+      "start_age": "48",
+      "start_year": "2038",
+      "end_year": "2047",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运5与命局的互动分析",
+      "phase_analysis": "人生第5阶段",
+      "age_range": "48-57",
+      "description": "大运5期间的运势特点",
+      "big_cs": {
+        "index": 1,
+        "char": "沐浴"
+      }
+    },
+    {
+      "gan_zhi": "甲午",
+      "start_age": "58",
+      "start_year": "2048",
+      "end_year": "2057",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运6与命局的互动分析",
+      "phase_analysis": "人生第6阶段",
+      "age_range": "58-67",
+      "description": "大运6期间的运势特点",
+      "big_cs": {
+        "index": 7,
+        "char": "死"
+      }
+    },
+    {
+      "gan_zhi": "庚子",
+      "start_age": "68",
+      "start_year": "2058",
+      "end_year": "2067",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运7与命局的互动分析",
+      "phase_analysis": "人生第7阶段",
+      "age_range": "68-77",
+      "description": "大运7期间的运势特点",
+      "big_cs": {
+        "index": 1,
+        "char": "沐浴"
+      }
+    },
+    {
+      "gan_zhi": "丙午",
+      "start_age": "78",
+      "start_year": "2068",
+      "end_year": "2077",
+      "ten_gods_gan": "未知",
+      "hidden_stems_zhi": "未知",
+      "interaction_with_mingju": "大运8与命局的互动分析",
+      "phase_analysis": "人生第8阶段",
+      "age_range": "78-87",
+      "description": "大运8期间的运势特点",
+      "big_cs": {
+        "index": 7,
+        "char": "死"
+      }
+    }
+  ],
+  "current_year_fortune": {
+    "year": "2025",
+    "gan_zhi": "甲辰",
+    "analysis": "流年 甲辰 运势简析，年龄 35。",
+    "age": "35",
+    "detailed_analysis": {
+      "overall_fortune": "2025年流年对庚午年、庚辰月、甲子日、己巳时的命主而言，整体运势呈现平稳发展的趋势。",
+      "career_wealth": "事业财运方面，需要稳扎稳打，避免过于冒进。",
+      "love_marriage": "感情婚姻方面，适合加强沟通，维护和谐关系。",
+      "health": "健康方面，注意劳逸结合，保持良好的作息习惯。",
+      "strategic_guidance": "建议采取稳健的策略，循序渐进地推进各项计划。",
+      "practical_advice": "在日常生活中，可以多关注五行调节，保持身心平衡。",
+      "key_timeframes": "重要时间节点需要特别关注春分、夏至、秋分、冬至等节气变化。",
+      "personal_agency": "发挥主观能动性，积极面对机遇和挑战。"
+    },
+    "special_combinations": {
+      "sui_yun_bing_lin": false,
+      "tian_ke_di_chong": false,
+      "sui_yun_xiang_chong": false,
+      "special_warnings": [],
+      "favorable_combinations": [],
+      "critical_analysis": ""
+    },
+    "liunian_gan": "甲",
+    "liunian_zhi": "辰",
+    "ten_god_relation": "比肩",
+    "current_dayun": "丙子",
+    "predicted_events": {
+      "career": [
+        "事业稳步发展",
+        "适合学习新技能"
+      ],
+      "wealth": [
+        "财运平稳",
+        "避免投机"
+      ],
+      "health": [
+        "注意劳逸结合",
+        "保持良好作息"
+      ],
+      "relationship": [
+        "感情和谐",
+        "加强沟通"
+      ]
+    }
+  },
+  "gan_zhi_info": {
+    "year_pillar": {
+      "gan": "庚",
+      "zhi": "午",
+      "ten_god": "正官",
+      "hidden_stems": "丁,己"
+    },
+    "month_pillar": {
+      "gan": "庚",
+      "zhi": "辰",
+      "ten_god": "正官",
+      "hidden_stems": "戊,乙,癸"
+    },
+    "day_pillar": {
+      "gan": "甲",
+      "zhi": "子",
+      "ten_god": "日主",
+      "hidden_stems": "癸"
+    },
+    "hour_pillar": {
+      "gan": "己",
+      "zhi": "巳",
+      "ten_god": "正印",
+      "hidden_stems": "丙,戊,庚"
+    }
+  },
+  "na_yin": {
+    "year_na_yin": [
+      "路旁土",
+      2
+    ],
+    "month_na_yin": [
+      "白蜡金",
+      3
+    ],
+    "day_na_yin": [
+      "海中金",
+      3
+    ],
+    "hour_na_yin": [
+      "大林木",
+      0
+    ]
+  },
+  "palace_info": {
+    "tai_yuan": "辛未",
+    "ming_gong": "甲申",
+    "shen_gong": "丙戌",
+    "tai_xi": "己丑"
+  },
+  "birth_place": "北京",
+  "location_info": {
+    "latitude": 30.0,
+    "longitude": 120.0,
+    "timezone": "Asia/Shanghai",
+    "country": "中国",
+    "city": "北京"
+  },
+  "dz_cang_gan": [
+    {
+      "pillar": "year",
+      "hidden_stems": "丁,己"
+    },
+    {
+      "pillar": "month",
+      "hidden_stems": "戊,乙,癸"
+    },
+    {
+      "pillar": "day",
+      "hidden_stems": "癸"
+    },
+    {
+      "pillar": "hour",
+      "hidden_stems": "丙,戊,庚"
+    }
+  ],
+  "day_chang_sheng": [
+    {
+      "index": 7,
+      "char": "死"
+    },
+    {
+      "index": 5,
+      "char": "衰"
+    },
+    {
+      "index": 1,
+      "char": "沐浴"
+    },
+    {
+      "index": 6,
+      "char": "病"
+    }
+  ],
+  "year_chang_sheng": [
+    {
+      "index": 1,
+      "char": "沐浴"
+    },
+    {
+      "index": 11,
+      "char": "养"
+    },
+    {
+      "index": 7,
+      "char": "死"
+    },
+    {
+      "index": 0,
+      "char": "长生"
+    }
+  ],
+  "shen_sha_details": [
+    {
+      "key": "yi_ma",
+      "name": "驿马",
+      "position": "申",
+      "strength": 0.7,
+      "active": true,
+      "tags": []
+    },
+    {
+      "key": "kong_wang",
+      "name": "空亡",
+      "position": "戌亥",
+      "strength": 1.0,
+      "active": false,
+      "tags": [
+        "已冲化"
+      ]
+    },
+    {
+      "key": "tao_hua",
+      "name": "桃花",
+      "position": "午->卯, 辰->亥, 子->酉, 巳->戌",
+      "strength": 1.0,
+      "active": true,
+      "tags": []
+    }
+  ],
+  "interactions": {
+    "stem_combinations": [
+      {
+        "type": "天干五合",
+        "combination": "甲己",
+        "element": "土",
+        "positions": [
+          "日干",
+          "时干"
+        ]
+      }
+    ],
+    "branch_six_combinations": [],
+    "branch_three_half_combinations": [
+      {
+        "type": "地支半合局",
+        "combination": "子辰",
+        "element": "水",
+        "positions": [
+          "日支",
+          "月支"
+        ]
+      },
+      {
+        "type": "地支半合局",
+        "combination": "辰子",
+        "element": "水",
+        "positions": [
+          "月支",
+          "日支"
+        ]
+      }
+    ],
+    "branch_six_conflicts": [
+      {
+        "type": "地支六冲",
+        "combination": "午子",
+        "positions": [
+          "年支",
+          "日支"
+        ]
+      }
+    ],
+    "branch_penalties": [],
+    "branch_harms": []
+  },
+  "favorable_elements": [
+    "木",
+    "火"
+  ]
+}

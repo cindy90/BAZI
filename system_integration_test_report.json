@@ -1,0 +1,51 @@
+{
+  "test_timestamp": "2025-07-04T17:04:49.560582",
+  "test_type": "system_integration_validation",
+  "test_results": [
+    {
+      "case": "现代标准案例",
+      "status": "✅ 通过",
+      "details": {
+        "year_pillar": "甲辰",
+        "hour_zhi": "未",
+        "dayun_direction": "顺排",
+        "solar_correction": "-16.00分钟"
+      }
+    },
+    {
+      "case": "历史验证案例",
+      "status": "✅ 通过",
+      "details": {
+        "year_pillar": "庚子",
+        "hour_zhi": "午",
+        "dayun_direction": "逆排",
+        "solar_correction": "0.00分钟"
+      }
+    },
+    {
+      "case": "边界测试案例",
+      "status": "✅ 通过",
+      "details": {
+        "year_pillar": "甲辰",
+        "hour_zhi": "辰",
+        "dayun_direction": "顺排",
+        "solar_correction": "-64.00分钟"
+      }
+    }
+  ],
+  "algorithm_status": {
+    "真太阳时校正": "✅ 已集成",
+    "权威年柱算法": "✅ 已集成",
+    "五虎遁月柱": "⚠️ 需要节气数据",
+    "蔡勒日柱": "✅ 已集成",
+    "五鼠遁时柱": "✅ 已集成",
+    "精确大运": "✅ 已修正（1天=4个月）",
+    "增强神煞": "✅ 已集成"
+  },
+  "summary": {
+    "total_tests": 3,
+    "passed_tests": 3,
+    "failed_tests": 0,
+    "success_rate": "100.0%"
+  }
+}

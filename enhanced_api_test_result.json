@@ -1,0 +1,238 @@
+{
+  "test_info": {
+    "test_name": "增强版流年分析API测试",
+    "test_time": "2025-07-04T15:51:44.205008",
+    "bazi": "甲子 丙寅 己卯 辛未",
+    "day_master": "土",
+    "strength": "偏弱"
+  },
+  "five_elements_score": {
+    "金": "9.2%",
+    "木": "47.4%",
+    "水": "11.9%",
+    "火": "11.9%",
+    "土": "19.7%"
+  },
+  "favorable_elements": [
+    "土",
+    "火"
+  ],
+  "current_year_fortune": {
+    "year": "2025",
+    "gan_zhi": "甲辰",
+    "analysis": "2025年流年甲辰，年龄41岁。流年天干甲(木)代表正官，地支辰(土)，长生状态衰。根据综合分析，命局评分3.6分，主要喜用神为土,金，次要喜用神为火,比劫，当前大运庚午(伤官)。流年与命局关系和谐，运势顺畅",
+    "age": "41",
+    "liunian_gan": "甲",
+    "liunian_zhi": "辰",
+    "ten_god_relation": "正官",
+    "current_dayun": "庚午",
+    "comprehensive_rating": 3.5692307692307685,
+    "five_elements_analysis": {
+      "liunian_gan_element": "木",
+      "liunian_zhi_element": "土",
+      "dayun_element": "金",
+      "element_interaction": "木年遇金运",
+      "favorable_match": true,
+      "unfavorable_match": true
+    },
+    "chang_sheng_info": {
+      "state": "衰",
+      "description": "流年甲辰长生状态为衰"
+    },
+    "liunian_interactions": {
+      "stem_interactions": {},
+      "branch_interactions": {},
+      "special_combinations": [
+        "三合水局局成化",
+        "三合水局局成化",
+        "三合水局局成化"
+      ],
+      "conflicts": [],
+      "harmonies": [
+        "流年甲与日柱己合化土",
+        "流年辰助成水局三合",
+        "流年辰助成水局三合",
+        "流年辰助成水局三合"
+      ],
+      "punishments": [],
+      "harms": [
+        "流年辰害日支卯"
+      ],
+      "overall_assessment": "流年与命局关系和谐，运势顺畅"
+    },
+    "liunian_shensha": [
+      {
+        "name": "华盖",
+        "position": "年, 时",
+        "strength": 0.8,
+        "description": "神煞为忌神，作用力减弱",
+        "positive_tags": [
+          "艺术",
+          "宗教",
+          "玄学",
+          "才华"
+        ],
+        "negative_tags": [
+          "孤独",
+          "清高",
+          "脱俗"
+        ]
+      }
+    ],
+    "detailed_analysis": {
+      "overall_fortune": "2025年流年甲辰对己卯日主的影响：根据综合分析，命局身弱，印格，以印为用，需要官杀生印，或比劫泄印。流年天干甲(木)为正官，不利，地支辰(土)，长生状态衰。流年与命局关系和谐，运势顺畅",
+      "career_wealth": "事业财运方面，正官星当令，木行主导，需要谨慎应对。配合大运庚午的伤官影响，建议适宜居住在西方，多从事与金相关的行业。流年甲与日柱己合化土",
+      "love_marriage": "感情婚姻方面，受正官和木行影响，感情需要维护，宜在衰状态下保持耐心。",
+      "health": "健康方面，甲辰年木行当令，土行为辅，长生衰状态提示需要注意保养。",
+      "strategic_guidance": "战略指导：在正官的影响下，善用土,金元素特质，稳健保守，结合木旺需要金来修剪，土来培根。",
+      "practical_advice": "实用建议：适宜居住在西方，多从事与金相关的行业，特别关注木与土,金的配合，避免木,金的不利影响。",
+      "key_timeframes": "2025年重要时间段：春季(木行相关)，配合大运庚午的周期性影响。",
+      "personal_agency": "发挥主观能动性，积极把握土,金相关机遇，结合衰状态特点和印格的发展策略。"
+    },
+    "special_combinations": {
+      "sui_yun_bing_lin": false,
+      "tian_ke_di_chong": false,
+      "sui_yun_xiang_chong": false,
+      "special_warnings": [
+        "流年甲(木)克日主己(土)，需要增强自身力量",
+        "流年逢华盖，需要谨慎应对可能的挑战"
+      ],
+      "favorable_combinations": [
+        "流年逢华盖，吉神护佑运势亨通"
+      ],
+      "critical_analysis": "重点关注正官星的作用发挥，流年与命局关系和谐，运势顺畅。木与土,金的配合效果，以及衰状态下的运势起伏。",
+      "personalized_insights": [
+        "流年合化力量强，正官星的正面作用显著"
+      ],
+      "timing_analysis": [
+        "流年衰阶段，宜保守稳健，注意身体健康"
+      ],
+      "risk_assessment": [
+        "天干相克，正官星过旺可能带来压力"
+      ]
+    },
+    "predicted_events": {
+      "career": [
+        "正官流年，中年期事业发展稳定，有升职机会",
+        "流年逢华盖，适合学术研究或艺术创作"
+      ],
+      "wealth": [
+        "财运与正官配合，整体收支平衡"
+      ],
+      "health": [
+        "身体健康状况良好，注意中年期的保养重点"
+      ],
+      "relationship": [
+        "正官主配偶，感情关系趋于稳定，适合结婚"
+      ],
+      "timing": [
+        "流年地支辰(土)为喜用神，下半年运势更佳",
+        "三合局成化，团队合作运势佳，适合合作项目"
+      ],
+      "strategy": [
+        "重点关注土相关的发展机会",
+        "避免木相关的不利因素，加强土,金的影响",
+        "发挥团队优势，可考虑合作经营或投资",
+        "发挥创意才能，可从事文化艺术相关工作"
+      ],
+      "warning": [
+        "流年天干甲(木)为忌神，上半年需要谨慎"
+      ]
+    }
+  },
+  "comprehensive_analysis": {
+    "basic_analysis": {
+      "day_master_strength": 0.35692307692307684,
+      "strength_level": "身弱",
+      "favorable_elements": [
+        "土",
+        "火"
+      ],
+      "unfavorable_elements": [
+        "木",
+        "金"
+      ],
+      "analysis": "日主土身弱，需要生扶，喜土,火，忌木,金"
+    },
+    "season_analysis": {
+      "month_branch": "寅",
+      "season": "春季",
+      "temperature": "温和",
+      "adjustment_needed": "木旺需要金来修剪，土来培根",
+      "seasonal_gods": [
+        "金",
+        "土"
+      ]
+    },
+    "circulation_analysis": {
+      "circulation_path": [
+        "金",
+        "木",
+        "水",
+        "火",
+        "土"
+      ],
+      "key_elements": [
+        "木",
+        "火",
+        "土",
+        "金",
+        "水"
+      ],
+      "blockages": [],
+      "circulation_gods": [
+        "木",
+        "火",
+        "土",
+        "金",
+        "水"
+      ]
+    },
+    "pathology_analysis": {
+      "primary_issues": [
+        "木过旺"
+      ],
+      "secondary_issues": [],
+      "remedies": [
+        "用金克制木"
+      ],
+      "medicine_gods": [
+        "金"
+      ]
+    },
+    "pattern_analysis": {
+      "primary_pattern": "印格",
+      "secondary_pattern": "",
+      "pattern_gods": [
+        "官杀",
+        "比劫"
+      ],
+      "pattern_strength": 0,
+      "pattern_description": "以印为用，需要官杀生印，或比劫泄印"
+    },
+    "final_prognosis": {
+      "overall_rating": 3.5692307692307685,
+      "primary_favorable": [
+        "土",
+        "金"
+      ],
+      "secondary_favorable": [
+        "火",
+        "比劫"
+      ],
+      "primary_unfavorable": [
+        "木",
+        "金"
+      ],
+      "secondary_unfavorable": [],
+      "life_advice": [
+        "适宜居住在西方，多从事与金相关的行业",
+        "适宜居住在中央或四季末月，多从事与土相关的行业"
+      ],
+      "fortune_trends": {},
+      "key_years": []
+    },
+    "analysis_timestamp": "2025-07-04T15:51:44.191249",
+    "analysis_version": "v1.0"
+  }
+}

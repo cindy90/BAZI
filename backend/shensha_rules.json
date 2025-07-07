@@ -1,0 +1,1838 @@
+{
+    "rules": [
+        {
+            "key": "tianyi_guiren",
+            "name": "天乙贵人",
+            "description": "天乙贵人是八字神煞中最尊贵、最吉祥的贵人星，主逢凶化吉，遇难呈祥，得人帮助。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "day_stem",
+                "year_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "丑",
+                    "未"
+                ],
+                "戊": [
+                    "丑",
+                    "未"
+                ],
+                "乙": [
+                    "子",
+                    "申"
+                ],
+                "己": [
+                    "子",
+                    "申"
+                ],
+                "丙": [
+                    "亥",
+                    "酉"
+                ],
+                "丁": [
+                    "亥",
+                    "酉"
+                ],
+                "庚": [
+                    "丑",
+                    "未"
+                ],
+                "辛": [
+                    "寅",
+                    "午"
+                ],
+                "壬": [
+                    "卯",
+                    "巳"
+                ],
+                "癸": [
+                    "巳",
+                    "卯"
+                ]
+            },
+            "positive_tags": [
+                "贵人",
+                "逢凶化吉",
+                "助力",
+                "提携"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "favorable_element": 1.2,
+                "conflict": 0.5,
+                "harmony": 1.1,
+                "day_master_weak": 1.3,
+                "day_master_strong": 0.9
+            },
+            "positions_influence": {
+                "year": "长辈、祖上贵人助力，早年得到提携",
+                "month": "事业、学业贵人，中年发展得助",
+                "day": "配偶、自身贵人，婚姻美满或自带贵气",
+                "hour": "子女、晚辈贵人，晚年享福或子女有出息"
+            },
+            "auspicious_level": 9
+        },
+        {
+            "key": "tao_hua",
+            "name": "桃花",
+            "description": "主情欲、艺术、魅力，异性缘佳，但过旺易招情色纠纷。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch",
+                "day_branch"
+            ],
+            "rules": {
+                "寅": "卯",
+                "午": "卯",
+                "戌": "卯",
+                "亥": "子",
+                "卯": "子",
+                "未": "子",
+                "申": "酉",
+                "子": "酉",
+                "辰": "酉",
+                "巳": "午",
+                "酉": "午",
+                "丑": "午"
+            },
+            "positive_tags": [
+                "魅力",
+                "艺术",
+                "异性缘",
+                "人缘"
+            ],
+            "negative_tags": [
+                "情色",
+                "酒色",
+                "风流"
+            ],
+            "strength_modifier": {
+                "day_master_weak": 0.8,
+                "day_master_strong": 1.2,
+                "with_harm": 0.7,
+                "with_official": 1.5,
+                "multiple_appearance": 1.8
+            },
+            "positions_influence": {
+                "year": "早年风流，家族中多有风流人物",
+                "month": "异性缘佳，中年感情丰富",
+                "day": "配偶有魅力或感情复杂，婚姻多变",
+                "hour": "晚年桃花或子女感情复杂"
+            },
+            "auspicious_level": 3
+        },
+        {
+            "key": "wenchang_guiren",
+            "name": "文昌贵人",
+            "description": "主聪明好学，利于考试、文艺创作，增强智慧和学习能力。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "day_stem",
+                "year_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "巳"
+                ],
+                "乙": [
+                    "午"
+                ],
+                "丙": [
+                    "申"
+                ],
+                "丁": [
+                    "酉"
+                ],
+                "戊": [
+                    "申"
+                ],
+                "己": [
+                    "酉"
+                ],
+                "庚": [
+                    "亥"
+                ],
+                "辛": [
+                    "子"
+                ],
+                "壬": [
+                    "寅"
+                ],
+                "癸": [
+                    "卯"
+                ]
+            },
+            "positive_tags": [
+                "文昌",
+                "智慧",
+                "学业",
+                "考试"
+            ],
+            "negative_tags": [
+                "书呆子"
+            ],
+            "strength_modifier": {
+                "favorable_element": 1.3,
+                "with_official": 1.2,
+                "with_seal": 1.4
+            },
+            "positions_influence": {
+                "year": "祖上文化修养高，早年聪明",
+                "month": "学业运佳，事业文职有利",
+                "day": "本人聪明或配偶有文化",
+                "hour": "子女聪明好学，晚年文艺有成"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "lushen",
+            "name": "禄神",
+            "description": "主财禄、地位、享受，是天干在地支的根基所在。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "寅"
+                ],
+                "乙": [
+                    "卯"
+                ],
+                "丙": [
+                    "巳"
+                ],
+                "丁": [
+                    "午"
+                ],
+                "戊": [
+                    "巳"
+                ],
+                "己": [
+                    "午"
+                ],
+                "庚": [
+                    "申"
+                ],
+                "辛": [
+                    "酉"
+                ],
+                "壬": [
+                    "亥"
+                ],
+                "癸": [
+                    "子"
+                ]
+            },
+            "positive_tags": [
+                "禄神",
+                "财富",
+                "地位",
+                "享受"
+            ],
+            "negative_tags": [
+                "贪享乐"
+            ],
+            "strength_modifier": {
+                "conflict": 0.3,
+                "harmony": 1.2,
+                "with_wealth": 1.4
+            },
+            "positions_influence": {
+                "year": "祖业丰厚，早年享福",
+                "month": "事业有成，中年富贵",
+                "day": "自身有禄，配偶富贵",
+                "hour": "晚年享福，子女孝顺"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "yangbian",
+            "name": "羊刃",
+            "description": "主刚强、冲动，有制化时显威权，无制化时易凶险。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "卯"
+                ],
+                "乙": [
+                    "寅"
+                ],
+                "丙": [
+                    "午"
+                ],
+                "丁": [
+                    "巳"
+                ],
+                "戊": [
+                    "午"
+                ],
+                "己": [
+                    "巳"
+                ],
+                "庚": [
+                    "酉"
+                ],
+                "辛": [
+                    "申"
+                ],
+                "壬": [
+                    "子"
+                ],
+                "癸": [
+                    "亥"
+                ]
+            },
+            "positive_tags": [
+                "勇敢",
+                "魄力",
+                "权威"
+            ],
+            "negative_tags": [
+                "冲动",
+                "暴躁",
+                "凶险",
+                "刑妻克子"
+            ],
+            "strength_modifier": {
+                "with_official": 1.3,
+                "with_seal": 1.1,
+                "no_control": 1.6,
+                "conflict": 1.8
+            },
+            "positions_influence": {
+                "year": "祖上刚烈，早年环境动荡",
+                "month": "事业竞争激烈，中年多变动",
+                "day": "性格刚强，婚姻易有波折",
+                "hour": "晚年不安，子女倔强"
+            },
+            "auspicious_level": 4
+        },
+        {
+            "key": "huagai",
+            "name": "华盖",
+            "description": "主艺术、宗教、孤独，有艺术天赋但易孤芳自赏。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch",
+                "day_branch"
+            ],
+            "rules": {
+                "寅": "戌",
+                "午": "戌",
+                "戌": "戌",
+                "申": "辰",
+                "子": "辰",
+                "辰": "辰",
+                "亥": "未",
+                "卯": "未",
+                "未": "未",
+                "巳": "丑",
+                "酉": "丑",
+                "丑": "丑"
+            },
+            "positive_tags": [
+                "艺术",
+                "宗教",
+                "玄学",
+                "才华"
+            ],
+            "negative_tags": [
+                "孤独",
+                "清高",
+                "脱俗"
+            ],
+            "strength_modifier": {
+                "with_seal": 1.3,
+                "artistic_elements": 1.2
+            },
+            "positions_influence": {
+                "year": "祖上有宗教或艺术背景",
+                "month": "事业与艺术、宗教相关",
+                "day": "本人有艺术天赋，性格清高",
+                "hour": "晚年清静，子女有艺术细胞"
+            },
+            "auspicious_level": 6
+        },
+        {
+            "key": "jiangxing",
+            "name": "将星",
+            "description": "主领导能力、权威、统帅才能，利于管理和指挥。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch",
+                "day_branch"
+            ],
+            "rules": {
+                "申": "子",
+                "子": "子",
+                "辰": "子",
+                "寅": "午",
+                "午": "午",
+                "戌": "午",
+                "巳": "酉",
+                "酉": "酉",
+                "丑": "酉",
+                "亥": "卯",
+                "卯": "卯",
+                "未": "卯"
+            },
+            "positive_tags": [
+                "领导",
+                "权威",
+                "统帅",
+                "管理"
+            ],
+            "negative_tags": [
+                "专横",
+                "独断"
+            ],
+            "strength_modifier": {
+                "with_official": 1.4,
+                "with_seal": 1.2,
+                "day_master_strong": 1.3
+            },
+            "positions_influence": {
+                "year": "祖上有权威地位",
+                "month": "事业有管理职位",
+                "day": "本人有领导才能",
+                "hour": "晚年有威望，子女有权威"
+            },
+            "auspicious_level": 7
+        },
+        {
+            "key": "yima",
+            "name": "驿马",
+            "description": "主变动、出行、搬迁，动中求财，但易奔波劳碌。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch",
+                "day_branch"
+            ],
+            "rules": {
+                "申": "寅",
+                "子": "寅",
+                "辰": "寅",
+                "寅": "申",
+                "午": "申",
+                "戌": "申",
+                "巳": "亥",
+                "酉": "亥",
+                "丑": "亥",
+                "亥": "巳",
+                "卯": "巳",
+                "未": "巳"
+            },
+            "positive_tags": [
+                "变动",
+                "出行",
+                "求财",
+                "活跃"
+            ],
+            "negative_tags": [
+                "奔波",
+                "劳碌",
+                "不安"
+            ],
+            "strength_modifier": {
+                "conflict": 1.5,
+                "harmony": 0.7,
+                "with_wealth": 1.2
+            },
+            "positions_influence": {
+                "year": "祖上多迁移，早年环境多变",
+                "month": "事业多变动，中年奔波",
+                "day": "本人好动，婚姻多变",
+                "hour": "晚年不安，子女远离"
+            },
+            "auspicious_level": 5
+        },
+        {
+            "key": "kuigang",
+            "name": "魁罡",
+            "description": "主聪明果断、不容侵犯，但刑妻克子，性格刚烈。",
+            "calc_method": "day_pillar_specific",
+            "specific_pillars": [
+                "庚戌",
+                "庚辰",
+                "戊戌",
+                "壬辰"
+            ],
+            "positive_tags": [
+                "聪明",
+                "果断",
+                "权威",
+                "不容侵犯"
+            ],
+            "negative_tags": [
+                "刚烈",
+                "刑妻",
+                "克子",
+                "孤独"
+            ],
+            "strength_modifier": {
+                "multiple_appearance": 1.5,
+                "with_punishment": 1.3
+            },
+            "positions_influence": {
+                "day": "本人性格刚烈，婚姻易有波折，但聪明果断"
+            },
+            "auspicious_level": 5
+        },
+        {
+            "key": "kongwang",
+            "name": "空亡",
+            "description": "主虚空、失落，但有时反而逢凶化吉，空中求有。",
+            "calc_method": "xunkong",
+            "base_pillar_types": [
+                "day_pillar"
+            ],
+            "positive_tags": [
+                "逢凶化吉",
+                "空中求有",
+                "灵感"
+            ],
+            "negative_tags": [
+                "虚空",
+                "失落",
+                "不实",
+                "变动"
+            ],
+            "strength_modifier": {
+                "conflict_resolution": 0.3,
+                "with_noble": 0.8
+            },
+            "positions_influence": {
+                "year": "祖业空虚，早年失依",
+                "month": "事业虚浮，中年多变",
+                "day": "婚姻虚空或配偶有损",
+                "hour": "子女缘薄或晚年空虚"
+            },
+            "auspicious_level": 2,
+            "interactions": {
+                "conflict_resolution": {
+                    "condition": "branch_conflict",
+                    "active": false,
+                    "description": "空亡被冲则化解，失去空亡效应"
+                }
+            }
+        },
+        {
+            "key": "jinshen",
+            "name": "金神",
+            "description": "主刚烈、果断、武职，有权威但易招凶险，需火制方为贵格。",
+            "calc_method": "day_pillar_specific",
+            "specific_pillars": [
+                "乙丑",
+                "己巳",
+                "癸酉"
+            ],
+            "positive_tags": [
+                "刚烈",
+                "果断",
+                "权威",
+                "武职"
+            ],
+            "negative_tags": [
+                "凶险",
+                "暴躁",
+                "刑伤"
+            ],
+            "strength_modifier": {
+                "with_fire": 1.5,
+                "without_fire": 0.6,
+                "day_master_strong": 1.2
+            },
+            "positions_influence": {
+                "day": "性格刚烈，有权威，但需火制化方为贵"
+            },
+            "auspicious_level": 6
+        },
+        {
+            "key": "tianxi",
+            "name": "天喜",
+            "description": "主婚姻喜庆、人缘佳、心情愉快，利于感情和人际关系。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "戌",
+                "丑": "亥",
+                "寅": "子",
+                "卯": "丑",
+                "辰": "寅",
+                "巳": "卯",
+                "午": "辰",
+                "未": "巳",
+                "申": "午",
+                "酉": "未",
+                "戌": "申",
+                "亥": "酉"
+            },
+            "positive_tags": [
+                "婚姻",
+                "喜庆",
+                "人缘",
+                "愉快"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_marriage": 1.3,
+                "young_age": 1.2
+            },
+            "positions_influence": {
+                "year": "早年多喜庆，祖上有福",
+                "month": "事业顺利，中年多喜",
+                "day": "婚姻美满，配偶贤良",
+                "hour": "子女福气，晚年快乐"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "pima",
+            "name": "披麻",
+            "description": "主孝服、丧事、悲伤，易遇丧亡之事。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "卯",
+                "丑": "辰",
+                "寅": "巳",
+                "卯": "午",
+                "辰": "未",
+                "巳": "申",
+                "午": "酉",
+                "未": "戌",
+                "申": "亥",
+                "酉": "子",
+                "戌": "丑",
+                "亥": "寅"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "孝服",
+                "丧事",
+                "悲伤",
+                "死亡"
+            ],
+            "strength_modifier": {
+                "with_death": 1.4,
+                "multiple_appearance": 1.3
+            },
+            "positions_influence": {
+                "year": "早年或祖上多丧事",
+                "month": "中年易遇丧亡",
+                "day": "配偶或本人多病灾",
+                "hour": "晚年多悲伤或子女有损"
+            },
+            "auspicious_level": 1
+        },
+        {
+            "key": "xueren",
+            "name": "血刃",
+            "description": "主血光、手术、外伤，易有意外伤害。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch",
+                "day_branch"
+            ],
+            "rules": {
+                "子": "酉",
+                "丑": "午",
+                "寅": "卯",
+                "卯": "子",
+                "辰": "酉",
+                "巳": "午",
+                "午": "卯",
+                "未": "子",
+                "申": "酉",
+                "酉": "午",
+                "戌": "卯",
+                "亥": "子"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "血光",
+                "手术",
+                "外伤",
+                "意外"
+            ],
+            "strength_modifier": {
+                "with_punishment": 1.5,
+                "with_conflict": 1.3
+            },
+            "positions_influence": {
+                "year": "早年或祖上多伤灾",
+                "month": "中年易有血光",
+                "day": "本人或配偶易受伤",
+                "hour": "晚年或子女易有意外"
+            },
+            "auspicious_level": 1
+        },
+        {
+            "key": "tiande",
+            "name": "天德",
+            "description": "主德行、福气、逢凶化吉，为最吉之神煞。",
+            "calc_method": "month_based",
+            "month_rules": {
+                "正月": "丁",
+                "二月": "坤",
+                "三月": "壬",
+                "四月": "辛",
+                "五月": "亥",
+                "六月": "甲",
+                "七月": "癸",
+                "八月": "寅",
+                "九月": "丙",
+                "十月": "乙",
+                "十一月": "己",
+                "十二月": "庚"
+            },
+            "positive_tags": [
+                "德行",
+                "福气",
+                "逢凶化吉",
+                "贵人"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_virtue": 1.4,
+                "rescue_from_disaster": 1.5
+            },
+            "positions_influence": {
+                "year": "祖上积德，早年得福",
+                "month": "事业有德，中年顺利",
+                "day": "本人品德高尚，配偶贤良",
+                "hour": "晚年有福，子女孝顺"
+            },
+            "auspicious_level": 10
+        },
+        {
+            "key": "yuede",
+            "name": "月德",
+            "description": "主德行、福气、化解灾难，功效略逊于天德。",
+            "calc_method": "month_based",
+            "month_rules": {
+                "正月": "丙",
+                "二月": "甲",
+                "三月": "壬",
+                "四月": "庚",
+                "五月": "戊",
+                "六月": "丙",
+                "七月": "甲",
+                "八月": "壬",
+                "九月": "庚",
+                "十月": "戊",
+                "十一月": "丙",
+                "十二月": "甲"
+            },
+            "positive_tags": [
+                "德行",
+                "福气",
+                "化解",
+                "平安"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_tiande": 1.3,
+                "protection": 1.2
+            },
+            "positions_influence": {
+                "year": "祖上有德，早年平安",
+                "month": "事业平稳，中年无灾",
+                "day": "本人善良，婚姻和谐",
+                "hour": "晚年安康，子女平安"
+            },
+            "auspicious_level": 9
+        },
+        {
+            "key": "tiandehe",
+            "name": "天德合",
+            "description": "与天德相合，功效加强，主德行福气更盛。",
+            "calc_method": "stem_combination",
+            "base_shensha": "tiande",
+            "combination_rules": {
+                "甲": "己",
+                "乙": "庚",
+                "丙": "辛",
+                "丁": "壬",
+                "戊": "癸",
+                "己": "甲",
+                "庚": "乙",
+                "辛": "丙",
+                "壬": "丁",
+                "癸": "戊"
+            },
+            "positive_tags": [
+                "德合",
+                "福气",
+                "贵人",
+                "化解"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_tiande": 1.5,
+                "enhanced_virtue": 1.3
+            },
+            "positions_influence": {
+                "year": "祖德深厚，早年大福",
+                "month": "事业大利，中年发达",
+                "day": "本人大贵，配偶贤德",
+                "hour": "晚年大福，子女贵显"
+            },
+            "auspicious_level": 10
+        },
+        {
+            "key": "yuedehe",
+            "name": "月德合",
+            "description": "与月德相合，功效加强，主德行平安更盛。",
+            "calc_method": "stem_combination",
+            "base_shensha": "yuede",
+            "combination_rules": {
+                "甲": "己",
+                "乙": "庚",
+                "丙": "辛",
+                "丁": "壬",
+                "戊": "癸",
+                "己": "甲",
+                "庚": "乙",
+                "辛": "丙",
+                "壬": "丁",
+                "癸": "戊"
+            },
+            "positive_tags": [
+                "德合",
+                "平安",
+                "福气",
+                "化解"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_yuede": 1.4,
+                "enhanced_protection": 1.2
+            },
+            "positions_influence": {
+                "year": "祖德护佑，早年平安",
+                "month": "事业平稳，中年顺利",
+                "day": "本人善德，婚姻美满",
+                "hour": "晚年安康，子女平安"
+            },
+            "auspicious_level": 9
+        },
+        {
+            "key": "tongzi",
+            "name": "童子煞",
+            "description": "主童真、聪明，但婚姻不顺，易有感情波折。",
+            "calc_method": "complex_formula",
+            "formula": "spring_autumn_yinzi_maowei, summer_winter_chenxu_sichou",
+            "positive_tags": [
+                "童真",
+                "聪明",
+                "纯洁"
+            ],
+            "negative_tags": [
+                "婚姻不顺",
+                "感情波折",
+                "孤独"
+            ],
+            "strength_modifier": {
+                "young_marriage": 0.6,
+                "late_marriage": 1.2
+            },
+            "positions_influence": {
+                "year": "早年孤独，祖上缘薄",
+                "month": "事业孤立，中年独立",
+                "day": "婚姻不顺，配偶缘薄",
+                "hour": "子女缘薄，晚年孤独"
+            },
+            "auspicious_level": 3
+        },
+        {
+            "key": "guoyin_guiren",
+            "name": "国印贵人",
+            "description": "国印贵人主文印、权威、官职，利学业和仕途，主掌权威印信。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "戌"
+                ],
+                "乙": [
+                    "亥"
+                ],
+                "丙": [
+                    "丑"
+                ],
+                "丁": [
+                    "寅"
+                ],
+                "戊": [
+                    "丑"
+                ],
+                "己": [
+                    "寅"
+                ],
+                "庚": [
+                    "辰"
+                ],
+                "辛": [
+                    "巳"
+                ],
+                "壬": [
+                    "未"
+                ],
+                "癸": [
+                    "申"
+                ]
+            },
+            "positive_tags": [
+                "权威",
+                "官职",
+                "学业",
+                "印信"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "favorable_element": 1.3,
+                "with_official": 1.5,
+                "day_master_weak": 1.2
+            },
+            "positions_influence": {
+                "year": "祖上有官印，早年权威庇护",
+                "month": "事业官印，中年权职发达",
+                "day": "自身权威，配偶有官职",
+                "hour": "晚年权威，子女有官运"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "goujiao_sha",
+            "name": "勾绞煞",
+            "description": "勾绞煞主勾引、绞杀，易有意外伤害或法律纠纷，需防小人。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "辰",
+                "丑": "巳",
+                "寅": "午",
+                "卯": "未",
+                "辰": "申",
+                "巳": "酉",
+                "午": "戌",
+                "未": "亥",
+                "申": "子",
+                "酉": "丑",
+                "戌": "寅",
+                "亥": "卯"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "勾引",
+                "绞杀",
+                "意外",
+                "纠纷",
+                "小人"
+            ],
+            "strength_modifier": {
+                "with_conflict": 1.4,
+                "with_harm": 1.3,
+                "favorable_element": 0.7
+            },
+            "positions_influence": {
+                "year": "早年意外，祖上纠纷",
+                "month": "事业纠纷，中年官司",
+                "day": "婚姻纠纷，配偶争执",
+                "hour": "晚年纠纷，子女争执"
+            },
+            "auspicious_level": 2
+        },
+        {
+            "key": "fuxing_guiren",
+            "name": "福星贵人",
+            "description": "福星贵人主福德、财禄、幸运，有福星照命，一生多福多寿。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "寅"
+                ],
+                "乙": [
+                    "卯"
+                ],
+                "丙": [
+                    "巳"
+                ],
+                "丁": [
+                    "午"
+                ],
+                "戊": [
+                    "巳"
+                ],
+                "己": [
+                    "午"
+                ],
+                "庚": [
+                    "申"
+                ],
+                "辛": [
+                    "酉"
+                ],
+                "壬": [
+                    "亥"
+                ],
+                "癸": [
+                    "子"
+                ]
+            },
+            "positive_tags": [
+                "福德",
+                "财禄",
+                "幸运",
+                "多福"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "favorable_element": 1.3,
+                "with_wealth": 1.2,
+                "with_seal": 1.1
+            },
+            "positions_influence": {
+                "year": "祖上有福，早年幸运",
+                "month": "事业有福，中年顺利",
+                "day": "本人福气，配偶贤良",
+                "hour": "子女有福，晚年安康"
+            },
+            "auspicious_level": 9
+        },
+        {
+            "key": "dexiu_guiren",
+            "name": "德秀贵人",
+            "description": "德秀贵人主品德高尚、才华出众，德才兼备，利学业文章。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "丑"
+                ],
+                "乙": [
+                    "子"
+                ],
+                "丙": [
+                    "寅"
+                ],
+                "丁": [
+                    "卯"
+                ],
+                "戊": [
+                    "寅"
+                ],
+                "己": [
+                    "卯"
+                ],
+                "庚": [
+                    "辰"
+                ],
+                "辛": [
+                    "巳"
+                ],
+                "壬": [
+                    "午"
+                ],
+                "癸": [
+                    "未"
+                ]
+            },
+            "positive_tags": [
+                "品德",
+                "才华",
+                "德才",
+                "文章"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_seal": 1.4,
+                "with_officer": 1.3,
+                "favorable_element": 1.2
+            },
+            "positions_influence": {
+                "year": "祖上有德，家风良好",
+                "month": "事业有德，口碑佳",
+                "day": "本人有德，品格高尚",
+                "hour": "子女有德，传承良好"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "zaisha",
+            "name": "灾煞",
+            "description": "灾煞主意外、灾祸、病伤，易遇突发事件，需防范意外。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "午",
+                "丑": "卯",
+                "寅": "子",
+                "卯": "酉",
+                "辰": "午",
+                "巳": "卯",
+                "午": "子",
+                "未": "酉",
+                "申": "午",
+                "酉": "卯",
+                "戌": "子",
+                "亥": "酉"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "灾祸",
+                "意外",
+                "病伤",
+                "突发"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.4,
+                "with_harm": 1.3,
+                "with_clash": 1.2
+            },
+            "positions_influence": {
+                "year": "早年多灾，祖上不利",
+                "month": "中年灾厄，事业波折",
+                "day": "本人易灾，身体注意",
+                "hour": "晚年不利，子女有灾"
+            },
+            "auspicious_level": 2
+        },
+        {
+            "key": "shilingri",
+            "name": "十灵日",
+            "description": "十灵日主灵性、智慧、通灵，天资聪颖，易有特殊能力。",
+            "calc_method": "specific_days",
+            "specific_days": [
+                "甲子",
+                "甲午",
+                "乙丑",
+                "乙未",
+                "丙寅",
+                "丙申",
+                "丁卯",
+                "丁酉",
+                "戊辰",
+                "戊戌",
+                "己巳",
+                "己亥",
+                "庚午",
+                "庚子",
+                "辛未",
+                "辛丑",
+                "壬申",
+                "壬寅",
+                "癸酉",
+                "癸卯"
+            ],
+            "positive_tags": [
+                "灵性",
+                "智慧",
+                "通灵",
+                "天资"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_seal": 1.3,
+                "favorable_element": 1.2,
+                "with_officer": 1.1
+            },
+            "positions_influence": {
+                "day": "本人灵性强，智慧过人，易有特殊才能"
+            },
+            "auspicious_level": 7
+        },
+        {
+            "key": "taiji_guiren",
+            "name": "太极贵人",
+            "description": "太极贵人主智慧、悟性、宗教缘分，对易学玄学有天赋。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "子",
+                    "午"
+                ],
+                "乙": [
+                    "子",
+                    "午"
+                ],
+                "丙": [
+                    "卯",
+                    "酉"
+                ],
+                "丁": [
+                    "卯",
+                    "酉"
+                ],
+                "戊": [
+                    "辰",
+                    "戌",
+                    "丑",
+                    "未"
+                ],
+                "己": [
+                    "辰",
+                    "戌",
+                    "丑",
+                    "未"
+                ],
+                "庚": [
+                    "寅",
+                    "亥"
+                ],
+                "辛": [
+                    "寅",
+                    "亥"
+                ],
+                "壬": [
+                    "巳",
+                    "申"
+                ],
+                "癸": [
+                    "巳",
+                    "申"
+                ]
+            },
+            "positive_tags": [
+                "智慧",
+                "悟性",
+                "宗教",
+                "玄学"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_seal": 1.4,
+                "favorable_element": 1.2,
+                "with_officer": 1.1
+            },
+            "positions_influence": {
+                "year": "祖上有慧根，家族重精神",
+                "month": "事业与玄学相关，智慧过人",
+                "day": "本人有慧根，易学天赋高",
+                "hour": "子女有慧根，传承智慧"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "hongluan",
+            "name": "红鸾",
+            "description": "红鸾主婚姻、桃花、异性缘，利感情发展，主正缘桃花。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "卯",
+                "丑": "寅",
+                "寅": "丑",
+                "卯": "子",
+                "辰": "亥",
+                "巳": "戌",
+                "午": "酉",
+                "未": "申",
+                "申": "未",
+                "酉": "午",
+                "戌": "巳",
+                "亥": "辰"
+            },
+            "positive_tags": [
+                "婚姻",
+                "桃花",
+                "异性缘",
+                "正缘"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "with_marriage": 1.4,
+                "favorable_element": 1.2,
+                "young_age": 1.3
+            },
+            "positions_influence": {
+                "year": "早年桃花，祖上姻缘佳",
+                "month": "中年桃花，事业得异性助",
+                "day": "本人桃花旺，异性缘佳",
+                "hour": "晚年桃花，子女姻缘好"
+            },
+            "auspicious_level": 7
+        },
+        {
+            "key": "hongyan_sha",
+            "name": "红艳煞",
+            "description": "红艳煞主桃花、风流、异性缘重，易有感情纠葛，需注意色情之灾。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "午"
+                ],
+                "乙": [
+                    "未"
+                ],
+                "丙": [
+                    "寅"
+                ],
+                "丁": [
+                    "卯"
+                ],
+                "戊": [
+                    "辰"
+                ],
+                "己": [
+                    "巳"
+                ],
+                "庚": [
+                    "午"
+                ],
+                "辛": [
+                    "未"
+                ],
+                "壬": [
+                    "子"
+                ],
+                "癸": [
+                    "丑"
+                ]
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "桃花",
+                "风流",
+                "感情纠葛",
+                "色情"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.3,
+                "with_peach_blossom": 1.4,
+                "multiple_appearance": 1.5
+            },
+            "positions_influence": {
+                "year": "早年桃花重，祖上风流",
+                "month": "中年桃花旺，事业有阻",
+                "day": "本人风流，婚姻不稳",
+                "hour": "晚年桃花，子女有忧"
+            },
+            "auspicious_level": 3
+        },
+        {
+            "key": "jinyu",
+            "name": "金舆",
+            "description": "金舆主富贵、车马、出行顺利，有贵人相助，利于发展。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "辰"
+                ],
+                "乙": [
+                    "巳"
+                ],
+                "丙": [
+                    "未"
+                ],
+                "丁": [
+                    "申"
+                ],
+                "戊": [
+                    "未"
+                ],
+                "己": [
+                    "申"
+                ],
+                "庚": [
+                    "戌"
+                ],
+                "辛": [
+                    "亥"
+                ],
+                "壬": [
+                    "丑"
+                ],
+                "癸": [
+                    "寅"
+                ]
+            },
+            "positive_tags": [
+                "富贵",
+                "车马",
+                "出行",
+                "贵人"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "favorable_element": 1.3,
+                "with_wealth": 1.2,
+                "with_officer": 1.1
+            },
+            "positions_influence": {
+                "year": "祖上富贵，早年得助",
+                "month": "事业顺利，中年发达",
+                "day": "本人富贵，出行平安",
+                "hour": "晚年富足，子女有成"
+            },
+            "auspicious_level": 8
+        },
+        {
+            "key": "guasu",
+            "name": "寡宿",
+            "description": "寡宿主孤独、离群、婚姻不利，易有孤寡之象，感情不顺。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "巳",
+                "丑": "午",
+                "寅": "未",
+                "卯": "申",
+                "辰": "酉",
+                "巳": "戌",
+                "午": "亥",
+                "未": "子",
+                "申": "丑",
+                "酉": "寅",
+                "戌": "卯",
+                "亥": "辰"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "孤独",
+                "离群",
+                "婚姻不利",
+                "孤寡"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.3,
+                "with_solitude": 1.4,
+                "female_gender": 1.2
+            },
+            "positions_influence": {
+                "year": "早年孤独，祖上不利",
+                "month": "中年孤寡，事业独立",
+                "day": "本人孤独，婚姻不顺",
+                "hour": "晚年孤寡，子女疏远"
+            },
+            "auspicious_level": 2
+        },
+        {
+            "key": "diaokey",
+            "name": "吊客",
+            "description": "吊客主丧事、悲伤、哭泣，易遇丧亡之事，需防孝服。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "巳",
+                "丑": "午",
+                "寅": "未",
+                "卯": "申",
+                "辰": "酉",
+                "巳": "戌",
+                "午": "亥",
+                "未": "子",
+                "申": "丑",
+                "酉": "寅",
+                "戌": "卯",
+                "亥": "辰"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "丧事",
+                "悲伤",
+                "哭泣",
+                "孝服"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.4,
+                "with_death": 1.3,
+                "with_mourning": 1.2
+            },
+            "positions_influence": {
+                "year": "早年丧事，祖上不利",
+                "month": "中年丧亡，事业受阻",
+                "day": "本人易丧，身体注意",
+                "hour": "晚年丧事，子女有忧"
+            },
+            "auspicious_level": 1
+        },
+        {
+            "key": "wangshen",
+            "name": "亡神",
+            "description": "亡神主死亡、消失、失落，易有意外之事，需防不测。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "亥",
+                "丑": "子",
+                "寅": "丑",
+                "卯": "寅",
+                "辰": "卯",
+                "巳": "辰",
+                "午": "巳",
+                "未": "午",
+                "申": "未",
+                "酉": "申",
+                "戌": "酉",
+                "亥": "戌"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "死亡",
+                "消失",
+                "失落",
+                "意外"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.4,
+                "with_death": 1.3,
+                "with_accident": 1.2
+            },
+            "positions_influence": {
+                "year": "早年不利，祖上有损",
+                "month": "中年意外，事业波折",
+                "day": "本人易有意外，需防不测",
+                "hour": "晚年不利，子女有忧"
+            },
+            "auspicious_level": 1
+        },
+        {
+            "key": "jiesha",
+            "name": "劫煞",
+            "description": "劫煞主劫财、破耗、意外损失，易有钱财之灾，需防破财。",
+            "calc_method": "base_zhi_lookup",
+            "base_zhi_types": [
+                "year_branch"
+            ],
+            "rules": {
+                "子": "巳",
+                "丑": "寅",
+                "寅": "亥",
+                "卯": "申",
+                "辰": "巳",
+                "巳": "寅",
+                "午": "亥",
+                "未": "申",
+                "申": "巳",
+                "酉": "寅",
+                "戌": "亥",
+                "亥": "申"
+            },
+            "positive_tags": [],
+            "negative_tags": [
+                "劫财",
+                "破耗",
+                "意外损失",
+                "钱财之灾"
+            ],
+            "strength_modifier": {
+                "unfavorable_element": 1.3,
+                "with_wealth_loss": 1.4,
+                "with_robbery": 1.2
+            },
+            "positions_influence": {
+                "year": "早年破财，祖上不利",
+                "month": "中年劫财，事业受损",
+                "day": "本人易破财，需防劫夺",
+                "hour": "晚年破耗，子女有损"
+            },
+            "auspicious_level": 2
+        },
+        {
+            "key": "tianchu_guiren",
+            "name": "天厨贵人",
+            "description": "天厨贵人主衣食丰足、饮食无忧，有福寿之象，衣食无缺。",
+            "calc_method": "stem_zhi_lookup",
+            "base_stem_types": [
+                "year_stem",
+                "day_stem"
+            ],
+            "rules": {
+                "甲": [
+                    "巳"
+                ],
+                "乙": [
+                    "午"
+                ],
+                "丙": [
+                    "未"
+                ],
+                "丁": [
+                    "申"
+                ],
+                "戊": [
+                    "未"
+                ],
+                "己": [
+                    "申"
+                ],
+                "庚": [
+                    "亥"
+                ],
+                "辛": [
+                    "子"
+                ],
+                "壬": [
+                    "丑"
+                ],
+                "癸": [
+                    "寅"
+                ]
+            },
+            "positive_tags": [
+                "衣食",
+                "丰足",
+                "饮食无忧",
+                "福寿"
+            ],
+            "negative_tags": [],
+            "strength_modifier": {
+                "favorable_element": 1.2,
+                "with_wealth": 1.3,
+                "with_food": 1.1
+            },
+            "positions_influence": {
+                "year": "祖上丰足，早年衣食无忧",
+                "month": "事业有成，中年富足",
+                "day": "本人衣食无缺，生活安康",
+                "hour": "晚年富足，子女孝顺"
+            },
+            "auspicious_level": 8
+        }
+    ],
+    "shensha_interactions": {
+        "yima_kongwang": {
+            "name": "驿马空亡",
+            "shensha_keys": [
+                "yima",
+                "kongwang"
+            ],
+            "condition": "same_position",
+            "effects": {
+                "yima": {
+                    "add_tags": [
+                        "虚动"
+                    ],
+                    "strength_modifier": 0.7,
+                    "description": "驿马遇空亡，虚动不实，动中有阻"
+                }
+            }
+        },
+        "yima_chong": {
+            "name": "驿马逢冲",
+            "shensha_keys": [
+                "yima"
+            ],
+            "condition": "branch_conflict",
+            "strength_formula": "base * (1.3 ^ conflict_count)",
+            "effects": {
+                "yima": {
+                    "add_tags": [
+                        "冲动"
+                    ],
+                    "description": "驿马逢冲，动力增强但易冲动"
+                }
+            }
+        },
+        "yima_he": {
+            "name": "驿马逢合",
+            "shensha_keys": [
+                "yima"
+            ],
+            "condition": "branch_harmony",
+            "strength_formula": "base * (0.8 ^ harmony_count)",
+            "effects": {
+                "yima": {
+                    "add_tags": [
+                        "合动"
+                    ],
+                    "description": "驿马逢合，动力减弱但较稳定"
+                }
+            }
+        },
+        "kongwang_resolved": {
+            "name": "空亡逢冲",
+            "shensha_keys": [
+                "kongwang"
+            ],
+            "condition": "branch_conflict",
+            "effects": {
+                "kongwang": {
+                    "active": false,
+                    "add_tags": [
+                        "已冲化"
+                    ],
+                    "description": "空亡被冲则化解，失去空亡效应"
+                }
+            }
+        },
+        "yangbian_control": {
+            "name": "羊刃有制",
+            "shensha_keys": [
+                "yangbian"
+            ],
+            "condition": "with_official_or_seal",
+            "effects": {
+                "yangbian": {
+                    "strength_modifier": 1.3,
+                    "add_tags": [
+                        "有制"
+                    ],
+                    "remove_tags": [
+                        "凶险"
+                    ],
+                    "description": "羊刃有官杀或印绶制化，反主权威"
+                }
+            }
+        },
+        "yangbian_no_control": {
+            "name": "羊刃无制",
+            "shensha_keys": [
+                "yangbian"
+            ],
+            "condition": "no_official_or_seal",
+            "effects": {
+                "yangbian": {
+                    "strength_modifier": 1.6,
+                    "add_tags": [
+                        "无制",
+                        "凶险"
+                    ],
+                    "description": "羊刃无制化，刚烈冲动，易有凶险"
+                }
+            }
+        },
+        "taohua_multiple": {
+            "name": "桃花重现",
+            "shensha_keys": [
+                "tao_hua"
+            ],
+            "condition": "multiple_appearance",
+            "effects": {
+                "tao_hua": {
+                    "strength_modifier": 1.8,
+                    "add_tags": [
+                        "重现",
+                        "风流"
+                    ],
+                    "description": "桃花重现，异性缘极佳但易风流"
+                }
+            }
+        },
+        "kuigang_multiple": {
+            "name": "魁罡重现",
+            "shensha_keys": [
+                "kuigang"
+            ],
+            "condition": "multiple_appearance",
+            "effects": {
+                "kuigang": {
+                    "strength_modifier": 1.5,
+                    "add_tags": [
+                        "重现",
+                        "威权"
+                    ],
+                    "description": "魁罡重现，权威增强但更加孤傲"
+                }
+            }
+        },
+        "tianyi_favorable": {
+            "name": "天乙贵人得用",
+            "shensha_keys": [
+                "tianyi_guiren"
+            ],
+            "condition": "favorable_element",
+            "effects": {
+                "tianyi_guiren": {
+                    "strength_modifier": 1.2,
+                    "add_tags": [
+                        "得用"
+                    ],
+                    "description": "天乙贵人为喜用神，贵人助力更强"
+                }
+            }
+        },
+        "wenchang_seal": {
+            "name": "文昌配印",
+            "shensha_keys": [
+                "wenchang_guiren"
+            ],
+            "condition": "with_seal",
+            "effects": {
+                "wenchang_guiren": {
+                    "strength_modifier": 1.4,
+                    "add_tags": [
+                        "配印"
+                    ],
+                    "description": "文昌贵人配印绶，学业文艺大利"
+                }
+            }
+        },
+        "general_favorable": {
+            "name": "神煞得用",
+            "shensha_keys": [
+                "*"
+            ],
+            "condition": "favorable_element",
+            "effects": {
+                "*": {
+                    "strength_modifier": 1.2,
+                    "add_tags": [
+                        "得用"
+                    ],
+                    "description": "神煞为喜用神，作用力增强"
+                }
+            }
+        },
+        "general_unfavorable": {
+            "name": "神煞失用",
+            "shensha_keys": [
+                "*"
+            ],
+            "condition": "unfavorable_element",
+            "effects": {
+                "*": {
+                    "strength_modifier": 0.8,
+                    "add_tags": [
+                        "失用"
+                    ],
+                    "description": "神煞为忌神，作用力减弱"
+                }
+            }
+        }
+    }
+}

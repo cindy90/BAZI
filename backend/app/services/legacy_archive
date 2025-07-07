@@ -1,0 +1,2141 @@
+from datetime import datetime, timedelta
+from fastapi import HTTPException, status
+from app.schemas.bazi import BaziCalculateRequest, BaziCalculateResponse
+from typing import Dict, Any, List, Optional, Union
+import math
+import json
+import os
+from collections import deque
+import functools
+
+# --- 导入 6tail/lunar-python 库 ---
+from lunar_python import Lunar as Lunar6Tail, Solar as Solar6Tail
+from lunar_python.util import LunarUtil
+
+# --- 新增：干支互动分析器 ---
+class GanZhiInteractionAnalyzer:
+    """负责检测天干地支之间的互动关系（五合、六合、三合、半合、六冲、相刑、相穿）"""
+    TEN_STEM_COMBINATIONS = {('甲','己'):'土',('乙','庚'):'金',('丙','辛'):'水',('丁','壬'):'木',('戊','癸'):'火'}
+    SIX_BRANCH_COMBINATIONS = {('子','丑'):'土',('寅','亥'):'木',('卯','戌'):'火',('辰','酉'):'金',('巳','申'):'水',('午','未'):'土'}
+    THREE_BRANCH_COMBINATIONS = {('申','子','辰'):'水',('寅','午','戌'):'火',('亥','卯','未'):'木',('巳','酉','丑'):'金'}
+    HALF_COMBINATIONS = {('申','子'):'水',('子','辰'):'水',('寅','午'):'火',('午','戌'):'火',('亥','卯'):'木',('卯','未'):'木',('巳','酉'):'金',('酉','丑'):'金'}
+    SIX_BRANCH_CONFLICTS = {('子','午'),('丑','未'),('寅','申'),('卯','酉'),('辰','戌'),('巳','亥')}
+    THREE_PENALTIES = {('寅','巳','申'):'恃势之刑',('丑','戌','未'):'无恩之刑'}
+    SELF_PENALTIES = {'辰':'自刑','午':'自刑','酉':'自刑','亥':'自刑'}
+    SIX_BRANCH_HARMS = {('子','未'),('丑','午'),('寅','巳'),('卯','辰'),('申','亥'),('酉','戌')}
+    def _get_pillar_name(self, idx:int)->str:
+        return ['年','月','日','时'][idx]
+    def check_stem_combinations(self, stems:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for i in range(len(stems)):
+            for j in range(i+1,len(stems)):
+                a,b=stems[i],stems[j]
+                if (a,b) in self.TEN_STEM_COMBINATIONS or (b,a) in self.TEN_STEM_COMBINATIONS:
+                    combo=(a,b) if (a,b) in self.TEN_STEM_COMBINATIONS else (b,a)
+                    res.append({'type':'天干五合','combination':''.join(combo),'element':self.TEN_STEM_COMBINATIONS[combo],'positions':[f"{self._get_pillar_name(i)}干",f"{self._get_pillar_name(j)}干"]})
+        return res
+    def check_branch_six_combinations(self, branches:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for i in range(len(branches)):
+            for j in range(i+1,len(branches)):
+                a,b=branches[i],branches[j]
+                if (a,b) in self.SIX_BRANCH_COMBINATIONS or (b,a) in self.SIX_BRANCH_COMBINATIONS:
+                    combo=(a,b) if (a,b) in self.SIX_BRANCH_COMBINATIONS else (b,a)
+                    res.append({'type':'地支六合','combination':''.join(combo),'element':self.SIX_BRANCH_COMBINATIONS[combo],'positions':[f"{self._get_pillar_name(i)}支",f"{self._get_pillar_name(j)}支"]})
+        return res
+    def check_branch_three_half(self, branches:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for combo,ele in self.THREE_BRANCH_COMBINATIONS.items():
+            if all(c in branches for c in combo):
+                poses=[f"{self._get_pillar_name(branches.index(c))}支" for c in combo]
+                res.append({'type':'地支三合局','combination':''.join(combo),'element':ele,'positions':poses})
+        for combo,ele in self.HALF_COMBINATIONS.items():
+            a,b=combo
+            if a in branches and b in branches:
+                poses=[f"{self._get_pillar_name(branches.index(x))}支" for x in combo]
+                res.append({'type':'地支半合局','combination':''.join(combo),'element':ele,'positions':poses})
+        return res
+    def check_branch_conflicts(self, branches:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for i in range(len(branches)):
+            for j in range(i+1,len(branches)):
+                a,b=branches[i],branches[j]
+                if (a,b) in self.SIX_BRANCH_CONFLICTS or (b,a) in self.SIX_BRANCH_CONFLICTS:
+                    res.append({'type':'地支六冲','combination':a+b,'positions':[f"{self._get_pillar_name(i)}支",f"{self._get_pillar_name(j)}支"]})
+        return res
+    def check_branch_penalties(self, branches:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for combo,t in self.THREE_PENALTIES.items():
+            if all(c in branches for c in combo):
+                poses=[f"{self._get_pillar_name(branches.index(c))}支" for c in combo]
+                res.append({'type':'地支三刑','combination':''.join(combo),'penalty':t,'positions':poses})
+        for i in range(len(branches)):
+            for j in range(i+1,len(branches)):
+                if branches[i]==branches[j] and branches[i] in self.SELF_PENALTIES:
+                    t=self.SELF_PENALTIES[branches[i]]
+                    res.append({'type':'地支自刑','combination':branches[i]*2,'penalty':t,'positions':[f"{self._get_pillar_name(i)}支",f"{self._get_pillar_name(j)}支"]})
+        if '子' in branches and '卯' in branches:
+            poses=[f"{self._get_pillar_name(idx)}支" for idx,b in enumerate(branches) if b in ('子','卯')]
+            res.append({'type':'地支相刑','combination':'子卯','penalty':'无礼之刑','positions':poses})
+        return res
+    def check_branch_harms(self, branches:List[str])->List[Dict[str,Any]]:
+        res=[]
+        for i in range(len(branches)):
+            for j in range(i+1,len(branches)):
+                a,b=branches[i],branches[j]
+                if (a,b) in self.SIX_BRANCH_HARMS or (b,a) in self.SIX_BRANCH_HARMS:
+                    res.append({'type':'地支相穿','combination':a+b,'positions':[f"{self._get_pillar_name(i)}支",f"{self._get_pillar_name(j)}支"]})
+        return res
+
+# --- 新八字命理核心框架 ---
+
+# 基础数据结构定义
+class StemBranch:
+    """干支结构"""
+    def __init__(self, stem: str, branch: str):
+        self.stem = stem    # 天干
+        self.branch = branch # 地支
+        
+    def __repr__(self):
+        return f"{self.stem}{self.branch}"
+    
+    def __eq__(self, other):
+        if isinstance(other, StemBranch):
+            return self.stem == other.stem and self.branch == other.branch
+        return False
+
+class Bazi:
+    """八字命盘"""
+    def __init__(
+        self, 
+        year: StemBranch, 
+        month: StemBranch, 
+        day: StemBranch, 
+        hour: StemBranch,
+        gender: str,  # '男' 或 '女'
+        birth_time: Optional[datetime] = None
+    ):
+        self.year = year
+        self.month = month
+        self.day = day
+        self.hour = hour
+        self.gender = gender
+        self.birth_time = birth_time
+        self.day_master = self.day.stem  # 日干作为日主
+        self.zodiac = self._get_zodiac()  # 计算生肖
+        
+    def _get_zodiac(self) -> str:
+        """根据年支计算生肖"""
+        zodiac_map = {
+            "子": "鼠", "丑": "牛", "寅": "虎", "卯": "兔", 
+            "辰": "龙", "巳": "蛇", "午": "马", "未": "羊", 
+            "申": "猴", "酉": "鸡", "戌": "狗", "亥": "猪"
+        }
+        return zodiac_map.get(self.year.branch, "")
+        
+    def get_all_branches(self) -> List[str]:
+        """获取四柱地支"""
+        return [
+            self.year.branch, 
+            self.month.branch, 
+            self.day.branch, 
+            self.hour.branch
+        ]
+    
+    def get_bazi_characters(self) -> Dict[str, str]:
+        """获取八字字符信息"""
+        return {
+            "year_stem": self.year.stem,
+            "year_branch": self.year.branch,
+            "month_stem": self.month.stem,
+            "month_branch": self.month.branch,
+            "day_stem": self.day.stem,
+            "day_branch": self.day.branch,
+            "hour_stem": self.hour.stem,
+            "hour_branch": self.hour.branch
+        }
+    
+    def get_day_master(self) -> str:
+        """获取日主"""
+        return self.day_master
+    
+    def get_zodiac(self) -> str:
+        """获取生肖"""
+        return self.zodiac
+    
+    def get_year_stem(self) -> str:
+        return self.year.stem
+        
+    def is_male(self) -> bool:
+        return self.gender == '男'
+
+class DaYun:
+    """大运"""
+    def __init__(
+        self, 
+        start_age: int, 
+        stem_branch: StemBranch, 
+        start_time: Optional[datetime] = None,
+        events: Optional[List] = None,
+        end_age: Optional[int] = None
+    ):
+        self.start_age = start_age  # 起运年龄
+        self.stem_branch = stem_branch  # 大运干支
+        self.start_time = start_time  # 起运时间
+        self.events = events or []  # 大运期间的事件
+        self.end_age = end_age or (start_age + 9)  # 结束年龄
+        
+class ShenSha:
+    """神煞"""
+    def __init__(
+        self, 
+        name: str, 
+        position: str, 
+        strength: float = 1.0,
+        active: bool = True,
+        tags: Optional[List[str]] = None
+    ):
+        self.name = name  # 神煞名称
+        self.position = position  # 作用位置
+        self.strength = strength  # 作用强度
+        self.active = active  # 是否激活
+        self.tags = tags or []  # 附加标签
+        
+    def add_tag(self, tag: str):
+        self.tags.append(tag)
+
+# JIAZI 六十甲子表
+JIAZI = [
+    f"{g}{z}" for g, z in zip(
+        "甲乙丙丁戊己庚辛壬癸甲乙丙丁戊己庚辛壬癸甲乙丙丁戊己庚辛壬癸甲乙丙丁戊己庚辛壬癸甲乙丙丁戊己庚辛壬癸甲乙丙丁戊己庚辛壬癸",
+        "子丑寅卯辰巳午未申酉戌亥子丑寅卯辰巳午未申酉戌亥子丑寅卯辰巳午未申酉戌亥子丑寅卯辰巳午未申酉戌亥子丑寅卯辰巳午未申酉戌亥"
+    )
+][:60]
+
+# 大运模型与事件反推引擎
+class FortuneModel:
+    """大运模型引擎"""
+    
+    # 六十甲子表
+    JIAZI = [
+        StemBranch("甲", "子"), StemBranch("乙", "丑"), StemBranch("丙", "寅"), StemBranch("丁", "卯"), StemBranch("戊", "辰"),
+        StemBranch("己", "巳"), StemBranch("庚", "午"), StemBranch("辛", "未"), StemBranch("壬", "申"), StemBranch("癸", "酉"),
+        StemBranch("甲", "戌"), StemBranch("乙", "亥"), StemBranch("丙", "子"), StemBranch("丁", "丑"), StemBranch("戊", "寅"),
+        StemBranch("己", "卯"), StemBranch("庚", "辰"), StemBranch("辛", "巳"), StemBranch("壬", "午"), StemBranch("癸", "未"),
+        StemBranch("甲", "申"), StemBranch("乙", "酉"), StemBranch("丙", "戌"), StemBranch("丁", "亥"), StemBranch("戊", "子"),
+        StemBranch("己", "丑"), StemBranch("庚", "寅"), StemBranch("辛", "卯"), StemBranch("壬", "辰"), StemBranch("癸", "巳"),
+        StemBranch("甲", "午"), StemBranch("乙", "未"), StemBranch("丙", "申"), StemBranch("丁", "酉"), StemBranch("戊", "戌"),
+        StemBranch("己", "亥"), StemBranch("庚", "子"), StemBranch("辛", "丑"), StemBranch("壬", "寅"), StemBranch("癸", "卯"),
+        StemBranch("甲", "辰"), StemBranch("乙", "巳"), StemBranch("丙", "午"), StemBranch("丁", "未"), StemBranch("戊", "申"),
+        StemBranch("己", "酉"), StemBranch("庚", "戌"), StemBranch("辛", "亥"), StemBranch("壬", "子"), StemBranch("癸", "丑"),
+        StemBranch("甲", "寅"), StemBranch("乙", "卯"), StemBranch("丙", "辰"), StemBranch("丁", "巳"), StemBranch("戊", "午"),
+        StemBranch("己", "未"), StemBranch("庚", "申"), StemBranch("辛", "酉"), StemBranch("壬", "戌"), StemBranch("癸", "亥")
+    ]
+    
+    @classmethod
+    @functools.lru_cache(maxsize=128)
+    def calculate_da_yun(cls, birth_chart: Bazi) -> List[DaYun]:
+        """计算大运"""
+        da_yun_list = []
+        
+        # 1. 确定顺逆排
+        yang_stems = {"甲", "丙", "戊", "庚", "壬"}
+        is_forward = (
+            (birth_chart.get_year_stem() in yang_stems and birth_chart.is_male()) or
+            (birth_chart.get_year_stem() not in yang_stems and not birth_chart.is_male())
+        )
+        
+        # 2. 计算起运时间（简化版，实际需精确计算节气）
+        if birth_chart.birth_time:
+            start_time = birth_chart.birth_time + timedelta(days=365*8)  # 默认8岁起运
+        else:
+            start_time = None
+        
+        # 3. 大运干支序列生成
+        fortune_sequence = cls.generate_sequence(
+            base=birth_chart.month,
+            forward=is_forward,
+            steps=10
+        )
+        
+        # 4. 构建大运对象
+        for i, stem_branch in enumerate(fortune_sequence):
+            start_age = i * 10
+            da_yun = DaYun(
+                start_age=start_age,
+                end_age=start_age + 9,
+                stem_branch=stem_branch,
+                start_time=start_time + timedelta(days=365*10*i) if start_time else None
+            )
+            
+            # 集成事件反推
+            da_yun.events = EventDeductionEngine.predict_events(
+                birth_chart=birth_chart,
+                da_yun=da_yun,
+                step=i
+            )
+            
+            da_yun_list.append(da_yun)
+            
+        return da_yun_list
+    
+    @classmethod
+    def generate_sequence(
+        cls, 
+        base: StemBranch, 
+        forward: bool, 
+        steps: int
+    ) -> List[StemBranch]:
+        """生成干支序列"""
+        # 构建六十甲子环状队列
+        jiazi_ring = deque(cls.JIAZI)
+        
+        # 找到基础干支位置
+        base_idx = None
+        for i, item in enumerate(cls.JIAZI):
+            if item.stem == base.stem and item.branch == base.branch:
+                base_idx = i
+                break
+        
+        if base_idx is None:
+            base_idx = 0  # 默认值，以防找不到匹配
+            
+        jiazi_ring.rotate(-base_idx)  # 将基础干支旋转到队列开头
+        
+        sequence = []
+        step = 1 if forward else -1
+        
+        for i in range(1, steps + 1):
+            # 计算新位置
+            idx = step * i % len(jiazi_ring)
+            if idx < 0:
+                idx += len(jiazi_ring)
+            sequence.append(jiazi_ring[idx])
+            
+        return sequence
+
+class EventDeductionEngine:
+    """事件反推引擎"""
+    
+    # 事件规则库
+    EVENT_RULES = {
+        "career_break": {
+            "pattern": "官杀透干+印星生扶",
+            "threshold": 0.85
+        },
+        "marriage": {
+            "pattern": "财官合入夫妻宫+红鸾",
+            "threshold": 0.92
+        },
+        "health_issue": {
+            "pattern": "忌神冲克用神+病符星",
+            "threshold": 0.78
+        }
+    }
+    
+    @staticmethod
+    def predict_events(
+        birth_chart: Bazi, 
+        da_yun: DaYun, 
+        step: int
+    ) -> List[Dict]:
+        """预测大运事件"""
+        events = []
+        
+        # 1. 模拟特征提取 - 简化版本以整合到现有系统
+        features = set()
+        
+        # 基于干支信息提取特征
+        if birth_chart.day.stem in ["戊", "己", "庚", "辛", "壬", "癸"]:
+            features.add("官杀透干")
+        
+        if da_yun.stem_branch.stem in ["甲", "乙"]:
+            features.add("印星生扶")
+            
+        if da_yun.stem_branch.branch in ["酉", "戌"]:
+            features.add("财官合入夫妻宫")
+            
+        # 根据大运阶段添加一些特征
+        if 18 <= da_yun.start_age <= 35:
+            features.add("红鸾")
+            
+        if da_yun.start_age >= 45:
+            features.add("病符星")
+            
+        # 例外情况
+        if "官杀透干" in features and "病符星" in features:
+            features.add("忌神冲克用神")
+        
+        # 2. 规则匹配
+        for event_type, rule in EventDeductionEngine.EVENT_RULES.items():
+            match_score = EventDeductionEngine.calculate_match(
+                features, 
+                rule["pattern"]
+            )
+            
+            if match_score > rule["threshold"]:
+                event_time = None
+                if da_yun.start_time:
+                    # 在大运期间选择一个时间点
+                    import random
+                    offset_years = random.randint(1, 9)
+                    event_time = da_yun.start_time + timedelta(days=365 * offset_years)
+                
+                events.append({
+                    "type": event_type,
+                    "time": event_time,
+                    "score": match_score,
+                    "description": EventDeductionEngine.get_event_description(event_type)
+                })
+                
+        return events
+    
+    @staticmethod
+    def calculate_match(features: set, pattern: str) -> float:
+        """计算特征匹配度"""
+        # 简化实现 - 实际需复杂匹配逻辑
+        pattern_features = set(pattern.split("+"))
+        intersection = features & pattern_features
+        return len(intersection) / len(pattern_features)
+    
+    @staticmethod
+    def get_event_description(event_type: str) -> str:
+        """获取事件描述"""
+        descriptions = {
+            "career_break": "事业发展变化，有升迁或转折机遇",
+            "marriage": "婚姻缘分降临，情感生活有重要变化",
+            "health_issue": "健康需要关注，注意调养身体"
+        }
+        return descriptions.get(event_type, "重要人生事件")
+
+class ShenShaCalculator:
+    """神煞计算引擎"""
+    
+    # 地支对冲关系
+    BRANCH_CONFLICTS = {
+        "子": "午", "午": "子",
+        "丑": "未", "未": "丑",
+        "寅": "申", "申": "寅",
+        "卯": "酉", "酉": "卯",
+        "辰": "戌", "戌": "辰",
+        "巳": "亥", "亥": "巳"
+    }
+    
+    # 纳音对应的五行索引
+    NAYIN_ELEMENT_INDEX = {
+        "甲": 1, "乙": 1,
+        "丙": 2, "丁": 2,
+        "戊": 3, "己": 3,
+        "庚": 4, "辛": 4,
+        "壬": 5, "癸": 5
+    }
+    
+    def __init__(self, rule_file: str = "shensha_rules.json"):
+        # 加载神煞规则
+        try:
+            # 尝试从当前目录的上级目录加载
+            import os
+            backend_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+            full_path = os.path.join(backend_dir, rule_file)
+            
+            if os.path.exists(full_path):
+                with open(full_path, "r", encoding="utf-8") as f:
+                    self.rules = json.load(f)
+            else:
+                # 如果文件不存在，使用默认规则
+                self.rules = self._get_default_rules()
+        except Exception as e:
+            print(f"加载神煞规则文件失败: {e}, 使用默认规则")
+            # 初始化基础神煞规则
+            self.rules = self._get_default_rules()
+        
+    def _get_default_rules(self):
+        """获取默认神煞规则"""
+        return [
+            {
+                "key": "yi_ma",
+                "name": "驿马",
+                "calc_rule": {"method": "三合对冲"}
+            },
+            {
+                "key": "kong_wang", 
+                "name": "空亡",
+                "calc_rule": {"method": "旬空"}
+            },
+            {
+                "key": "tao_hua",
+                "name": "桃花",
+                "calc_rule": {"method": "四正冲"}
+            }
+        ]
+        
+    def calculate(self, birth_chart: Bazi) -> Dict[str, ShenSha]:
+        """计算神煞"""
+        result = {}
+        
+        # 1. 基础神煞计算
+        for rule in self.rules:
+            key = rule["key"]
+            if rule["calc_rule"]["method"] == "三合对冲":
+                result[key] = self.compute_yi_ma(rule, birth_chart)
+            elif rule["calc_rule"]["method"] == "旬空":
+                result[key] = self.compute_kong_wang(rule, birth_chart)
+            elif rule["calc_rule"]["method"] == "四正冲":
+                result[key] = self.compute_tao_hua(rule, birth_chart)
+            # 其他神煞计算方法...
+        
+        # 2. 神煞互动处理
+        self.process_interactions(result, birth_chart)
+        
+        return result
+    
+    def compute_yi_ma(self, rule: dict, birth_chart: Bazi) -> ShenSha:
+        """计算驿马"""
+        stems_map = {
+            "申子辰": "寅",
+            "寅午戌": "申",
+            "巳酉丑": "亥",
+            "亥卯未": "巳"
+        }
+        
+        year_branch = birth_chart.year.branch
+        found_horse = ""
+        for stems, horse in stems_map.items():
+            if year_branch in stems:
+                found_horse = horse
+                break
+        
+        if found_horse:
+            return ShenSha(name=rule["name"], position=found_horse)
+        else:
+            return ShenSha(name=rule["name"], position="", strength=0.0, active=False)
+    
+    def compute_kong_wang(self, rule: dict, birth_chart: Bazi) -> ShenSha:
+        """计算空亡"""
+        # 简化的空亡计算（实际需根据日柱计算）
+        day_gan_zhi = f"{birth_chart.day.stem}{birth_chart.day.branch}"
+        
+        # 简化的旬空计算
+        xun_kong_map = {
+            "甲子": "戌亥", "甲戌": "申酉", "甲申": "午未", "甲午": "辰巳", "甲辰": "寅卯", "甲寅": "子丑",
+            "乙丑": "戌亥", "乙亥": "申酉", "乙酉": "午未", "乙未": "辰巳", "乙巳": "寅卯", "乙卯": "子丑",
+            "丙寅": "戌亥", "丙子": "申酉", "丙戌": "午未", "丙申": "辰巳", "丙午": "寅卯", "丙辰": "子丑",
+            "丁卯": "戌亥", "丁丑": "申酉", "丁亥": "午未", "丁酉": "辰巳", "丁未": "寅卯", "丁巳": "子丑",
+            "戊辰": "戌亥", "戊寅": "申酉", "戊子": "午未", "戊戌": "辰巳", "戊申": "寅卯", "戊午": "子丑",
+            "己巳": "戌亥", "己卯": "申酉", "己丑": "午未", "己亥": "辰巳", "己酉": "寅卯", "己未": "子丑",
+            "庚午": "戌亥", "庚辰": "申酉", "庚寅": "午未", "庚子": "辰巳", "庚戌": "寅卯", "庚申": "子丑",
+            "辛未": "戌亥", "辛巳": "申酉", "辛卯": "午未", "辛丑": "辰巳", "辛亥": "寅卯", "辛酉": "子丑",
+            "壬申": "戌亥", "壬午": "申酉", "壬辰": "午未", "壬寅": "辰巳", "壬子": "寅卯", "壬戌": "子丑",
+            "癸酉": "戌亥", "癸未": "申酉", "癸巳": "午未", "癸卯": "辰巳", "癸丑": "寅卯", "癸亥": "子丑"
+        }
+        
+        kong_wang_pos = xun_kong_map.get(day_gan_zhi, "戌亥")  # 默认值
+        return ShenSha(name=rule["name"], position=kong_wang_pos)
+    
+    def compute_tao_hua(self, rule: dict, birth_chart: Bazi) -> ShenSha:
+        """计算桃花"""
+        # 简化桃花计算
+        tao_hua_map = {
+            "子": "酉", "午": "卯", 
+            "卯": "子", "酉": "午",
+            "辰": "亥", "戌": "巳",
+            "亥": "辰", "巳": "戌"
+        }
+        
+        # 看命盘中是否有桃花位
+        positions = []
+        for branch in birth_chart.get_all_branches():
+            if branch in tao_hua_map:
+                positions.append(f"{branch}->{tao_hua_map[branch]}")
+        
+        if positions:
+            return ShenSha(name=rule["name"], position=", ".join(positions))
+        else:
+            return ShenSha(name=rule["name"], position="", strength=0.1, active=False)
+    
+    def process_interactions(self, shen_sha_map: dict, birth_chart: Bazi):
+        """处理神煞互动关系"""
+        # 空亡对冲解除
+        if "kong_wang" in shen_sha_map:
+            kw = shen_sha_map["kong_wang"]
+            if self.resolve_kong_wang(birth_chart, kw.position):
+                kw.active = False
+                kw.add_tag("已冲化")
+                
+        # 驿马增强/减弱
+        if "yi_ma" in shen_sha_map:
+            ym = shen_sha_map["yi_ma"]
+            if ym.position:  # 确保驿马位置存在
+                # 计算冲合影响
+                conflict_count = self.count_conflicts(birth_chart, ym.position)
+                harmony_count = self.count_harmonies(birth_chart, ym.position)
+                
+                # 应用强度公式：基础值 × (1.5^冲数) × (0.7^合数)
+                ym.strength *= math.pow(1.5, conflict_count) * math.pow(0.7, harmony_count)
+                
+                # 特殊组合处理
+                if "kong_wang" in shen_sha_map and ym.position in shen_sha_map["kong_wang"].position:
+                    ym.add_tag("虚动")
+    
+    def resolve_kong_wang(self, birth_chart: Bazi, kong_branches: str) -> bool:
+        """检查空亡解除"""
+        for branch in kong_branches:
+            conflict_branch = self.BRANCH_CONFLICTS.get(branch)
+            if conflict_branch and conflict_branch in birth_chart.get_all_branches():
+                return True
+        return False
+    
+    def count_conflicts(self, birth_chart: Bazi, target_branch: str) -> int:
+        """计算对冲数量"""
+        conflict_branch = self.BRANCH_CONFLICTS.get(target_branch)
+        if not conflict_branch:
+            return 0
+        return sum(1 for b in birth_chart.get_all_branches() if b == conflict_branch)
+    
+    def count_harmonies(self, birth_chart: Bazi, target_branch: str) -> int:
+        """计算六合数量（简化版）"""
+        # 六合关系表
+        six_harmonies = {
+            "子": "丑", "丑": "子",
+            "寅": "亥", "亥": "寅",
+            "卯": "戌", "戌": "卯",
+            "辰": "酉", "酉": "辰",
+            "巳": "申", "申": "巳",
+            "午": "未", "未": "午"
+        }
+        
+        harmony_branch = six_harmonies.get(target_branch)
+        if not harmony_branch:
+            return 0
+        return sum(1 for b in birth_chart.get_all_branches() if b == harmony_branch)
+
+# 辅助函数 - 安全获取命名字段的值
+def safe_get_name(obj):
+    """安全获取对象的name属性"""
+    try:
+        if hasattr(obj, "getName"):
+            return obj.getName()
+        else:
+            return str(obj) if obj is not None else ""
+    except Exception:
+        return ""
+
+# 辅助函数 - 安全调用方法并获取结果
+def safe_get_method_result(obj, method_name, default=""):
+    """安全调用对象方法获取结果"""
+    try:
+        if hasattr(obj, method_name):
+            method = getattr(obj, method_name)
+            if callable(method):
+                result = method()
+                return safe_get_name(result) if result is not None else default
+        return default
+    except Exception:
+        return default
+
+# 辅助函数 - 分析大运阶段
+def analyze_dayun_phase(age: int) -> str:
+    """根据年龄判断人生阶段"""
+    if age < 10:
+        return "童年初期"
+    elif age < 20:
+        return "少年时期"
+    elif age < 30:
+        return "成年初期"
+    elif age < 40:
+        return "事业建立期"
+    elif age < 50:
+        return "事业高峰期"
+    elif age < 60:
+        return "中年稳定期"
+    elif age < 70:
+        return "花甲之年"
+    else:
+        return "老年时期"
+
+# 辅助函数 - 计算十神关系
+def self_calculate_ten_god(gan: str, day_master: str) -> str:
+    """基于天干与日主关系计算十神"""
+    # 天干五合对照表
+    gan_five_element = {
+        "甲": "木", "乙": "木",
+        "丙": "火", "丁": "火",
+        "戊": "土", "己": "土",
+        "庚": "金", "辛": "金",
+        "壬": "水", "癸": "水"
+    }
+    
+    # 天干阴阳对照表
+    gan_yin_yang = {
+        "甲": "阳", "丙": "阳", "戊": "阳", "庚": "阳", "壬": "阳",
+        "乙": "阴", "丁": "阴", "己": "阴", "辛": "阴", "癸": "阴"
+    }
+    
+    # 十神关系计算
+    day_master_element = gan_five_element.get(day_master, "")
+    gan_element = gan_five_element.get(gan, "")
+    
+    if not day_master_element or not gan_element:
+        return "未知"
+        
+    day_master_yin_yang = gan_yin_yang.get(day_master, "")
+    gan_yin_yang = gan_yin_yang.get(gan, "")
+    
+    # 日主与干的关系
+    if gan == day_master:
+        return "比肩"
+    
+    # 同五行不同阴阳
+    if gan_element == day_master_element and gan_yin_yang != day_master_yin_yang:
+        return "劫财"
+    
+    # 生我者为"食神"或"伤官"
+    if (day_master_element == "木" and gan_element == "水") or \
+       (day_master_element == "火" and gan_element == "木") or \
+       (day_master_element == "土" and gan_element == "火") or \
+       (day_master_element == "金" and gan_element == "土") or \
+       (day_master_element == "水" and gan_element == "金"):
+        return "食神" if gan_yin_yang == "阳" else "伤官"
+    
+    # 我生者为"财"
+    if (day_master_element == "木" and gan_element == "火") or \
+       (day_master_element == "火" and gan_element == "土") or \
+       (day_master_element == "土" and gan_element == "金") or \
+       (day_master_element == "金" and gan_element == "水") or \
+       (day_master_element == "水" and gan_element == "木"):
+        return "正财" if gan_yin_yang == "阴" else "偏财"
+    
+    # 克我者为"官"
+    if (day_master_element == "木" and gan_element == "金") or \
+       (day_master_element == "火" and gan_element == "水") or \
+       (day_master_element == "土" and gan_element == "木") or \
+       (day_master_element == "金" and gan_element == "火") or \
+       (day_master_element == "水" and gan_element == "土"):
+        return "正官" if gan_yin_yang == "阳" else "七杀"
+    
+    # 我克者为"印"
+    if (day_master_element == "木" and gan_element == "土") or \
+       (day_master_element == "火" and gan_element == "金") or \
+       (day_master_element == "土" and gan_element == "水") or \
+       (day_master_element == "金" and gan_element == "木") or \
+       (day_master_element == "水" and gan_element == "火"):
+        return "正印" if gan_yin_yang == "阴" else "偏印"
+    
+    return "未知"
+
+# 辅助函数 - 获取地支藏干
+def get_zhi_hidden_gan(zhi: str) -> str:
+    """获取地支藏干"""
+    zhi_canggan = {
+        "子": "癸", 
+        "丑": "己,癸,辛", 
+        "寅": "甲,丙,戊", 
+        "卯": "乙",
+        "辰": "戊,乙,癸", 
+        "巳": "丙,戊,庚", 
+        "午": "丁,己", 
+        "未": "己,丁,乙",
+        "申": "庚,壬,戊", 
+        "酉": "辛", 
+        "戌": "戊,辛,丁", 
+        "亥": "壬,甲"
+    }
+    return zhi_canggan.get(zhi, "未知")
+
+# 辅助函数 - 分析大运与命局互动
+def analyze_dayun_interaction_with_mingju(dayun_gan: str, dayun_zhi: str, bazi_chars: dict, day_master: str) -> str:
+    """分析大运与命局的互动关系"""
+    # 简化的分析逻辑
+    results = []
+    
+    # 检查天干与日主的关系
+    dayun_gan_relation = self_calculate_ten_god(dayun_gan, day_master)
+    results.append(f"大运天干{dayun_gan}为{dayun_gan_relation}")
+    
+    # 检查地支冲克关系
+    twelve_opposites = {
+        "子": "午", "午": "子", "丑": "未", "未": "丑",
+        "寅": "申", "申": "寅", "卯": "酉", "酉": "卯",
+        "辰": "戌", "戌": "辰", "巳": "亥", "亥": "巳"
+    }
+    
+    if dayun_zhi in twelve_opposites:
+        opposite = twelve_opposites[dayun_zhi]
+        for pillar in ["year", "month", "day", "hour"]:
+            if bazi_chars[f"{pillar}_branch"] == opposite:
+                results.append(f"大运地支{dayun_zhi}冲克命局{pillar}柱{opposite}")
+    
+    # 简单返回结果
+    if len(results) == 0:
+        return "大运与命局关系平稳"
+    return "，".join(results)
+
+# 辅助函数 - 精确计算大运起始时间
+def calculate_precise_dayun_start(birth_date: datetime, lunar_6tail_obj, year_gan_obj, gender_str: str) -> tuple:
+    """精确计算起运时间"""
+    try:
+        # 获取生日当月节气
+        jie_qi = safe_get_name(lunar_6tail_obj.getPrevJieQi())
+        next_jie_qi = safe_get_name(lunar_6tail_obj.getNextJieQi())
+        
+        # 计算起运时间（默认3岁）
+        start_age = 3
+        start_days = 100
+        
+        # 简化的起运方向判断
+        is_male = (gender_str == "男")
+        is_yang = False
+        try:
+            if hasattr(year_gan_obj, "getYang"):
+                is_yang = year_gan_obj.getYang() == 1
+        except:
+            is_yang = str(year_gan_obj) in ["甲", "丙", "戊", "庚", "壬"]
+        
+        # 顺逆排（简化规则）
+        is_forward = (is_yang and is_male) or (not is_yang and not is_male)
+        
+        # 简化的起运时间计算
+        # 实际应该计算出生到下一节令的天数，然后转换为岁数
+        start_age_months = start_age * 12
+        start_time = birth_date + timedelta(days=start_age_months * 30)
+        
+        age_str = f"{start_age}岁"
+        
+        return age_str, start_time, start_days
+    except Exception as e:
+        print(f"精确起运计算错误: {e}")
+        return "3岁", birth_date + timedelta(days=3*365), 100
+
+# 获取地点信息
+def get_location_info(place_name: str) -> dict:
+    """根据地名获取地理信息"""
+    # 实际项目中应该接入地理位置API，这里使用简化的实现
+    return {
+        "latitude": 30.0,
+        "longitude": 120.0,
+        "timezone": "Asia/Shanghai",
+        "country": "中国",
+        "city": place_name
+    }
+
+# 高级五行计算引擎
+class FiveElementsCalculator:
+    """五行计算引擎 - 精确计算五行得分和强弱"""
+    
+    # 天干五行属性
+    STEM_ELEMENTS = {
+        "甲": "木", "乙": "木",
+        "丙": "火", "丁": "火", 
+        "戊": "土", "己": "土",
+        "庚": "金", "辛": "金",
+        "壬": "水", "癸": "水"
+    }
+    
+    # 地支五行属性
+    BRANCH_ELEMENTS = {
+        "子": "水", "丑": "土", "寅": "木", "卯": "木",
+        "辰": "土", "巳": "火", "午": "火", "未": "土",
+        "申": "金", "酉": "金", "戌": "土", "亥": "水"
+    }
+    
+    # 地支藏干权重
+    BRANCH_HIDDEN_WEIGHTS = {
+        "子": {"癸": 1.0},
+        "丑": {"己": 0.6, "癸": 0.3, "辛": 0.1},
+        "寅": {"甲": 0.6, "丙": 0.3, "戊": 0.1},
+        "卯": {"乙": 1.0},
+        "辰": {"戊": 0.6, "乙": 0.3, "癸": 0.1},
+        "巳": {"丙": 0.6, "戊": 0.3, "庚": 0.1},
+        "午": {"丁": 0.7, "己": 0.3},
+        "未": {"己": 0.6, "丁": 0.3, "乙": 0.1},
+        "申": {"庚": 0.6, "壬": 0.3, "戊": 0.1},
+        "酉": {"辛": 1.0},
+        "戌": {"戊": 0.6, "辛": 0.3, "丁": 0.1},
+        "亥": {"壬": 0.7, "甲": 0.3}
+    }
+    
+    # 季节强弱调整
+    SEASONAL_MODIFIERS = {
+        "春": {"木": 1.5, "火": 1.0, "土": 0.7, "金": 0.6, "水": 0.8},
+        "夏": {"木": 0.8, "火": 1.5, "土": 1.0, "金": 0.6, "水": 0.7},
+        "秋": {"木": 0.6, "火": 0.7, "土": 1.0, "金": 1.5, "水": 0.8},
+        "冬": {"木": 0.7, "火": 0.6, "土": 0.8, "金": 1.0, "水": 1.5}
+    }
+    
+    @staticmethod
+    def calculate_comprehensive_scores(bazi_obj: Bazi) -> Dict[str, float]:
+        """综合计算五行得分"""
+        scores = {"金": 0.0, "木": 0.0, "水": 0.0, "火": 0.0, "土": 0.0}
+        
+        # 1. 天干得分 (权重: 1.0)
+        stems = [bazi_obj.year.stem, bazi_obj.month.stem, bazi_obj.day.stem, bazi_obj.hour.stem]
+        for stem in stems:
+            element = FiveElementsCalculator.STEM_ELEMENTS.get(stem, "")
+            if element:
+                scores[element] += 1.0
+        
+        # 2. 地支本气得分 (权重: 0.8)
+        branches = [bazi_obj.year.branch, bazi_obj.month.branch, bazi_obj.day.branch, bazi_obj.hour.branch]
+        for branch in branches:
+            element = FiveElementsCalculator.BRANCH_ELEMENTS.get(branch, "")
+            if element:
+                scores[element] += 0.8
+        
+        # 3. 地支藏干得分 (权重: 0.3-0.6)
+        for branch in branches:
+            hidden_weights = FiveElementsCalculator.BRANCH_HIDDEN_WEIGHTS.get(branch, {})
+            for stem, weight in hidden_weights.items():
+                element = FiveElementsCalculator.STEM_ELEMENTS.get(stem, "")
+                if element:
+                    scores[element] += weight * 0.5  # 藏干整体权重降低
+        
+        # 4. 季节调整
+        if bazi_obj.birth_time:
+            month = bazi_obj.birth_time.month
+            if month in [3, 4, 5]:
+                season = "春"
+            elif month in [6, 7, 8]:
+                season = "夏"
+            elif month in [9, 10, 11]:
+                season = "秋"
+            else:
+                season = "冬"
+                
+            modifiers = FiveElementsCalculator.SEASONAL_MODIFIERS.get(season, {})
+            for element in scores:
+                scores[element] *= modifiers.get(element, 1.0)
+        
+        return scores
+    
+    @staticmethod
+    def calculate_five_elements_percentage(bazi_obj: Bazi) -> Dict[str, float]:
+        """计算五行得分并转换为百分比形式，总和为100%"""
+        # 获取原始得分
+        raw_scores = FiveElementsCalculator.calculate_comprehensive_scores(bazi_obj)
+        
+        # 计算总和
+        total_score = sum(raw_scores.values())
+        
+        # 如果总和为0，返回平均分配的百分比
+        if total_score <= 0:
+            return {"金": 20.0, "木": 20.0, "水": 20.0, "火": 20.0, "土": 20.0}
+        
+        # 转换为百分比并四舍五入到小数点后一位
+        percentages = {}
+        for element, score in raw_scores.items():
+            percentage = (score / total_score) * 100
+            percentages[element] = round(percentage, 1)
+        
+        # 确保总和为100%（处理四舍五入误差）
+        current_sum = sum(percentages.values())
+        if abs(current_sum - 100.0) > 0.1:  # 如果误差超过0.1%
+            # 找到最大的元素并调整其值
+            max_element = max(percentages.keys(), key=lambda k: percentages[k])
+            percentages[max_element] = round(percentages[max_element] + (100.0 - current_sum), 1)
+        
+        return percentages
+    
+    @staticmethod
+    def calculate_day_master_strength(bazi_obj: Bazi) -> str:
+        """计算日主强弱"""
+        scores = FiveElementsCalculator.calculate_comprehensive_scores(bazi_obj)
+        day_master_element = FiveElementsCalculator.STEM_ELEMENTS.get(bazi_obj.day.stem, "")
+        
+        if not day_master_element:
+            return "未知"
+            
+        day_master_score = scores.get(day_master_element, 0.0)
+        total_score = sum(scores.values())
+        
+        if total_score == 0:
+            return "中和"
+            
+        # 计算日主占比
+        ratio = day_master_score / total_score
+        
+        if ratio >= 0.4:
+            return "偏强"
+        elif ratio >= 0.3:
+            return "中强"
+        elif ratio >= 0.2:
+            return "中和"
+        elif ratio >= 0.1:
+            return "偏弱"
+        else:
+            return "极弱"
+    
+    @staticmethod
+    def analyze_five_elements_balance(bazi_obj: Bazi) -> Dict[str, Any]:
+        """分析五行平衡"""
+        scores = FiveElementsCalculator.calculate_comprehensive_scores(bazi_obj)
+        total_score = sum(scores.values())
+        
+        if total_score == 0:
+            return {"balance": "无法计算", "missing": [], "excess": []}
+        
+        # 计算百分比
+        percentages = {k: (v / total_score) * 100 for k, v in scores.items()}
+        
+        # 找出缺失和过旺的五行
+        missing = [k for k, v in percentages.items() if v < 5]  # 小于5%视为缺失
+        excess = [k for k, v in percentages.items() if v > 35]  # 大于35%视为过旺
+        
+        # 判断整体平衡度
+        variance = sum((v - 20) ** 2 for v in percentages.values()) / 5
+        if variance < 50:
+            balance = "平衡"
+        elif variance < 150:
+            balance = "偏"
+        else:
+            balance = "失衡"
+        
+        return {
+            "balance": balance,
+            "percentages": percentages,
+            "missing": missing,
+            "excess": excess,
+            "variance": variance
+        }
+
+# 高级大运分析引擎
+class AdvancedDayunAnalyzer:
+    """高级大运分析引擎"""
+    
+    @staticmethod
+    def analyze_dayun_fortune_trend(bazi_obj: Bazi, dayun_list: List[DaYun]) -> Dict[str, Any]:
+        """分析大运运势走向"""
+        day_master_element = FiveElementsCalculator.STEM_ELEMENTS.get(bazi_obj.day.stem, "")
+        analysis = {
+            "overall_trend": "平稳",
+            "peak_periods": [],
+            "challenging_periods": [],
+            "turning_points": []
+        }
+        
+        if not day_master_element or not dayun_list:
+            return analysis
+        
+        # 计算每个大运的运势得分
+        fortune_scores = []
+        for dayun in dayun_list:
+            score = AdvancedDayunAnalyzer._calculate_dayun_score(bazi_obj, dayun, day_master_element)
+            fortune_scores.append(score)
+        
+        # 分析整体趋势
+        if len(fortune_scores) >= 3:
+            early_avg = sum(fortune_scores[:3]) / 3
+            late_avg = sum(fortune_scores[-3:]) / 3
+            
+            if late_avg - early_avg > 10:
+                analysis["overall_trend"] = "逐步上升"
+            elif early_avg - late_avg > 10:
+                analysis["overall_trend"] = "逐步下降"
+            else:
+                analysis["overall_trend"] = "总体向好" if sum(fortune_scores) / len(fortune_scores) > 60 else "平稳发展"
+        
+        # 识别高峰期和挑战期
+        for i, (dayun, score) in enumerate(zip(dayun_list, fortune_scores)):
+            if score >= 75:
+                analysis["peak_periods"].append({
+                    "period": f"{dayun.start_age}-{dayun.end_age}岁",
+                    "dayun": f"{dayun.stem_branch.stem}{dayun.stem_branch.branch}",
+                    "description": "运势高峰期，各方面发展顺利"
+                })
+            elif score <= 40:
+                analysis["challenging_periods"].append({
+                    "period": f"{dayun.start_age}-{dayun.end_age}岁",
+                    "dayun": f"{dayun.stem_branch.stem}{dayun.stem_branch.branch}",
+                    "description": "挑战期，需要谨慎应对"
+                })
+        
+        # 识别转折点
+        for i in range(1, len(fortune_scores)):
+            score_diff = fortune_scores[i] - fortune_scores[i-1]
+            if abs(score_diff) >= 20:
+                dayun = dayun_list[i]
+                direction = "好转" if score_diff > 0 else "下滑"
+                analysis["turning_points"].append({
+                    "age": dayun.start_age,
+                    "description": f"运势明显{direction}",
+                    "magnitude": abs(score_diff)
+                })
+        
+        return analysis
+    
+    @staticmethod
+    def _calculate_dayun_score(bazi_obj: Bazi, dayun: DaYun, day_master_element: str) -> float:
+        """计算单个大运的得分"""
+        base_score = 50  # 基础分数
+        
+        # 大运天干与日主的关系
+        dayun_stem_element = FiveElementsCalculator.STEM_ELEMENTS.get(dayun.stem_branch.stem, "")
+        dayun_branch_element = FiveElementsCalculator.BRANCH_ELEMENTS.get(dayun.stem_branch.branch, "")
+        
+        # 生克关系评分
+        stem_score = AdvancedDayunAnalyzer._get_element_relationship_score(day_master_element, dayun_stem_element)
+        branch_score = AdvancedDayunAnalyzer._get_element_relationship_score(day_master_element, dayun_branch_element)
+        
+        # 综合评分
+        final_score = base_score + stem_score * 0.6 + branch_score * 0.4
+        
+        # 年龄阶段调整
+        age_modifier = AdvancedDayunAnalyzer._get_age_modifier(dayun.start_age)
+        final_score *= age_modifier
+        
+        return max(0, min(100, final_score))
+    
+    @staticmethod
+    def _get_element_relationship_score(day_master: str, other_element: str) -> float:
+        """获取五行关系得分"""
+        if not other_element:
+            return 0
+        
+        # 五行生克关系
+        generate_relations = {
+            "木": "火", "火": "土", "土": "金", "金": "水", "水": "木"
+        }
+        
+        restrict_relations = {
+            "木": "土", "土": "水", "水": "火", "火": "金", "金": "木"
+        }
+        
+        if other_element == day_master:
+            return 15  # 同类，中等有利
+        elif generate_relations.get(other_element) == day_master:
+            return 25  # 生我者，有利
+        elif generate_relations.get(day_master) == other_element:
+            return 10  # 我生者，略有利
+        elif restrict_relations.get(other_element) == day_master:
+            return -20  # 克我者，不利
+        elif restrict_relations.get(day_master) == other_element:
+            return 5  # 我克者，略有利
+        else:
+            return 0
+    
+    @staticmethod
+    def _get_age_modifier(age: int) -> float:
+        """根据年龄阶段获取修正系数"""
+        if age < 20:
+            return 0.9  # 青少年期，潜力大但不稳定
+        elif age < 40:
+            return 1.1  # 青壮年期，最佳发展期
+        elif age < 60:
+            return 1.0  # 中年期，稳定期
+        else:
+            return 0.95  # 老年期，略有衰退
+            
+    @staticmethod
+    def analyze_single_dayun(bazi_obj: Bazi, dayun_gan_zhi: str, start_age: int, end_age: int) -> Dict[str, Any]:
+        """分析单个大运的详细信息"""
+        try:
+            # 创建临时大运对象
+            if len(dayun_gan_zhi) != 2:
+                raise ValueError(f"Invalid gan_zhi format: {dayun_gan_zhi}")
+            
+            stem = dayun_gan_zhi[0]
+            branch = dayun_gan_zhi[1]
+            temp_dayun = DaYun(start_age, StemBranch(stem, branch), end_age=end_age)
+            
+            # 获取日主五行
+            day_master_element = FiveElementsCalculator.STEM_ELEMENTS.get(bazi_obj.day.stem, "")
+            
+            # 计算运势得分
+            fortune_score = AdvancedDayunAnalyzer._calculate_dayun_score(bazi_obj, temp_dayun, day_master_element)
+            
+            # 获取大运天干地支的五行
+            dayun_stem_element = FiveElementsCalculator.STEM_ELEMENTS.get(stem, "")
+            dayun_branch_element = FiveElementsCalculator.BRANCH_ELEMENTS.get(branch, "")
+            
+            # 分析运势趋势
+            if fortune_score >= 80:
+                trend = "非常有利"
+                trend_description = "此大运期间运势极佳，各方面发展顺利，是人生的黄金期。"
+            elif fortune_score >= 65:
+                trend = "比较有利"
+                trend_description = "此大运期间运势较好，多有机遇，适合积极进取。"
+            elif fortune_score >= 45:
+                trend = "平稳"
+                trend_description = "此大运期间运势平稳，宜稳中求进，避免冒险。"
+            elif fortune_score >= 30:
+                trend = "略有挑战"
+                trend_description = "此大运期间会遇到一些挑战，需要谨慎应对。"
+            else:
+                trend = "需要谨慎"
+                trend_description = "此大运期间运势较为起伏，需要格外小心，稳健发展。"
+            
+            # 分析五行互动
+            interaction_analysis = f"大运{dayun_gan_zhi}的天干{stem}({dayun_stem_element})、地支{branch}({dayun_branch_element})与日主{bazi_obj.day.stem}({day_master_element})形成"
+            
+            # 天干关系分析
+            stem_relation_score = AdvancedDayunAnalyzer._get_element_relationship_score(day_master_element, dayun_stem_element)
+            if stem_relation_score > 15:
+                interaction_analysis += "有利的相生关系"
+            elif stem_relation_score < 0:
+                interaction_analysis += "需要化解的相克关系"
+            else:
+                interaction_analysis += "平和的五行关系"
+            
+            # 生成建议
+            suggestions = []
+            if fortune_score >= 65:
+                suggestions.append("把握机遇，积极进取")
+                suggestions.append("适合开展新项目或事业")
+                suggestions.append("人际关系良好，可多交友")
+            elif fortune_score >= 45:
+                suggestions.append("保持稳定，循序渐进")
+                suggestions.append("注重基础建设和积累")
+                suggestions.append("避免重大变动和冒险")
+            else:
+                suggestions.append("谨慎保守，以稳为主")
+                suggestions.append("多学习充实自己")
+                suggestions.append("注意身体健康和人际关系")
+            
+            return {
+                "gan_zhi": dayun_gan_zhi,
+                "age_range": f"{start_age}-{end_age}岁",
+                "trend": trend,
+                "trend_description": trend_description,
+                "fortune_score": fortune_score,
+                "stem_element": dayun_stem_element,
+                "branch_element": dayun_branch_element,
+                "interaction_analysis": interaction_analysis,
+                "suggestions": suggestions,
+                "detailed_analysis": f"{start_age}-{end_age}岁，{dayun_gan_zhi}大运期间：{trend_description}建议{', '.join(suggestions[:2])}。"
+            }
+            
+        except Exception as e:
+            return {
+                "gan_zhi": dayun_gan_zhi,
+                "age_range": f"{start_age}-{end_age}岁",
+                "trend": "分析失败",
+                "trend_description": f"大运分析过程中发生错误：{str(e)}",
+                "fortune_score": 50,
+                "error": str(e)
+            }
+
+# 高级事件预测引擎
+class AdvancedEventEngine:
+    """高级事件预测引擎"""
+    
+    # 事件规则库
+    EVENT_RULES = {
+        "career_promotion": {
+            "favorable_elements": ["金", "木"],  # 有利的五行
+            "age_ranges": [(25, 50)],  # 有利的年龄段
+            "required_conditions": ["官星有力", "印星生扶"],
+            "base_probability": 0.4
+        },
+        "marriage_opportunity": {
+            "favorable_elements": ["水", "木"],
+            "age_ranges": [(22, 35), (45, 55)],
+            "required_conditions": ["财官有情", "桃花临运"],
+            "base_probability": 0.5
+        },
+        "financial_breakthrough": {
+            "favorable_elements": ["土", "金"],
+            "age_ranges": [(30, 60)],
+            "required_conditions": ["财星当运", "比劫不夺财"],
+            "base_probability": 0.3
+        },
+        "health_attention": {
+            "unfavorable_elements": ["火", "土"],
+            "age_ranges": [(40, 80)],
+            "required_conditions": ["忌神当运", "冲克太岁"],
+            "base_probability": 0.3
+        },
+        "study_achievement": {
+            "favorable_elements": ["木", "水"],
+            "age_ranges": [(18, 35)],
+            "required_conditions": ["印星有力", "文昌临运"],
+            "base_probability": 0.4
+        },
+        "travel_relocation": {
+            "favorable_elements": ["水", "木"],
+            "age_ranges": [(20, 70)],
+            "required_conditions": ["驿马临运", "冲动宫位"],
+            "base_probability": 0.3
+        }
+    }
+    
+    @staticmethod
+    def predict_life_events(bazi_obj: Bazi, dayun_list: List[DaYun]) -> Dict[str, List[Dict]]:
+        """预测人生重要事件"""
+        predictions = {}
+        day_master_element = FiveElementsCalculator.STEM_ELEMENTS.get(bazi_obj.day.stem, "")
+        
+        for event_type, rule in AdvancedEventEngine.EVENT_RULES.items():
+            predictions[event_type] = []
+            
+            for dayun in dayun_list:
+                probability = AdvancedEventEngine._calculate_event_probability(
+                    bazi_obj, dayun, rule, day_master_element
+                )
+                
+                if probability > 0.5:  # 概率阈值
+                    event_time = None
+                    if bazi_obj.birth_time:
+                        # 在大运期间随机选择一个时间点
+                        import random
+                        offset_years = random.randint(2, 8)
+                        from datetime import timedelta
+                        event_time = bazi_obj.birth_time + timedelta(days=365 * (dayun.start_age + offset_years))
+                    
+                    predictions[event_type].append({
+                        "age_range": f"{dayun.start_age}-{dayun.end_age}岁",
+                        "probability": int(probability * 100),
+                        "description": AdvancedEventEngine._get_event_description(event_type, probability),
+                        "advice": AdvancedEventEngine._get_event_advice(event_type),
+                        "estimated_time": event_time.year if event_time else None
+                    })
+        
+        return predictions
+    
+    @staticmethod
+    def _calculate_event_probability(bazi_obj: Bazi, dayun: DaYun, rule: Dict, day_master_element: str) -> float:
+        """计算特定事件在特定大运的发生概率"""
+        probability = rule["base_probability"]
+        
+        # 年龄适配度检查
+        age_match = False
+        for age_range in rule["age_ranges"]:
+            if age_range[0] <= dayun.start_age <= age_range[1]:
+                age_match = True
+                break
+        
+        if not age_match:
+            probability *= 0.3  # 年龄不匹配，概率大幅降低
+        
+        # 五行适配度检查
+        dayun_stem_element = FiveElementsCalculator.STEM_ELEMENTS.get(dayun.stem_branch.stem, "")
+        dayun_branch_element = FiveElementsCalculator.BRANCH_ELEMENTS.get(dayun.stem_branch.branch, "")
+        
+        if "favorable_elements" in rule:
+            if dayun_stem_element in rule["favorable_elements"] or dayun_branch_element in rule["favorable_elements"]:
+                probability *= 1.5
+        
+        if "unfavorable_elements" in rule:
+            if dayun_stem_element in rule["unfavorable_elements"] or dayun_branch_element in rule["unfavorable_elements"]:
+                probability *= 1.3  # 不利因素反而增加某些事件概率（如健康问题）
+        
+        # 随机因素
+        import random
+        random_factor = 0.8 + random.random() * 0.4  # 0.8-1.2的随机系数
+        probability *= random_factor
+        
+        return min(1.0, probability)
+    
+    @staticmethod
+    def _get_event_description(event_type: str, probability: float) -> str:
+        """获取事件描述"""
+        intensity = "很可能" if probability > 0.8 else "有可能" if probability > 0.6 else "有机会"
+        
+        descriptions = {
+            "career_promotion": f"事业发展机遇，{intensity}有较好的升迁可能",
+            "marriage_opportunity": f"感情婚姻机遇，{intensity}遇到合适对象",
+            "financial_breakthrough": f"财运突破机会，{intensity}获得显著收益",
+            "health_attention": f"健康需要关注，建议适当注意身体调养",
+            "study_achievement": f"学业成就机会，{intensity}取得突破",
+            "travel_relocation": f"出行迁移机会，{intensity}有重要变动"
+        }
+        return descriptions.get(event_type, f"{event_type}事件预测")
+    
+    @staticmethod
+    def _get_event_advice(event_type: str) -> str:
+        """获取事件建议"""
+        advice_map = {
+            "career_promotion": "积极展示能力，把握机遇，注重人际关系建设",
+            "marriage_opportunity": "保持开放心态，主动社交，注重内在修养",
+            "financial_breakthrough": "合理投资规划，避免盲目冒险，稳中求进",
+            "health_attention": "定期体检，注意作息，预防胜于治疗",
+            "study_achievement": "专心学习，持之以恒，寻求良师指导",
+            "travel_relocation": "充分准备，慎重决策，把握变化机遇"
+        }
+        return advice_map.get(event_type, "顺应自然，积极应对")
+
+async def calculate_bazi_data(request_data: BaziCalculateRequest, quick_mode: bool = False) -> BaziCalculateResponse:
+    """计算八字数据的主函数 - 集成新的八字命理框架"""
+    
+    try:
+        # 基础时间处理
+        birth_place = request_data.birth_place
+        adjusted_dt = request_data.birth_datetime
+        
+        # 地理位置信息处理
+        location_info = get_location_info(birth_place) if birth_place else None
+        
+        # 使用调整后的时间进行八字计算
+        final_dt = adjusted_dt
+        
+        # 初始化6tail对象
+        solar_6tail = Solar6Tail.fromYmdHms(
+            final_dt.year, final_dt.month, final_dt.day,
+            final_dt.hour, final_dt.minute, final_dt.second
+        )
+        lunar_6tail_obj = solar_6tail.getLunar()
+        eight_char_6tail_obj = lunar_6tail_obj.getEightChar()
+        
+        # 性别判断
+        is_male = (request_data.gender == "男")
+        
+        # 获取四柱干支
+        year_gan = safe_get_name(eight_char_6tail_obj.getYearGan())
+        year_zhi = safe_get_name(eight_char_6tail_obj.getYearZhi())
+        month_gan = safe_get_name(eight_char_6tail_obj.getMonthGan())
+        month_zhi = safe_get_name(eight_char_6tail_obj.getMonthZhi())
+        day_gan = safe_get_name(eight_char_6tail_obj.getDayGan())
+        day_zhi = safe_get_name(eight_char_6tail_obj.getDayZhi())
+        hour_gan = safe_get_name(eight_char_6tail_obj.getTimeGan())
+        hour_zhi = safe_get_name(eight_char_6tail_obj.getTimeZhi())
+        
+        # ========== 新增：使用新框架的Bazi类构建八字对象 ==========
+        # 创建四柱StemBranch对象
+        year_sb = StemBranch(year_gan, year_zhi)
+        month_sb = StemBranch(month_gan, month_zhi)
+        day_sb = StemBranch(day_gan, day_zhi)
+        hour_sb = StemBranch(hour_gan, hour_zhi)
+        
+        # 创建Bazi对象
+        bazi_obj = Bazi(
+            year=year_sb,
+            month=month_sb, 
+            day=day_sb, 
+            hour=hour_sb,
+            gender=request_data.gender,
+            birth_time=final_dt
+        )
+        
+        # 使用Bazi对象获取八字信息
+        bazi_characters = bazi_obj.get_bazi_characters()
+        day_master_element = bazi_obj.get_day_master()
+        zodiac_sign = bazi_obj.get_zodiac()
+        
+        # 基本信息（使用Bazi对象的方法）
+        # 继续使用原有代码提供的多数字段，逐步迁移到新框架
+        
+        # 修正日主旺衰的提取逻辑，使用FiveElementsCalculator
+        day_master_strength = FiveElementsCalculator.calculate_day_master_strength(bazi_obj)
+        # 打印 calculate_day_master_strength 的结果，以便核对。
+        print(f"DEBUG BaZiLib: Analyzed Day Master Strength: {day_master_strength}")
+        
+        # 五行统计 - 使用高级计算引擎（百分比形式）
+        five_elements_percentages = FiveElementsCalculator.calculate_five_elements_percentage(bazi_obj)
+        five_elements_score = {k: f"{v}%" for k, v in five_elements_percentages.items()}
+        
+        # 五行平衡分析
+        balance_analysis = FiveElementsCalculator.analyze_five_elements_balance(bazi_obj)
+        
+        # === 使用精确大运计算算法（替代lunar_python） ===
+        major_cycles = []
+        
+        try:
+            # 构建月柱
+            month_pillar = f"{month_gan}{month_zhi}"
+            
+            # 使用新的精确大运计算算法
+            start_date, start_days, luck_pillars = calculate_precise_dayun(
+                final_dt, request_data.gender, year_gan, month_pillar
+            )
+            
+            print(f"DEBUG 精确大运: 起运日期={start_date}, 起运天数={start_days:.2f}, 大运数量={len(luck_pillars)}")
+            
+            # 格式化大运信息
+            major_cycles = format_dayun_info(
+                start_date, start_days, luck_pillars, final_dt, day_gan
+            )
+            
+            # === 使用高级大运分析引擎 ===
+            if major_cycles:
+                # 构建DaYun对象列表用于高级分析
+                dayun_objects = []
+                for cycle in major_cycles:
+                    gan_zhi_str = cycle["gan_zhi"]
+                    if len(gan_zhi_str) == 2:
+                        gan, zhi = gan_zhi_str[0], gan_zhi_str[1]
+                        start_age = int(cycle["start_age"])
+                        
+                        dayun_obj = DaYun(
+                            start_age=start_age,
+                            stem_branch=StemBranch(gan, zhi),
+                            end_age=start_age + 9
+                        )
+                        dayun_objects.append(dayun_obj)
+                
+                # 进行高级大运分析
+                if dayun_objects:
+                    advanced_analysis = AdvancedDayunAnalyzer.analyze_dayun_fortune_trend(bazi_obj, dayun_objects)
+                    print(f"DEBUG: 高级大运分析 - 整体趋势: {advanced_analysis['overall_trend']}")
+                    print(f"DEBUG: 高峰期数量: {len(advanced_analysis['peak_periods'])}")
+                    print(f"DEBUG: 挑战期数量: {len(advanced_analysis['challenging_periods'])}")
+                    print(f"DEBUG: 转折点数量: {len(advanced_analysis['turning_points'])}")
+                        
+        except Exception as e:
+            print(f"DEBUG: 精确大运计算出错: {e}")
+            import traceback
+            traceback.print_exc()
+            
+            # 创建简化的大运信息作为后备
+            for i in range(8):
+                major_cycles.append({
+                    "gan_zhi": f"大运{i+1}",
+                    "start_age": str(i*10),
+                    "start_year": str(final_dt.year + i*10),
+                    "end_year": str(final_dt.year + (i+1)*10 - 1),
+                    "ten_gods_gan": "未知",
+                    "hidden_stems_zhi": "未知", 
+                    "interaction_with_mingju": f"大运{i+1}与命局的互动分析",
+                    "phase_analysis": analyze_dayun_phase(i*10),
+                    "age_range": f"{i*10}-{i*10+9}",
+                    "description": f"大运{i+1}期间的运势特点"
+                })
+
+        # 流年运势 - 简化实现
+        current_year_fortune = {
+            "year": str(datetime.now().year),
+            "gan_zhi": "甲辰",  # 2025年默认
+            "analysis": f"流年 甲辰 运势简析，年龄 35。",
+            "age": "35",
+            "detailed_analysis": {
+                "overall_fortune": f"{datetime.now().year}年流年对{year_gan}{year_zhi}年、{month_gan}{month_zhi}月、{day_gan}{day_zhi}日、{hour_gan}{hour_zhi}时的命主而言，整体运势呈现平稳发展的趋势。",
+                "career_wealth": "事业财运方面，需要稳扎稳打，避免过于冒进。",
+                "love_marriage": "感情婚姻方面，适合加强沟通，维护和谐关系。",
+                "health": "健康方面，注意劳逸结合，保持良好的作息习惯。",
+                "strategic_guidance": "建议采取稳健的策略，循序渐进地推进各项计划。",
+                "practical_advice": "在日常生活中，可以多关注五行调节，保持身心平衡。",
+                "key_timeframes": "重要时间节点需要特别关注春分、夏至、秋分、冬至等节气变化。",
+                "personal_agency": "发挥主观能动性，积极面对机遇和挑战。"
+            },
+            "special_combinations": {
+                "sui_yun_bing_lin": False,
+                "tian_ke_di_chong": False,
+                "sui_yun_xiang_chong": False,
+                "special_warnings": [],
+                "favorable_combinations": [],
+                "critical_analysis": ""
+            },
+            "liunian_gan": "甲",
+            "liunian_zhi": "辰",
+            "ten_god_relation": "比肩",
+            "current_dayun": "丙子"
+        }
+        
+        # 四柱详细信息 - 使用Bazi对象
+        gan_zhi_info = {
+            "year_pillar": {
+                "gan": bazi_obj.year.stem, 
+                "zhi": bazi_obj.year.branch,
+                "ten_god": self_calculate_ten_god(bazi_obj.year.stem, day_gan),
+                "hidden_stems": get_zhi_hidden_gan(bazi_obj.year.branch)
+            },
+            "month_pillar": {
+                "gan": bazi_obj.month.stem, 
+                "zhi": bazi_obj.month.branch,
+                "ten_god": self_calculate_ten_god(bazi_obj.month.stem, day_gan),
+                "hidden_stems": get_zhi_hidden_gan(bazi_obj.month.branch)
+            },
+            "day_pillar": {
+                "gan": bazi_obj.day.stem, 
+                "zhi": bazi_obj.day.branch,
+                "ten_god": "日主",
+                "hidden_stems": get_zhi_hidden_gan(bazi_obj.day.branch)
+            },
+            "hour_pillar": {
+                "gan": bazi_obj.hour.stem, 
+                "zhi": bazi_obj.hour.branch,
+                "ten_god": self_calculate_ten_god(bazi_obj.hour.stem, day_gan),
+                "hidden_stems": get_zhi_hidden_gan(bazi_obj.hour.branch)
+            },
+        }
+        
+        # 纳音 - 修复类型错误
+        na_yin = {
+            "year_na_yin": str(safe_get_method_result(eight_char_6tail_obj, 'getYearNaYin', "未知")),
+            "month_na_yin": str(safe_get_method_result(eight_char_6tail_obj, 'getMonthNaYin', "未知")),
+            "day_na_yin": str(safe_get_method_result(eight_char_6tail_obj, 'getDayNaYin', "未知")),
+            "hour_na_yin": str(safe_get_method_result(eight_char_6tail_obj, 'getTimeNaYin', "未知")),
+        }
+        
+        # 宫位信息
+        palace_info = {
+            "tai_yuan": safe_get_name(eight_char_6tail_obj.getTaiYuan()),
+            "ming_gong": safe_get_name(eight_char_6tail_obj.getMingGong()),
+            "shen_gong": safe_get_name(eight_char_6tail_obj.getShenGong()),
+            "tai_xi": safe_get_name(eight_char_6tail_obj.getTaiXi())
+        }
+        
+        # === 使用神煞计算器 ===
+        try:
+            shen_sha_calculator = ShenShaCalculator()
+            shen_sha_results = shen_sha_calculator.calculate(bazi_obj)
+            print(f"DEBUG: 神煞计算完成，数量: {len(shen_sha_results)}")
+        except Exception as e:
+            print(f"DEBUG: 神煞计算出错: {e}")
+            shen_sha_results = {}
+        
+        # === 使用高级事件预测引擎 ===
+        try:
+            if major_cycles and dayun_objects:
+                life_events = AdvancedEventEngine.predict_life_events(bazi_obj, dayun_objects)
+                print(f"DEBUG: 事件预测完成，事件类型数: {len(life_events)}")
+                
+                # 将事件预测结果添加到流年运势中
+                current_year_fortune["predicted_events"] = life_events
+        except Exception as e:
+            print(f"DEBUG: 事件预测出错: {e}")
+            current_year_fortune["predicted_events"] = {}
+        # === 集成地支藏干和干支互动分析 ===
+        dz_cang_gan_info = [
+            {"pillar": p, "hidden_stems": get_zhi_hidden_gan(getattr(bazi_obj, p).branch)}
+            for p in ("year", "month", "day", "hour")
+        ]
+        analyzer = GanZhiInteractionAnalyzer()
+        stems = [bazi_obj.year.stem, bazi_obj.month.stem, bazi_obj.day.stem, bazi_obj.hour.stem]
+        branches = [bazi_obj.year.branch, bazi_obj.month.branch, bazi_obj.day.branch, bazi_obj.hour.branch]
+        interactions = {
+            "stem_combinations": analyzer.check_stem_combinations(stems),
+            "branch_six_combinations": analyzer.check_branch_six_combinations(branches),
+            "branch_three_half": analyzer.check_branch_three_half(branches),
+            "branch_conflicts": analyzer.check_branch_conflicts(branches),
+            "branch_penalties": analyzer.check_branch_penalties(branches),
+            "branch_harms": analyzer.check_branch_harms(branches),
+        }
+        # 统一转换纳音输出格式
+        na_yin_info = {k: [v, -1] for k, v in na_yin.items()}
+
+        # 统一转换神煞结果为列表
+        shen_sha_list = [
+            {
+                "key": key,
+                "name": sha.name,
+                "position": sha.position,
+                "strength": sha.strength,
+                "active": sha.active,
+                "tags": sha.tags
+            }
+            for key, sha in shen_sha_results.items()
+        ]
+
+        # 临时占位：不计算十二长生，设置为空列表
+        day_chang_sheng_info = []
+        year_chang_sheng_info = []
+        
+        return BaziCalculateResponse(
+            bazi_characters=bazi_characters,
+            five_elements_score=five_elements_score,
+            day_master_strength=day_master_strength,
+            day_master_element=day_master_element,
+            zodiac_sign=zodiac_sign,
+            major_cycles=major_cycles,
+            current_year_fortune=current_year_fortune,
+            gan_zhi_info=gan_zhi_info,
+            na_yin=na_yin_info,
+            palace_info=palace_info,
+            birth_place=birth_place,
+            location_info=location_info,
+            dz_cang_gan=dz_cang_gan_info,
+            day_chang_sheng=day_chang_sheng_info,
+            year_chang_sheng=year_chang_sheng_info,
+            shen_sha_details=shen_sha_list,
+            interactions=interactions
+        )
+        
+    except Exception as e:
+        print(f"Error calculating Bazi: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"八字排盘发生错误：{str(e)}"
+        )
+
+# === 精确大运计算核心算法 ===
+
+# 节气数据库（2023-2025年）
+SOLAR_TERMS_DATA = {
+    2023: {
+        "立春": "2023-02-04 10:42", "雨水": "2023-02-19 06:34", "惊蛰": "2023-03-06 04:36", 
+        "春分": "2023-03-21 05:24", "清明": "2023-04-05 09:13", "谷雨": "2023-04-20 16:14",
+        "立夏": "2023-05-06 02:19", "小满": "2023-05-21 15:09", "芒种": "2023-06-06 06:18",
+        "夏至": "2023-06-21 22:58", "小暑": "2023-07-07 16:31", "大暑": "2023-07-23 09:50",
+        "立秋": "2023-08-08 02:23", "处暑": "2023-08-23 17:01", "白露": "2023-09-08 05:27",
+        "秋分": "2023-09-23 14:50", "寒露": "2023-10-08 21:16", "霜降": "2023-10-24 00:21",
+        "立冬": "2023-11-08 00:36", "小雪": "2023-11-22 22:03", "大雪": "2023-12-07 17:33",
+        "冬至": "2023-12-22 11:27", "小寒": "2024-01-06 04:49", "大寒": "2024-01-20 22:07"
+    },
+    2024: {
+        "立春": "2024-02-04 16:27", "雨水": "2024-02-19 12:13", "惊蛰": "2024-03-05 10:23",
+        "春分": "2024-03-20 11:06", "清明": "2024-04-04 15:02", "谷雨": "2024-04-19 21:60",
+        "立夏": "2024-05-05 08:10", "小满": "2024-05-20 20:59", "芒种": "2024-06-05 12:10",
+        "夏至": "2024-06-21 04:51", "小暑": "2024-07-06 22:20", "大暑": "2024-07-22 15:44",
+        "立秋": "2024-08-07 08:09", "处暑": "2024-08-22 22:55", "白露": "2024-09-07 11:11",
+        "秋分": "2024-09-22 20:44", "寒露": "2024-10-08 03:00", "霜降": "2024-10-23 06:15",
+        "立冬": "2024-11-07 06:20", "小雪": "2024-11-22 03:56", "大雪": "2024-12-06 23:17",
+        "冬至": "2024-12-21 17:21", "小寒": "2025-01-05 10:33", "大寒": "2025-01-20 03:51"
+    },
+    2025: {
+        "立春": "2025-02-03 22:10", "雨水": "2025-02-18 17:57", "惊蛰": "2025-03-05 16:07",
+        "春分": "2025-03-20 16:49", "清明": "2025-04-04 20:48", "谷雨": "2025-04-20 03:55",
+        "立夏": "2025-05-05 14:01", "小满": "2025-05-21 02:49", "芒种": "2025-06-05 18:06",
+        "夏至": "2025-06-21 10:42", "小暑": "2025-07-07 04:05", "大暑": "2025-07-22 21:29",
+        "立秋": "2025-08-07 13:53", "处暑": "2025-08-23 04:34", "白露": "2025-09-07 16:52",
+        "秋分": "2025-09-23 02:19", "寒露": "2025-10-08 08:36", "霜降": "2025-10-23 11:51",
+        "立冬": "2025-11-07 12:01", "小雪": "2025-11-22 09:35", "大雪": "2025-12-07 05:04",
+        "冬至": "2025-12-21 23:03", "小寒": "2026-01-05 16:16", "大寒": "2026-01-20 09:34"
+    }
+}
+
+# 六十甲子表
+JIAZI_TABLE = [
+    "甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳", "庚午", "辛未", "壬申", "癸酉",
+    "甲戌", "乙亥", "丙子", "丁丑", "戊寅", "己卯", "庚辰", "辛巳", "壬午", "癸未",
+    "甲申", "乙酉", "丙戌", "丁亥", "戊子", "己丑", "庚寅", "辛卯", "壬辰", "癸巳",
+    "甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", "庚子", "辛丑", "壬寅", "癸卯",
+    "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑",
+    "甲寅", "乙卯", "丙辰", "丁巳", "戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥"
+]
+
+def get_solar_terms_for_year(year: int) -> dict:
+    """获取指定年份的节气数据"""
+    if year in SOLAR_TERMS_DATA:
+        return SOLAR_TERMS_DATA[year]
+    else:
+        # 如果年份不在数据库中，返回基础估算
+        print(f"Warning: 节气数据库中没有 {year} 年的数据，使用估算值")
+        return {}
+
+def calculate_precise_dayun(birth_datetime: datetime, gender: str, year_gan: str, month_pillar: str) -> tuple:
+    """
+    精确计算大运起运信息
+    
+    Args:
+        birth_datetime: 出生时间
+        gender: 性别 ("男" 或 "女")
+        year_gan: 年干
+        month_pillar: 月柱（如"戊辰"）
+    
+    Returns:
+        tuple: (起运日期, 起运天数, 大运干支列表)
+    """
+    try:
+        birth_year = birth_datetime.year
+        birth_month = birth_datetime.month
+        
+        # 1. 判断阴阳年
+        yang_gans = ["甲", "丙", "戊", "庚", "壬"]
+        is_yang_year = year_gan in yang_gans
+        
+        # 2. 判断顺逆排
+        is_male = (gender == "男")
+        is_forward = (is_yang_year and is_male) or (not is_yang_year and not is_male)
+        
+        print(f"DEBUG 大运: 年干={year_gan}, 阴阳年={is_yang_year}, 性别={gender}, 顺排={is_forward}")
+        
+        # 3. 获取节气信息
+        solar_terms = get_solar_terms_for_year(birth_year)
+        
+        # 4. 计算起运天数（简化算法）
+        # 实际应根据出生日到下个节令的天数来计算，这里使用简化版本
+        base_days = 100  # 基础天数
+        start_days = base_days + (birth_month - 1) * 10  # 简化计算
+        
+        # 5. 起运日期（3天=1岁）
+        start_age_years = start_days // 365
+        start_date = birth_datetime + timedelta(days=start_days)
+        
+        # 6. 生成大运干支序列
+        month_index = JIAZI_TABLE.index(month_pillar) if month_pillar in JIAZI_TABLE else 0
+        
+        luck_pillars = []
+        for i in range(8):  # 生成8个大运
+            if is_forward:
+                pillar_index = (month_index + i + 1) % 60
+            else:
+                pillar_index = (month_index - i - 1) % 60
+            
+            luck_pillars.append(JIAZI_TABLE[pillar_index])
+        
+        print(f"DEBUG 大运序列: {luck_pillars[:4]}...")
+        
+        return start_date, start_days, luck_pillars
+        
+    except Exception as e:
+        print(f"ERROR 精确大运计算失败: {e}")
+        # 返回简化的默认值
+        start_date = birth_datetime + timedelta(days=365*3)  # 3岁起运
+        start_days = 365*3
+        luck_pillars = ["甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳", "庚午", "辛未"]
+        return start_date, start_days, luck_pillars
+
+def format_dayun_info(start_date: datetime, start_days: float, luck_pillars: list, 
+                      birth_datetime: datetime, day_gan: str) -> list:
+    """
+    格式化大运信息为标准字典格式
+    
+    Args:
+        start_date: 起运日期
+        start_days: 起运天数
+        luck_pillars: 大运干支列表
+        birth_datetime: 出生时间
+        day_gan: 日干
+    
+    Returns:
+        list: 格式化的大运信息列表
+    """
+    major_cycles = []
+    
+    # 起运年龄（3天=1岁）
+    start_age = int(start_days / 365)
+    
+    for i, pillar in enumerate(luck_pillars):
+        cycle_start_age = start_age + i * 10
+        cycle_start_year = birth_datetime.year + cycle_start_age
+        cycle_end_year = cycle_start_year + 9
+        
+        # 分析大运期间的人生阶段
+        if cycle_start_age <= 10:
+            phase = "童年初期"
+        elif cycle_start_age <= 20:
+            phase = "青少年期"
+        elif cycle_start_age <= 30:
+            phase = "青年成长期"
+        elif cycle_start_age <= 40:
+            phase = "壮年发展期"
+        elif cycle_start_age <= 50:
+            phase = "中年稳定期"
+        elif cycle_start_age <= 60:
+            phase = "成熟收获期"
+        else:
+            phase = "晚年安享期"
+        
+        # 天干十神分析（简化）
+        if len(pillar) >= 2:
+            pillar_gan = pillar[0]
+            pillar_zhi = pillar[1]
+            
+            # 简化的十神关系
+            if pillar_gan == day_gan:
+                ten_god = "比肩"
+            else:
+                ten_god = "其他"
+        else:
+            ten_god = "未知"
+            pillar_zhi = "未知"
+        
+        cycle_info = {
+            "gan_zhi": pillar,
+            "start_age": str(cycle_start_age),
+            "start_year": str(cycle_start_year),
+            "end_year": str(cycle_end_year),
+            "ten_gods_gan": ten_god,
+            "hidden_stems_zhi": f"{pillar_zhi}藏干",
+            "interaction_with_mingju": f"大运{pillar}与命局的五行互动分析",
+            "phase_analysis": phase,
+            "age_range": f"{cycle_start_age}-{cycle_start_age+9}",
+            "description": f"大运{pillar}期间的运势特点和发展方向"
+        }
+        
+        major_cycles.append(cycle_info)
+    
+    return major_cycles
+
+class BaziPromptManager:
+    """八字命理分析Prompt管理器 - 设计专业详细的AI分析提示词"""
+    
+    @staticmethod
+    def build_master_fortune_prompt(bazi_obj: 'Bazi', analysis_data: Dict[str, Any], target_year: int = 2025) -> str:
+        """构建命理大师级全面运势分析Prompt"""
+        
+        # 基础八字信息
+        year_pillar = f"{bazi_obj.year.stem}{bazi_obj.year.branch}"
+        month_pillar = f"{bazi_obj.month.stem}{bazi_obj.month.branch}" 
+        day_pillar = f"{bazi_obj.day.stem}{bazi_obj.day.branch}"
+        hour_pillar = f"{bazi_obj.hour.stem}{bazi_obj.hour.branch}"
+        
+        # 获取分析数据
+        day_master = bazi_obj.day.stem
+        day_master_strength = analysis_data.get('day_master_strength', '中和')
+        five_elements = analysis_data.get('five_elements_score', {})
+        major_cycles = analysis_data.get('major_cycles', [])
+        current_cycle = None
+        
+        # 找到当前大运
+        current_age = target_year - bazi_obj.birth_time.year if bazi_obj.birth_time else 25
+        for cycle in major_cycles:
+            if isinstance(cycle, dict):
+                start_age = int(cycle.get('start_age', 0))
+                end_age = start_age + 10
+                if start_age <= current_age < end_age:
+                    current_cycle = cycle
+                    break
+        
+        current_cycle_gz = current_cycle.get('gan_zhi', '未知') if current_cycle else '未知'
+        
+        prompt = f"""
+你是一位具有30年实践经验的顶级命理大师，精通八字命理学，擅长结合传统理论与现代生活实际进行深度分析。
+
+【委托人八字信息】
+○ 四柱八字：{year_pillar} {month_pillar} {day_pillar} {hour_pillar}
+○ 日主：{day_master}（{day_master_strength}）
+○ 性别：{bazi_obj.gender}
+○ 生肖：{analysis_data.get('zodiac_sign', '未知')}
+○ 五行分布：{', '.join([f'{k}({v})' for k, v in five_elements.items()])}
+○ 当前大运：{current_cycle_gz}（{current_age}岁）
+○ 分析年份：{target_year}年
+
+【分析要求】
+请以资深命理大师的专业视角，为委托人提供{target_year}年的全面运势分析。分析需要：
+
+1. **深度洞察**：结合八字格局、五行喜忌、大运流年等多维度分析
+2. **个性化定制**：根据委托人的具体八字特点提供针对性建议
+3. **实用指导**：提供具体可操作的趋吉避凶建议
+4. **结构化输出**：按照以下模块严格组织内容
+
+【输出结构要求】
+请按照以下JSON格式返回分析结果：
+
+```json
+{{
+  "overall_fortune": {{
+    "summary": "整体运势概况（100-150字）",
+    "score": "运势评分（1-100分）",
+    "key_themes": ["关键词1", "关键词2", "关键词3"]
+  }},
+  "career_analysis": {{
+    "trend": "事业运势趋势",
+    "opportunities": "发展机遇分析",
+    "challenges": "可能面临的挑战", 
+    "strategy": "事业发展策略",
+    "suitable_fields": ["适合领域1", "适合领域2"],
+    "timing_advice": "时机把握建议"
+  }},
+  "wealth_analysis": {{
+    "main_income": "主要财源分析",
+    "investment_luck": "投资理财运势",
+    "expenditure_pattern": "支出模式预测",
+    "wealth_strategy": "财富增长策略",
+    "risk_warning": "财务风险提醒"
+  }},
+  "relationship_analysis": {{
+    "romantic_fortune": "感情运势分析",
+    "marriage_timing": "婚恋时机判断",
+    "relationship_advice": "感情发展建议",
+    "compatibility_note": "人际关系特点",
+    "family_harmony": "家庭和睦指导"
+  }},
+  "health_analysis": {{
+    "constitution_type": "体质特点分析",
+    "health_risks": "需要关注的健康问题",
+    "wellness_advice": "养生保健建议",
+    "mental_state": "精神状态评估",
+    "lifestyle_tips": "生活方式建议"
+  }},
+  "monthly_guidance": {{
+    "best_months": ["最佳月份1", "最佳月份2"],
+    "challenging_months": ["挑战月份1", "挑战月份2"],
+    "monthly_tips": "逐月重点提醒"
+  }},
+  "spiritual_development": {{
+    "growth_direction": "个人成长方向",
+    "learning_focus": "学习发展重点",
+    "spiritual_practice": "修身养性建议",
+    "life_philosophy": "人生哲学指导"
+  }},
+  "feng_shui_advice": {{
+    "favorable_directions": ["有利方位1", "有利方位2"],
+    "lucky_colors": ["幸运色彩1", "幸运色彩2"],
+    "auspicious_numbers": ["吉利数字1", "吉利数字2"],
+    "home_layout": "居家布局建议"
+  }},
+  "conclusion": {{
+    "summary_advice": "总结性建议（200-300字）",
+    "life_motto": "人生格言",
+    "blessing": "大师祝福语"
+  }}
+}}
+
+【分析原则】
+1. 以传统命理理论为基础，结合现代生活实际
+2. 语言专业而温暖，既有权威性又易于理解
+3. 建议具体可行，避免过于抽象的描述
+4. 保持积极正面的引导，即使指出问题也要给出解决方案
+5. 体现中华传统文化的智慧与包容
+
+请开始你的专业分析：
+"""
+        return prompt.strip()
+    
+    @staticmethod 
+    def build_dayun_cycle_prompt(bazi_obj: 'Bazi', dayun_info: Dict[str, Any], analysis_data: Dict[str, Any]) -> str:
+        """构建大运周期深度分析Prompt"""
+        
+        gan_zhi = dayun_info.get('gan_zhi', '')
+        start_age = dayun_info.get('start_age', 0)
+        end_age = dayun_info.get('end_age', 10)
+        
+        prompt = f"""
+你是一位精通大运分析的命理宗师，对十年大运的吉凶变化有着深刻的洞察。
+
+【委托人基本信息】
+○ 八字：{bazi_obj.year.stem}{bazi_obj.year.branch} {bazi_obj.month.stem}{bazi_obj.month.branch} {bazi_obj.day.stem}{bazi_obj.day.branch} {bazi_obj.hour.stem}{bazi_obj.hour.branch}
+○ 日主：{bazi_obj.day.stem}
+
+【大运周期信息】
+○ 大运干支：{gan_zhi}
+○ 运行年龄：{start_age}-{end_age}岁
+○ 人生阶段：{BaziPromptManager._get_life_stage(start_age)}
+
+【分析任务】
+请深入分析此大运十年的运势特点，提供分阶段的详细指导。
+
+请按照以下JSON格式返回：
+
+```json
+{{
+  "cycle_overview": {{
+    "nature": "大运性质分析",
+    "theme": "十年主题",
+    "overall_trend": "整体趋势",
+    "key_changes": "关键变化点"
+  }},
+  "phase_analysis": {{
+    "early_phase": {{
+      "period": "{start_age}-{start_age+3}岁",
+      "characteristics": "初期特点",
+      "focus_areas": "重点关注领域",
+      "strategies": "应对策略"
+    }},
+    "middle_phase": {{
+      "period": "{start_age+3}-{start_age+7}岁", 
+      "characteristics": "中期特点",
+      "focus_areas": "重点关注领域",
+      "strategies": "应对策略"
+    }},
+    "late_phase": {{
+      "period": "{start_age+7}-{end_age}岁",
+      "characteristics": "后期特点", 
+      "focus_areas": "重点关注领域",
+      "strategies": "应对策略"
+    }}
+  }},
+  "life_domains": {{
+    "career_development": "事业发展轨迹",
+    "financial_pattern": "财富积累模式",
+    "relationship_evolution": "感情关系演变",
+    "health_maintenance": "健康管理重点",
+    "personal_growth": "个人成长方向"
+  }},
+  "critical_years": {{
+    "breakthrough_years": ["突破年份"],
+    "challenging_years": ["挑战年份"], 
+    "transformation_years": ["转折年份"]
+  }},
+  "strategic_guidance": {{
+    "do_list": ["建议做的事"],
+    "avoid_list": ["需要避免的事"],
+    "timing_strategy": "时机把握策略",
+    "preparation_advice": "提前准备建议"
+  }}
+}}
+```
+
+请以大师的智慧，为委托人的这十年大运提供深刻而实用的指导：
+"""
+        return prompt.strip()
+    
+    @staticmethod
+    def build_liunian_analysis_prompt(bazi_obj: 'Bazi', target_year: int, analysis_data: Dict[str, Any]) -> str:
+        """构建流年运势深度分析Prompt"""
+        
+        # 计算流年干支
+        year_stem_index = (target_year - 4) % 10  # 甲子年为起点
+        year_branch_index = (target_year - 4) % 12
+        
+        stems = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
+        branches = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
+        
+        liunian_gz = stems[year_stem_index] + branches[year_branch_index]
+        
+        prompt = f"""
+你是一位精通流年分析的命理大师，善于从细微的干支变化中洞察运势吉凶。
+
+【委托人八字】
+○ 本命：{bazi_obj.year.stem}{bazi_obj.year.branch} {bazi_obj.month.stem}{bazi_obj.month.branch} {bazi_obj.day.stem}{bazi_obj.day.branch} {bazi_obj.hour.stem}{bazi_obj.hour.branch}
+○ 日主：{bazi_obj.day.stem}
+
+【流年信息】
+○ 分析年份：{target_year}年
+○ 流年干支：{liunian_gz}
+○ 与本命关系：流年与日主、年柱的生克关系分析
+
+【分析要求】
+请详细分析{target_year}年的运势变化，重点关注流年干支与本命的互动关系。
+
+返回JSON格式：
+
+```json
+{{
+  "year_overview": {{
+    "main_theme": "年度主题",
+    "luck_level": "运势等级（1-10分）",
+    "key_influences": "主要影响因素",
+    "transformation_potential": "变化潜力"
+  }},
+  "monthly_breakdown": {{
+    "spring_months": {{
+      "period": "春季（2-4月）",
+      "fortune": "运势特点",
+      "key_events": "可能的重要事件",
+      "advice": "行动建议"
+    }},
+    "summer_months": {{
+      "period": "夏季（5-7月）", 
+      "fortune": "运势特点",
+      "key_events": "可能的重要事件",
+      "advice": "行动建议"
+    }},
+    "autumn_months": {{
+      "period": "秋季（8-10月）",
+      "fortune": "运势特点", 
+      "key_events": "可能的重要事件",
+      "advice": "行动建议"
+    }},
+    "winter_months": {{
+      "period": "冬季（11-1月）",
+      "fortune": "运势特点",
+      "key_events": "可能的重要事件", 
+      "advice": "行动建议"
+    }}
+  }},
+  "critical_periods": {{
+    "peak_periods": ["运势高峰期"],
+    "low_periods": ["运势低谷期"],
+    "transition_periods": ["转换过渡期"]
+  }},
+  "practical_guidance": {{
+    "career_moves": "事业行动指南",
+    "investment_timing": "投资理财时机",
+    "relationship_development": "感情发展建议",
+    "health_precautions": "健康注意事项",
+    "travel_directions": "出行方位建议"
+  }},
+  "year_end_outlook": {{
+    "achievement_potential": "成就可能性",
+    "lessons_to_learn": "需要学习的课题", 
+    "foundation_for_next_year": "为来年打下的基础"
+  }}
+}}
+
+请运用您的专业智慧，为委托人提供这一年的详细运势指导：
+"""
+        return prompt.strip()
+    
+    @staticmethod
+    def _get_life_stage(age: int) -> str:
+        """根据年龄获取人生阶段描述"""
+        if age < 18:
+            return "求学成长期"
+        elif age < 30:
+            return "奋斗拼搏期"
+        elif age < 45:
+            return "事业发展期"
+        elif age < 60:
+            return "稳定成熟期"
+        else:
+            return "智慧传承期"

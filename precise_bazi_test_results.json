@@ -1,0 +1,98 @@
+[
+  {
+    "original_time": "2024-06-15 14:30:00",
+    "corrected_time": "2024-06-15 14:14:00",
+    "longitude": 116.0,
+    "pillars": {
+      "year": "甲辰",
+      "month": "庚未",
+      "day": "辛卯",
+      "hour": "乙未"
+    },
+    "dayun": {
+      "start_age": 3,
+      "start_days": 15.5,
+      "sequence": [
+        "甲子",
+        "乙丑",
+        "丙寅",
+        "丁卯",
+        "戊辰",
+        "己巳",
+        "庚午",
+        "辛未"
+      ]
+    },
+    "liunian": "丙午",
+    "shensha": {
+      "魁罡": false,
+      "天乙贵人": false
+    },
+    "calculation_method": "enhanced_traditional",
+    "test_case": "现代案例1"
+  },
+  {
+    "original_time": "2024-12-21 08:15:00",
+    "corrected_time": "2024-12-21 08:19:00",
+    "longitude": 121.0,
+    "pillars": {
+      "year": "甲辰",
+      "month": "癸丑",
+      "day": "壬子",
+      "hour": "甲辰"
+    },
+    "dayun": {
+      "start_age": 3,
+      "start_days": 15.5,
+      "sequence": [
+        "甲子",
+        "乙丑",
+        "丙寅",
+        "丁卯",
+        "戊辰",
+        "己巳",
+        "庚午",
+        "辛未"
+      ]
+    },
+    "liunian": "丙午",
+    "shensha": {
+      "魁罡": false,
+      "天乙贵人": false
+    },
+    "calculation_method": "enhanced_traditional",
+    "test_case": "现代案例2"
+  },
+  {
+    "original_time": "1900-01-01 12:00:00",
+    "corrected_time": "1900-01-01 12:00:00",
+    "longitude": 120.0,
+    "pillars": {
+      "year": "己亥",
+      "month": "乙寅",
+      "day": "辛未",
+      "hour": "甲午"
+    },
+    "dayun": {
+      "start_age": 3,
+      "start_days": 15.5,
+      "sequence": [
+        "甲子",
+        "乙丑",
+        "丙寅",
+        "丁卯",
+        "戊辰",
+        "己巳",
+        "庚午",
+        "辛未"
+      ]
+    },
+    "liunian": "丙午",
+    "shensha": {
+      "魁罡": false,
+      "天乙贵人": true
+    },
+    "calculation_method": "enhanced_traditional",
+    "test_case": "历史案例"
+  }
+]

@@ -1,0 +1,10 @@
+lunar-python
+colorama
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+alembic
+python-dotenv
+httpx
+openai

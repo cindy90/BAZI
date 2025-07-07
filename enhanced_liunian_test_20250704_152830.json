@@ -1,0 +1,187 @@
+{
+  "test_info": {
+    "bazi": "庚午 壬午 丁酉 乙巳",
+    "liunian": "乙巳",
+    "test_time": "2025-07-04T15:28:30.292101"
+  },
+  "liunian_interactions": {
+    "stem_interactions": {},
+    "branch_interactions": {},
+    "special_combinations": [
+      "三合金局局成化",
+      "三合金局局成化",
+      "三合金局局成化"
+    ],
+    "conflicts": [],
+    "harmonies": [
+      "流年乙与年柱庚合化金",
+      "流年巳助成金局三合",
+      "流年巳助成金局三合",
+      "流年巳助成金局三合"
+    ],
+    "punishments": [],
+    "harms": [],
+    "overall_assessment": "流年与命局关系和谐，运势顺畅"
+  },
+  "liunian_shensha": [
+    {
+      "name": "羊刃",
+      "position": "年, 时",
+      "strength": 1.04,
+      "description": "神煞为忌神，作用力减弱",
+      "positive_tags": [
+        "勇敢",
+        "魄力",
+        "权威"
+      ],
+      "negative_tags": [
+        "冲动",
+        "暴躁",
+        "凶险",
+        "刑妻克子"
+      ]
+    },
+    {
+      "name": "空亡",
+      "position": "年, 时",
+      "strength": 0.8,
+      "description": "神煞为忌神，作用力减弱",
+      "positive_tags": [
+        "逢凶化吉",
+        "空中求有",
+        "灵感"
+      ],
+      "negative_tags": [
+        "虚空",
+        "失落",
+        "不实",
+        "变动"
+      ]
+    }
+  ],
+  "enhanced_predictions": {
+    "career": [
+      "伤官流年，中年期创新能力强，需注意人际关系"
+    ],
+    "wealth": [
+      "财运与伤官配合，整体收支平衡"
+    ],
+    "health": [
+      "身体健康状况良好，注意中年期的保养重点"
+    ],
+    "relationship": [
+      "伤官主自由，感情上追求个性化，但需包容"
+    ],
+    "timing": [
+      "三合局成化，团队合作运势佳，适合合作项目"
+    ],
+    "strategy": [
+      "避免木相关的不利因素，加强土,水的影响",
+      "发挥团队优势，可考虑合作经营或投资",
+      "脚踏实地，避免过于理想化的计划"
+    ],
+    "warning": [
+      "流年天干乙(木)为忌神，上半年需要谨慎",
+      "流年逢空亡，投资需格外谨慎，避免空想"
+    ]
+  },
+  "comprehensive_analysis": {
+    "basic_analysis": {
+      "day_master_strength": 0.7939914163090129,
+      "strength_level": "身强",
+      "favorable_elements": [
+        "土",
+        "金"
+      ],
+      "unfavorable_elements": [
+        "木",
+        "火"
+      ],
+      "analysis": "日主火身强，需要克泄，喜土,金，忌木,火"
+    },
+    "season_analysis": {
+      "month_branch": "午",
+      "season": "夏季",
+      "temperature": "炎热",
+      "adjustment_needed": "火旺需要水来调候，土来泄火",
+      "seasonal_gods": [
+        "水",
+        "土"
+      ]
+    },
+    "circulation_analysis": {
+      "circulation_path": [
+        "金",
+        "木",
+        "水",
+        "火",
+        "土"
+      ],
+      "key_elements": [
+        "木",
+        "火",
+        "土",
+        "金",
+        "水"
+      ],
+      "blockages": [],
+      "circulation_gods": [
+        "木",
+        "火",
+        "土",
+        "金",
+        "水"
+      ]
+    },
+    "pathology_analysis": {
+      "primary_issues": [
+        "火过旺"
+      ],
+      "secondary_issues": [
+        "土过弱"
+      ],
+      "remedies": [
+        "用水克制火",
+        "用火生扶土"
+      ],
+      "medicine_gods": [
+        "水",
+        "火"
+      ]
+    },
+    "pattern_analysis": {
+      "primary_pattern": "官杀格",
+      "secondary_pattern": "",
+      "pattern_gods": [
+        "印绶",
+        "比劫"
+      ],
+      "pattern_strength": 0,
+      "pattern_description": "以官杀为用，需要印绶化杀生身，或比劫抗官"
+    },
+    "final_prognosis": {
+      "overall_rating": 7.93991416309013,
+      "primary_favorable": [
+        "土",
+        "水"
+      ],
+      "secondary_favorable": [
+        "金",
+        "火"
+      ],
+      "primary_unfavorable": [
+        "木",
+        "火"
+      ],
+      "secondary_unfavorable": [],
+      "life_advice": [
+        "适宜居住在水边或北方，多从事与水相关的行业",
+        "适宜居住在中央或四季末月，多从事与土相关的行业"
+      ],
+      "fortune_trends": {},
+      "key_years": []
+    },
+    "analysis_timestamp": "2025-07-04T15:28:30.291686",
+    "analysis_version": "v1.0"
+  }
+}

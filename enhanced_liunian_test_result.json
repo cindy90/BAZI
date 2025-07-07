@@ -1,0 +1,77 @@
+{
+  "bazi_info": {
+    "year": "甲子",
+    "month": "丙寅",
+    "day": "戊午",
+    "hour": "壬戌"
+  },
+  "liunian_info": {
+    "gan_zhi": "乙巳",
+    "ten_god": "正官",
+    "gan_element": "木",
+    "zhi_element": "火"
+  },
+  "interactions": {
+    "stem_interactions": {},
+    "branch_interactions": {},
+    "special_combinations": [
+      "岁运相冲，运势波动"
+    ],
+    "conflicts": [
+      "流年巳冲大运亥"
+    ],
+    "harmonies": [],
+    "punishments": [
+      "流年巳刑月支寅(无恩之刑)"
+    ],
+    "harms": [
+      "流年巳害月支寅"
+    ],
+    "overall_assessment": "流年与命局关系平稳，按部就班"
+  },
+  "shensha": [
+    {
+      "name": "禄神",
+      "position": "年",
+      "strength": 1.2,
+      "description": "神煞为喜用神，作用力增强",
+      "positive_tags": [
+        "禄神",
+        "财富",
+        "地位",
+        "享受"
+      ],
+      "negative_tags": [
+        "贪享乐"
+      ]
+    }
+  ],
+  "comprehensive_analysis": {
+    "strength_level": "身中和",
+    "pattern": "印格",
+    "favorable_elements": [
+      "土",
+      "金"
+    ]
+  },
+  "predictions": {
+    "career": [
+      "正官流年，事业发展稳定，有升职加薪机会"
+    ],
+    "wealth": [
+      "财运平稳，收支基本平衡"
+    ],
+    "health": [
+      "身体健康状况良好，注意季节性保养"
+    ],
+    "relationship": [
+      "正官主配偶，感情关系趋于稳定"
+    ],
+    "timing": [
+      "流年运势平稳，按自然节律发展"
+    ],
+    "strategy": [
+      "保持平常心，稳健前行"
+    ]
+  }
+}

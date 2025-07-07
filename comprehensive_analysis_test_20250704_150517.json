@@ -1,0 +1,88 @@
+{
+  "basic_analysis": {
+    "day_master_strength": 0.43478260869565216,
+    "strength_level": "身中和",
+    "favorable_elements": [
+      "金"
+    ],
+    "unfavorable_elements": [],
+    "analysis": "日主金身中和，运势平衡，以金为主"
+  },
+  "season_analysis": {
+    "month_branch": "寅",
+    "season": "春季",
+    "temperature": "温和",
+    "adjustment_needed": "木旺需要金来修剪，土来培根",
+    "seasonal_gods": [
+      "金",
+      "土"
+    ]
+  },
+  "circulation_analysis": {
+    "circulation_path": [
+      "金",
+      "木",
+      "水",
+      "火",
+      "土"
+    ],
+    "key_elements": [
+      "木",
+      "火",
+      "土",
+      "金",
+      "水"
+    ],
+    "blockages": [],
+    "circulation_gods": [
+      "木",
+      "火",
+      "土",
+      "金",
+      "水"
+    ]
+  },
+  "pathology_analysis": {
+    "primary_issues": [
+      "木过旺"
+    ],
+    "secondary_issues": [],
+    "remedies": [
+      "用金克制木"
+    ],
+    "medicine_gods": [
+      "金"
+    ]
+  },
+  "pattern_analysis": {
+    "primary_pattern": "官杀格",
+    "secondary_pattern": "",
+    "pattern_gods": [
+      "印绶",
+      "比劫"
+    ],
+    "pattern_strength": 0,
+    "pattern_description": "以官杀为用，需要印绶化杀生身，或比劫抗官"
+  },
+  "final_prognosis": {
+    "overall_rating": 4.3478260869565215,
+    "primary_favorable": [
+      "金",
+      "土"
+    ],
+    "secondary_favorable": [
+      "印绶",
+      "比劫"
+    ],
+    "primary_unfavorable": [],
+    "secondary_unfavorable": [],
+    "life_advice": [
+      "适宜居住在西方，多从事与金相关的行业",
+      "适宜居住在中央或四季末月，多从事与土相关的行业"
+    ],
+    "fortune_trends": {},
+    "key_years": []
+  },
+  "analysis_timestamp": "2025-07-04T15:05:17.814100",
+  "analysis_version": "v1.0"
+}

@@ -1,5 +1,30 @@
 // frontend/src/router/modules/user.js
-// 这个文件目前为空，但可以用于未来添加需要认证的用户相关路由
-// 为了让主路由可以导入，这里可以定义一个空的路由数组或者直接导出空的：
-const userRoutes = []; // 暂时为空
+import BaziCalculator from '../../views/bazi/BaziCalculator.vue';
+import BaziResult from '../../views/bazi/BaziResult.vue';
+import IChingCalculator from '../../views/iching/IChingCalculator.vue';
+
+const userRoutes = [
+  {
+    path: '/bazi/calculate',
+    name: 'BaziCalculator', // 路由名称，用于 router.push({ name: 'BaziCalculator' })
+    component: BaziCalculator,
+    meta: { requiresAuth: true }, // 需要登录才能访问
+  },
+  {
+    path: '/bazi/result',
+    name: 'BaziResult',
+    component: BaziResult,
+    meta: { requiresAuth: true }, // 需要登录才能访问
+  },
+  {
+    path: '/iching/calculate',
+    name: 'IChingCalculator',
+    component: IChingCalculator,
+    meta: { 
+      requiresAuth: true,
+      title: '易经算卦'
+    }
+  },
+];
+
 export default userRoutes;

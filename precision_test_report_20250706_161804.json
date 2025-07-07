@@ -1,0 +1,224 @@
+{
+  "test_timestamp": "2025-07-06T16:18:04.827636",
+  "total_cases": 6,
+  "successful_cases": 6,
+  "failed_cases": 0,
+  "test_results": [
+    {
+      "test_case": "北京测试案例",
+      "birth_datetime": "1990-06-15T14:30:00",
+      "birth_place": "北京",
+      "gender": "男",
+      "bazi_characters": {
+        "year_stem": "庚",
+        "year_branch": "午",
+        "month_stem": "壬",
+        "month_branch": "午",
+        "day_stem": "辛",
+        "day_branch": "亥",
+        "hour_stem": "乙",
+        "hour_branch": "未"
+      },
+      "location_info": {
+        "province": "北京",
+        "city": "北京",
+        "longitude": 116.4074,
+        "latitude": 39.9042,
+        "longitude_diff_minutes": -14.370400000000018,
+        "equation_of_time_minutes": -0.4313601442989472,
+        "correction_applied": true,
+        "original_time": "1990-06-15T14:30:00",
+        "corrected_time": "1990-06-15T14:15:11.894391"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 116.4074,
+        "longitude_diff_minutes": -14.370400000000018,
+        "equation_of_time_minutes": -0.4313601442989472,
+        "original_time": "1990-06-15T14:30:00",
+        "corrected_time": "1990-06-15T14:15:11.894391",
+        "total_correction_minutes": -14.801760144298965
+      }
+    },
+    {
+      "test_case": "上海测试案例",
+      "birth_datetime": "1985-11-03T08:45:00",
+      "birth_place": "上海",
+      "gender": "女",
+      "bazi_characters": {
+        "year_stem": "乙",
+        "year_branch": "丑",
+        "month_stem": "丙",
+        "month_branch": "戌",
+        "day_stem": "丙",
+        "day_branch": "午",
+        "hour_stem": "癸",
+        "hour_branch": "巳"
+      },
+      "location_info": {
+        "province": "上海",
+        "city": "上海",
+        "longitude": 121.4737,
+        "latitude": 31.2304,
+        "longitude_diff_minutes": 5.894799999999975,
+        "equation_of_time_minutes": 16.387818218255006,
+        "correction_applied": true,
+        "original_time": "1985-11-03T08:45:00",
+        "corrected_time": "1985-11-03T09:07:16.957093"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 121.4737,
+        "longitude_diff_minutes": 5.894799999999975,
+        "equation_of_time_minutes": 16.387818218255006,
+        "original_time": "1985-11-03T08:45:00",
+        "corrected_time": "1985-11-03T09:07:16.957093",
+        "total_correction_minutes": 22.28261821825498
+      }
+    },
+    {
+      "test_case": "广州测试案例",
+      "birth_datetime": "1992-02-28T16:20:00",
+      "birth_place": "广州",
+      "gender": "男",
+      "bazi_characters": {
+        "year_stem": "壬",
+        "year_branch": "申",
+        "month_stem": "壬",
+        "month_branch": "寅",
+        "day_stem": "甲",
+        "day_branch": "戌",
+        "hour_stem": "壬",
+        "hour_branch": "申"
+      },
+      "location_info": {
+        "province": "广东",
+        "city": "广州",
+        "longitude": 113.2644,
+        "latitude": 23.1291,
+        "longitude_diff_minutes": -26.94240000000002,
+        "equation_of_time_minutes": -12.677311293698722,
+        "correction_applied": true,
+        "original_time": "1992-02-28T16:20:00",
+        "corrected_time": "1992-02-28T15:40:22.817322"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 113.2644,
+        "longitude_diff_minutes": -26.94240000000002,
+        "equation_of_time_minutes": -12.677311293698722,
+        "original_time": "1992-02-28T16:20:00",
+        "corrected_time": "1992-02-28T15:40:22.817322",
+        "total_correction_minutes": -39.61971129369874
+      }
+    },
+    {
+      "test_case": "乌鲁木齐测试案例",
+      "birth_datetime": "1988-09-10T12:00:00",
+      "birth_place": "乌鲁木齐",
+      "gender": "女",
+      "bazi_characters": {
+        "year_stem": "戊",
+        "year_branch": "辰",
+        "month_stem": "辛",
+        "month_branch": "酉",
+        "day_stem": "戊",
+        "day_branch": "辰",
+        "hour_stem": "丁",
+        "hour_branch": "巳"
+      },
+      "location_info": {
+        "province": "新疆",
+        "city": "乌鲁木齐",
+        "longitude": 87.6177,
+        "latitude": 43.7928,
+        "longitude_diff_minutes": -129.5292,
+        "equation_of_time_minutes": 3.1091034397838406,
+        "correction_applied": true,
+        "original_time": "1988-09-10T12:00:00",
+        "corrected_time": "1988-09-10T09:53:34.794206"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 87.6177,
+        "longitude_diff_minutes": -129.5292,
+        "equation_of_time_minutes": 3.1091034397838406,
+        "original_time": "1988-09-10T12:00:00",
+        "corrected_time": "1988-09-10T09:53:34.794206",
+        "total_correction_minutes": -126.42009656021617
+      }
+    },
+    {
+      "test_case": "拉萨测试案例",
+      "birth_datetime": "1993-04-05T10:15:00",
+      "birth_place": "拉萨",
+      "gender": "男",
+      "bazi_characters": {
+        "year_stem": "癸",
+        "year_branch": "酉",
+        "month_stem": "丙",
+        "month_branch": "辰",
+        "day_stem": "丙",
+        "day_branch": "辰",
+        "hour_stem": "壬",
+        "hour_branch": "辰"
+      },
+      "location_info": {
+        "province": "西藏",
+        "city": "拉萨",
+        "longitude": 91.1409,
+        "latitude": 29.6456,
+        "longitude_diff_minutes": -115.43639999999999,
+        "equation_of_time_minutes": -2.7378998361873004,
+        "correction_applied": true,
+        "original_time": "1993-04-05T10:15:00",
+        "corrected_time": "1993-04-05T08:16:49.542010"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 91.1409,
+        "longitude_diff_minutes": -115.43639999999999,
+        "equation_of_time_minutes": -2.7378998361873004,
+        "original_time": "1993-04-05T10:15:00",
+        "corrected_time": "1993-04-05T08:16:49.542010",
+        "total_correction_minutes": -118.17429983618729
+      }
+    },
+    {
+      "test_case": "哈尔滨测试案例",
+      "birth_datetime": "1987-12-21T18:30:00",
+      "birth_place": "哈尔滨",
+      "gender": "女",
+      "bazi_characters": {
+        "year_stem": "丁",
+        "year_branch": "卯",
+        "month_stem": "壬",
+        "month_branch": "子",
+        "day_stem": "甲",
+        "day_branch": "辰",
+        "hour_stem": "癸",
+        "hour_branch": "酉"
+      },
+      "location_info": {
+        "province": "黑龙江",
+        "city": "哈尔滨",
+        "longitude": 126.6394,
+        "latitude": 45.7566,
+        "longitude_diff_minutes": 26.55759999999998,
+        "equation_of_time_minutes": 1.9567531406125909,
+        "correction_applied": true,
+        "original_time": "1987-12-21T18:30:00",
+        "corrected_time": "1987-12-21T18:58:30.861188"
+      },
+      "success": true,
+      "correction_info": {
+        "longitude": 126.6394,
+        "longitude_diff_minutes": 26.55759999999998,
+        "equation_of_time_minutes": 1.9567531406125909,
+        "original_time": "1987-12-21T18:30:00",
+        "corrected_time": "1987-12-21T18:58:30.861188",
+        "total_correction_minutes": 28.51435314061257
+      }
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "bazi_characters": {
+    "year_stem": "庚",
+    "year_branch": "午",
+    "month_stem": "丁",
+    "month_branch": "卯",
+    "day_stem": "壬",
+    "day_branch": "辰",
+    "hour_stem": "甲",
+    "hour_branch": "戌"
+  },
+  "five_elements_score": {
+    "金": "7.6%",
+    "木": "40.6%",
+    "水": "9.3%",
+    "火": "24.3%",
+    "土": "18.2%"
+  },
+  "day_master_strength": "偏弱",
+  "day_master_element": "水",
+  "zodiac_sign": "马",
+  "major_cycles": [
+    {
+      "gan_zhi": "甲子",
+      "start_age": "3",
+      "start_year": "1993",
+      "end_year": "2002",
+      "ten_gods_gan": "食神",
+      "hidden_stems_zhi": "癸",
+      "interaction_with_mingju": "大运甲子与命局的五行互动分析",
+      "phase_analysis": "童年初期",
+      "age_range": "3-12",
+      "description": "大运甲子期间的运势特点和发展方向",
+      "trend": "大运甲子整体运势童年初期",
+      "advice": "在童年初期阶段，建议关注食神方面的发展",
+      "deep_analysis": "详细分析：大运甲子的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "乙丑",
+      "start_age": "13",
+      "start_year": "2003",
+      "end_year": "2012",
+      "ten_gods_gan": "伤官",
+      "hidden_stems_zhi": "己,癸,辛",
+      "interaction_with_mingju": "大运乙丑与命局的五行互动分析",
+      "phase_analysis": "少年时期",
+      "age_range": "13-22",
+      "description": "大运乙丑期间的运势特点和发展方向",
+      "trend": "大运乙丑整体运势少年时期",
+      "advice": "在少年时期阶段，建议关注伤官方面的发展",
+      "deep_analysis": "详细分析：大运乙丑的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "丙寅",
+      "start_age": "23",
+      "start_year": "2013",
+      "end_year": "2022",
+      "ten_gods_gan": "偏财",
+      "hidden_stems_zhi": "甲,丙,戊",
+      "interaction_with_mingju": "大运丙寅与命局的五行互动分析",
+      "phase_analysis": "成年初期",
+      "age_range": "23-32",
+      "description": "大运丙寅期间的运势特点和发展方向",
+      "trend": "大运丙寅整体运势成年初期",
+      "advice": "在成年初期阶段，建议关注偏财方面的发展",
+      "deep_analysis": "详细分析：大运丙寅的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "丁卯",
+      "start_age": "33",
+      "start_year": "2023",
+      "end_year": "2032",
+      "ten_gods_gan": "正财",
+      "hidden_stems_zhi": "乙",
+      "interaction_with_mingju": "大运丁卯与命局的五行互动分析",
+      "phase_analysis": "事业建立期",
+      "age_range": "33-42",
+      "description": "大运丁卯期间的运势特点和发展方向",
+      "trend": "大运丁卯整体运势事业建立期",
+      "advice": "在事业建立期阶段，建议关注正财方面的发展",
+      "deep_analysis": "详细分析：大运丁卯的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "戊辰",
+      "start_age": "43",
+      "start_year": "2033",
+      "end_year": "2042",
+      "ten_gods_gan": "七杀",
+      "hidden_stems_zhi": "戊,乙,癸",
+      "interaction_with_mingju": "大运戊辰与命局的五行互动分析",
+      "phase_analysis": "事业高峰期",
+      "age_range": "43-52",
+      "description": "大运戊辰期间的运势特点和发展方向",
+      "trend": "大运戊辰整体运势事业高峰期",
+      "advice": "在事业高峰期阶段，建议关注七杀方面的发展",
+      "deep_analysis": "详细分析：大运戊辰的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "己巳",
+      "start_age": "53",
+      "start_year": "2043",
+      "end_year": "2052",
+      "ten_gods_gan": "正官",
+      "hidden_stems_zhi": "丙,戊,庚",
+      "interaction_with_mingju": "大运己巳与命局的五行互动分析",
+      "phase_analysis": "中年稳定期",
+      "age_range": "53-62",
+      "description": "大运己巳期间的运势特点和发展方向",
+      "trend": "大运己巳整体运势中年稳定期",
+      "advice": "在中年稳定期阶段，建议关注正官方面的发展",
+      "deep_analysis": "详细分析：大运己巳的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "庚午",
+      "start_age": "63",
+      "start_year": "2053",
+      "end_year": "2062",
+      "ten_gods_gan": "偏印",
+      "hidden_stems_zhi": "丁,己",
+      "interaction_with_mingju": "大运庚午与命局的五行互动分析",
+      "phase_analysis": "花甲之年",
+      "age_range": "63-72",
+      "description": "大运庚午期间的运势特点和发展方向",
+      "trend": "大运庚午整体运势花甲之年",
+      "advice": "在花甲之年阶段，建议关注偏印方面的发展",
+      "deep_analysis": "详细分析：大运庚午的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "辛未",
+      "start_age": "73",
+      "start_year": "2063",
+      "end_year": "2072",
+      "ten_gods_gan": "正印",
+      "hidden_stems_zhi": "己,丁,乙",
+      "interaction_with_mingju": "大运辛未与命局的五行互动分析",
+      "phase_analysis": "老年时期",
+      "age_range": "73-82",
+      "description": "大运辛未期间的运势特点和发展方向",
+      "trend": "大运辛未整体运势老年时期",
+      "advice": "在老年时期阶段，建议关注正印方面的发展",
+      "deep_analysis": "详细分析：大运辛未的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "壬申",
+      "start_age": "83",
+      "start_year": "2073",
+      "end_year": "2082",
+      "ten_gods_gan": "比肩",
+      "hidden_stems_zhi": "庚,壬,戊",
+      "interaction_with_mingju": "大运壬申与命局的五行互动分析",
+      "phase_analysis": "老年时期",
+      "age_range": "83-92",
+      "description": "大运壬申期间的运势特点和发展方向",
+      "trend": "大运壬申整体运势老年时期",
+      "advice": "在老年时期阶段，建议关注比肩方面的发展",
+      "deep_analysis": "详细分析：大运壬申的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    },
+    {
+      "gan_zhi": "癸酉",
+      "start_age": "93",
+      "start_year": "2083",
+      "end_year": "2092",
+      "ten_gods_gan": "劫财",
+      "hidden_stems_zhi": "辛",
+      "interaction_with_mingju": "大运癸酉与命局的五行互动分析",
+      "phase_analysis": "老年时期",
+      "age_range": "93-102",
+      "description": "大运癸酉期间的运势特点和发展方向",
+      "trend": "大运癸酉整体运势老年时期",
+      "advice": "在老年时期阶段，建议关注劫财方面的发展",
+      "deep_analysis": "详细分析：大运癸酉的深层次运势解读",
+      "deepseek_enhanced": false,
+      "analysis_method": "basic"
+    }
+  ],
+  "current_year_fortune": {},
+  "gan_zhi_info": {
+    "year_pillar": {
+      "gan": "庚",
+      "zhi": "午",
+      "ten_god": "偏印",
+      "hidden_stems": "丁,己"
+    },
+    "month_pillar": {
+      "gan": "丁",
+      "zhi": "卯",
+      "ten_god": "正财",
+      "hidden_stems": "乙"
+    },
+    "day_pillar": {
+      "gan": "壬",
+      "zhi": "辰",
+      "ten_god": "日主",
+      "hidden_stems": "戊,乙,癸"
+    },
+    "hour_pillar": {
+      "gan": "甲",
+      "zhi": "戌",
+      "ten_god": "食神",
+      "hidden_stems": "戊,辛,丁"
+    }
+  },
+  "na_yin": {
+    "year_na_yin": [
+      "海中金",
+      1
+    ],
+    "month_na_yin": [
+      "炉中火",
+      2
+    ],
+    "day_na_yin": [
+      "大林木",
+      3
+    ],
+    "hour_na_yin": [
+      "长流水",
+      4
+    ]
+  },
+  "palace_info": {
+    "tai_yuan": "甲子",
+    "ming_gong": "乙丑",
+    "shen_gong": "丙寅",
+    "tai_xi": "丁卯"
+  },
+  "birth_place": "北京",
+  "location_info": {},
+  "dz_cang_gan": [],
+  "day_chang_sheng": [],
+  "year_chang_sheng": [],
+  "shen_sha_details": [
+    {
+      "key": "yi_ma",
+      "name": "驿马",
+      "position": "申",
+      "strength": 1.0,
+      "active": true,
+      "tags": []
+    },
+    {
+      "key": "kong_wang",
+      "name": "空亡",
+      "position": "午未",
+      "strength": 1.0,
+      "active": true,
+      "tags": []
+    },
+    {
+      "key": "tao_hua",
+      "name": "桃花",
+      "position": "午->卯, 卯->子, 辰->亥, 戌->巳",
+      "strength": 1.0,
+      "active": true,
+      "tags": []
+    }
+  ],
+  "interactions": {
+    "stem_combinations": [
+      {
+        "type": "天干五合",
+        "combination": "丁壬",
+        "element": "木",
+        "positions": [
+          "月干",
+          "日干"
+        ]
+      }
+    ],
+    "branch_six_combinations": [
+      {
+        "type": "地支六合",
+        "combination": "卯戌",
+        "element": "火",
+        "positions": [
+          "月支",
+          "时支"
+        ]
+      }
+    ],
+    "branch_three_half": [
+      {
+        "type": "地支半合局",
+        "combination": "午戌",
+        "element": "火",
+        "positions": [
+          "年支",
+          "时支"
+        ]
+      }
+    ],
+    "branch_conflicts": [
+      {
+        "type": "地支六冲",
+        "combination": "辰戌",
+        "positions": [
+          "日支",
+          "时支"
+        ]
+      }
+    ],
+    "branch_penalties": [],
+    "branch_harms": [
+      {
+        "type": "地支相穿",
+        "combination": "卯辰",
+        "positions": [
+          "月支",
+          "日支"
+        ]
+      }
+    ]
+  },
+  "favorable_elements": [
+    "金",
+    "水"
+  ]
+}

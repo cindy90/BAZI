@@ -1,0 +1,3508 @@
+{
+  "validated_cases": 100,
+  "success_count": 100,
+  "failed_cases": [],
+  "results": {
+    "1": {
+      "name": "黄金荣（历史人物：上海滩大亨）",
+      "pillars": {
+        "年柱": "戊辰",
+        "月柱": "甲子",
+        "日柱": "甲戌",
+        "时柱": "甲子"
+      },
+      "elements": {
+        "木": 0.39,
+        "火": 0.0,
+        "土": 0.39,
+        "金": 0.02,
+        "水": 0.44
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 2048,
+        "month": 12,
+        "day": 30,
+        "hour": 0,
+        "minute": 0
+      },
+      "favorable": "土（财）、火（食伤）",
+      "unfavorable": "水（印）、金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "东八区未注明",
+      "notes": "历史人物-上海滩大亨，农历2048年冬月廿六子时出生",
+      "zodiac": "龙",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "2": {
+      "name": "李清照",
+      "pillars": {
+        "年柱": "甲子",
+        "月柱": "丁卯",
+        "日柱": "乙巳",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.45,
+        "土": 0.1,
+        "金": 0.05,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1084,
+        "month": 3,
+        "day": 13,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "水（印）、木（比劫）",
+      "unfavorable": "火（食伤）、土（财）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "山东济南",
+      "notes": "宋代著名女词人，才华横溢",
+      "zodiac": "鼠",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "3": {
+      "name": "康熙皇帝",
+      "pillars": {
+        "年柱": "甲午",
+        "月柱": "己巳",
+        "日柱": "丁酉",
+        "时柱": "丙午"
+      },
+      "elements": {
+        "木": 0.1,
+        "火": 0.5,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 1654,
+        "month": 5,
+        "day": 4,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "水（印）、金（官杀）",
+      "unfavorable": "火（比劫）、土（食伤）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "北京紫禁城",
+      "notes": "清朝第四位皇帝，在位61年，开创康乾盛世",
+      "zodiac": "马",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "4": {
+      "name": "乾隆皇帝",
+      "pillars": {
+        "年柱": "辛卯",
+        "月柱": "丁酉",
+        "日柱": "庚午",
+        "时柱": "己卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.3,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 1711,
+        "month": 9,
+        "day": 25,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）、木（食伤）",
+      "unfavorable": "土（比劫）、火（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "北京紫禁城",
+      "notes": "清朝第六位皇帝，在位60年，康乾盛世巅峰",
+      "zodiac": "兔",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "5": {
+      "name": "朱元璋",
+      "pillars": {
+        "年柱": "戊辰",
+        "月柱": "壬戌",
+        "日柱": "丁亥",
+        "时柱": "庚戌"
+      },
+      "elements": {
+        "木": 0.05,
+        "火": 0.15,
+        "土": 0.5,
+        "金": 0.1,
+        "水": 0.2
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1328,
+        "month": 10,
+        "day": 21,
+        "hour": 20,
+        "minute": 0
+      },
+      "favorable": "木（印）、火（比劫）",
+      "unfavorable": "土（食伤）、金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽凤阳",
+      "notes": "明朝开国皇帝，出身贫寒，建立大明王朝",
+      "zodiac": "猴",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "6": {
+      "name": "成吉思汗",
+      "pillars": {
+        "年柱": "壬午",
+        "月柱": "乙巳",
+        "日柱": "戊申",
+        "时柱": "庚申"
+      },
+      "elements": {
+        "木": 0.1,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 1162,
+        "month": 5,
+        "day": 31,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "火（食伤）、木（印）",
+      "unfavorable": "金（比劫）、水（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "蒙古肉肉河",
+      "notes": "蒙古大汗，建立蒙古帝国，世界征服者",
+      "zodiac": "虎",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "7": {
+      "name": "曾国藩",
+      "pillars": {
+        "年柱": "辛未",
+        "月柱": "己亥",
+        "日柱": "丙寅",
+        "时柱": "庚寅"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.35,
+        "土": 0.2,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 1811,
+        "month": 11,
+        "day": 26,
+        "hour": 4,
+        "minute": 0
+      },
+      "favorable": "金（财）、水（官杀）",
+      "unfavorable": "木（印）、火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南双峰",
+      "notes": "晚清重臣，湘军创立者，洋务运动主要倡导者",
+      "zodiac": "羊",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "8": {
+      "name": "武则天",
+      "pillars": {
+        "年柱": "甲申",
+        "月柱": "丙寅",
+        "日柱": "戊午",
+        "时柱": "庚申"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.4,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "身强",
+      "birth_info": {
+        "year": 624,
+        "month": 2,
+        "day": 17,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）、木（官杀）",
+      "unfavorable": "火（比劫）、土（食伤）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "山西文水",
+      "notes": "中国历史上唯一的女皇帝，唐朝武周皇帝",
+      "zodiac": "猴",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "9": {
+      "name": "诸葛亮",
+      "pillars": {
+        "年柱": "辛酉",
+        "月柱": "乙未",
+        "日柱": "癸亥",
+        "时柱": "壬子"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.05,
+        "土": 0.2,
+        "金": 0.3,
+        "水": 0.3
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 181,
+        "month": 7,
+        "day": 23,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "火（食伤）、土（财）",
+      "unfavorable": "金（印）、水（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东沂南",
+      "notes": "三国时期蜀汉丞相，杰出政治家、军事家、文学家",
+      "zodiac": "鸡",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "10": {
+      "name": "慈禧太后",
+      "pillars": {
+        "年柱": "乙未",
+        "月柱": "丁亥",
+        "日柱": "己卯",
+        "时柱": "癸酉"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.1,
+        "土": 0.25,
+        "金": 0.35,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1835,
+        "month": 11,
+        "day": 29,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "火（印）、土（比劫）",
+      "unfavorable": "金（食伤）、水（财）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "北京紫禁城",
+      "notes": "清朝末年实际统治者，垂帘听政47年",
+      "zodiac": "羊",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "11": {
+      "name": "陈浩民",
+      "pillars": {
+        "年柱": "甲戌",
+        "月柱": "甲戌",
+        "日柱": "丙申",
+        "时柱": "己丑"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1994,
+        "month": 11,
+        "day": 6,
+        "hour": 1,
+        "minute": 25
+      },
+      "favorable": "木（印）、火（比劫）",
+      "unfavorable": "土（伤官）、金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "广东省广州市黄埔区",
+      "notes": "香港知名演员，丙火日主身弱，杂气伤官格，TVB及内地演艺事业",
+      "zodiac": "狗",
+      "constellation": "天蝎座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "12": {
+      "name": "高梦泽",
+      "pillars": {
+        "年柱": "庚子",
+        "月柱": "癸未",
+        "日柱": "癸酉",
+        "时柱": "己未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.2,
+        "土": 0.4,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "偏弱",
+      "birth_info": {
+        "year": 2020,
+        "month": 7,
+        "day": 29,
+        "hour": 13,
+        "minute": 26
+      },
+      "favorable": "金（印）、水（比劫）",
+      "unfavorable": "土（七杀）、火（食伤）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "北京朝阳区",
+      "notes": "现代女性案例，癸水日主偏弱，杂气七杀格，需金水助身",
+      "zodiac": "鼠",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "13": {
+      "name": "王雅琳",
+      "pillars": {
+        "年柱": "壬申",
+        "月柱": "癸卯",
+        "日柱": "己亥",
+        "时柱": "丁卯"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.15,
+        "土": 0.1,
+        "金": 0.2,
+        "水": 0.25
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1992,
+        "month": 3,
+        "day": 8,
+        "hour": 5,
+        "minute": 45
+      },
+      "favorable": "火（印）、土（比劫）",
+      "unfavorable": "金（官杀）、水（财）、木（食伤）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "上海黄浦区",
+      "notes": "现代女性设计师，创意产业从业者，己土日主身弱官杀旺",
+      "zodiac": "猴",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "14": {
+      "name": "高泽兮",
+      "pillars": {
+        "年柱": "癸卯",
+        "月柱": "辛酉",
+        "日柱": "乙亥",
+        "时柱": "丙子"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.2,
+        "土": 0.1,
+        "金": 0.3,
+        "水": 0.1
+      },
+      "strength": "平和",
+      "birth_info": {
+        "year": 2023,
+        "month": 9,
+        "day": 14,
+        "hour": 0,
+        "minute": 26
+      },
+      "favorable": "水（印）、火（食伤）",
+      "unfavorable": "金（七杀）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "北京市昌平区",
+      "notes": "现代儿童案例，乙木日主生于酉月，七杀格，地支卢酉冲",
+      "zodiac": "兔",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "15": {
+      "name": "陈道明",
+      "pillars": {
+        "年柱": "乙未",
+        "月柱": "庚辰",
+        "日柱": "丁巳",
+        "时柱": "乙巳"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏弱",
+      "birth_info": {
+        "year": 1955,
+        "month": 4,
+        "day": 26,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）、水（印）",
+      "unfavorable": "土（食伤）、金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "天津市天津市",
+      "notes": "中国著名演员，丁火日主生于辰月，财星佩印格，《康熙王朝》等史剧精湛",
+      "zodiac": "羊",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "16": {
+      "name": "李小龙",
+      "pillars": {
+        "年柱": "庚辰",
+        "月柱": "丁亥",
+        "日柱": "甲戌",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.2,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1940,
+        "month": 11,
+        "day": 27,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）、金（财）",
+      "unfavorable": "火（食伤）、土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "香港香港",
+      "notes": "武术家、哲学家、演员，甲木参天格局，金舆三重，截拳道创始人",
+      "zodiac": "龙",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "17": {
+      "name": "梅兰芳",
+      "pillars": {
+        "年柱": "甲午",
+        "月柱": "甲戌",
+        "日柱": "丁酉",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1894,
+        "month": 10,
+        "day": 22,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "金（财）、水（官杀）",
+      "unfavorable": "木（印）、火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省泰州市",
+      "notes": "京剧大师，梅派创始人，丁火日主生于戌月，伤官格，三重桃花",
+      "zodiac": "马",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "18": {
+      "name": "孟小冬",
+      "pillars": {
+        "年柱": "戊申",
+        "月柱": "甲子",
+        "日柱": "戊戌",
+        "时柱": "乙卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.1,
+        "土": 0.25,
+        "金": 0.25,
+        "水": 0.25
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1908,
+        "month": 12,
+        "day": 9,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "火（印）、土（比劫）",
+      "unfavorable": "金（食伤）、水（财）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "上海市上海市",
+      "notes": "京剧老生演员， 戊土日主 身弱正财格，魁罡日八专，性情刚烈",
+      "zodiac": "猴",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "19": {
+      "name": "乔治·布什",
+      "pillars": {
+        "年柱": "甲子",
+        "月柱": "庚午",
+        "日柱": "壬戌",
+        "时柱": "壬午"
+      },
+      "elements": {
+        "木": 0.1,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1924,
+        "month": 6,
+        "day": 12,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "金（印）、水（比劫）",
+      "unfavorable": "火（食伤）、土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国马萨诸塞州",
+      "notes": "美国第41任总统，壬水日主身弱，印星佩财结构，海湾战争决策者",
+      "zodiac": "鼠",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "20": {
+      "name": "孔子",
+      "pillars": {
+        "年柱": "庚戌",
+        "月柱": "戊子",
+        "日柱": "庚子",
+        "时柱": "甲申"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.1,
+        "土": 0.25,
+        "金": 0.3,
+        "水": 0.2
+      },
+      "strength": "偏弱",
+      "birth_info": {
+        "year": 2030,
+        "month": 12,
+        "day": 31,
+        "hour": 16,
+        "minute": 0
+      },
+      "favorable": "土（财）、木（食伤）",
+      "unfavorable": "金（伤官）、水（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省曲阜市",
+      "notes": "虚拟命盘，教育家、思想家，庚金日主偏弱，金白水清伤官格",
+      "zodiac": "狗",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "21": {
+      "name": "侯先生",
+      "pillars": {
+        "年柱": "己未",
+        "月柱": "己巳",
+        "日柱": "甲戌",
+        "时柱": "丁卯"
+      },
+      "elements": {
+        "木": 0.32,
+        "火": 0.12,
+        "土": 0.44,
+        "金": 0.06,
+        "水": 0.06
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1979,
+        "month": 5,
+        "day": 30,
+        "hour": 5,
+        "minute": 23
+      },
+      "favorable": "水（印）、木（比劫）",
+      "unfavorable": "土（财）、火（食伤）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "未明确未明确",
+      "notes": "搜狐网专业案例，甲木日主身弱财旺，日时卯戌相冲终生迁移",
+      "zodiac": "羊",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "22": {
+      "name": "毛泽东",
+      "pillars": {
+        "年柱": "癸巳",
+        "月柱": "甲子",
+        "日柱": "丁酉",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.15,
+        "金": 0.2,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1893,
+        "month": 12,
+        "day": 26,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南省湘潭市",
+      "notes": "中国领导人，丁火日主偏强，食伤生财格，三奇贵人，天乙贵人",
+      "zodiac": "蛇",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "23": {
+      "name": "邓小平",
+      "pillars": {
+        "年柱": "甲辰",
+        "月柱": "壬申",
+        "日柱": "甲戌",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.15,
+        "土": 0.35,
+        "金": 0.2,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1904,
+        "month": 8,
+        "day": 22,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "四川省广安市",
+      "notes": "改革开放总设计师，甲木日主身弱，财多身弱格，魁罡日，性格坚毅果断",
+      "zodiac": "龙",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "24": {
+      "name": "周恩来",
+      "pillars": {
+        "年柱": "戊戌",
+        "月柱": "乙卯",
+        "日柱": "戊申",
+        "时柱": "丙辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.2,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1898,
+        "month": 3,
+        "day": 5,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "火（印）土（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省淮安市",
+      "notes": "新中国总理，戊土日主中和，食伤生财格，天德贵人，仁厚博爱",
+      "zodiac": "狗",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "25": {
+      "name": "朱元璋",
+      "pillars": {
+        "年柱": "戊辰",
+        "月柱": "壬戌",
+        "日柱": "戊戌",
+        "时柱": "丁巳"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.1,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1328,
+        "month": 10,
+        "day": 21,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "金（食伤）、水（财）",
+      "unfavorable": "火（印）、土（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽省凤阳县",
+      "notes": "明朝开国皇帝，戊土日主偏强，食伤生财格，魁罡日，白手起家建立王朝",
+      "zodiac": "龙",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "26": {
+      "name": "武则天",
+      "pillars": {
+        "年柱": "甲申",
+        "月柱": "丙寅",
+        "日柱": "辛未",
+        "时柱": "乙未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.25,
+        "土": 0.2,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 624,
+        "month": 2,
+        "day": 17,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "土（印）、金（比劫）",
+      "unfavorable": "木（财）、火（官杀）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "山西省文水县",
+      "notes": "中国历史唯一女皇帝，辛金日主身弱，官杀混杂格，桃花贵人，权势滔天",
+      "zodiac": "猴",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "27": {
+      "name": "李世民",
+      "pillars": {
+        "年柱": "己未",
+        "月柱": "丙寅",
+        "日柱": "癸酉",
+        "时柱": "丙辰"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 599,
+        "month": 1,
+        "day": 28,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "金（印）、水（比劫）",
+      "unfavorable": "木（食伤）、火（财）、土（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "陕西省武功县",
+      "notes": "唐太宗，癸水日主身弱，财多身弱格，天乙贵人，开创贞观之治",
+      "zodiac": "羊",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "28": {
+      "name": "孙中山",
+      "pillars": {
+        "年柱": "丙寅",
+        "月柱": "己亥",
+        "日柱": "甲寅",
+        "时柱": "己巳"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.25,
+        "土": 0.2,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1866,
+        "month": 11,
+        "day": 12,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "金（官杀）、水（印）",
+      "unfavorable": "木（比劫）、火（食伤）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "广东省中山市",
+      "notes": "中华民国国父，甲木日主偏强，木火通明格，革命先驱，推翻封建制度",
+      "zodiac": "虎",
+      "constellation": "天蝎座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "29": {
+      "name": "袁世凯",
+      "pillars": {
+        "年柱": "己未",
+        "月柱": "癸酉",
+        "日柱": "甲戌",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.2,
+        "土": 0.3,
+        "金": 0.25,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1859,
+        "month": 9,
+        "day": 16,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省项城市",
+      "notes": "北洋政府大总统，甲木日主身弱，财多身弱格，魁罡日，野心勃勃称帝",
+      "zodiac": "羊",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "30": {
+      "name": "诸葛亮",
+      "pillars": {
+        "年柱": "辛酉",
+        "月柱": "乙未",
+        "日柱": "癸丑",
+        "时柱": "乙卯"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.1,
+        "土": 0.25,
+        "金": 0.2,
+        "水": 0.15
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 181,
+        "month": 7,
+        "day": 23,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "火（财）土（官杀）",
+      "unfavorable": "金（印）水（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省临沂市",
+      "notes": "三国蜀汉丞相，癸水日主偏强，杀印相生格，智谋超群，鞠躬尽瘁",
+      "zodiac": "鸡",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "31": {
+      "name": "曹操",
+      "pillars": {
+        "年柱": "乙亥",
+        "月柱": "乙酉",
+        "日柱": "戊申",
+        "时柱": "丁巳"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.25,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 155,
+        "month": 9,
+        "day": 15,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "木（官杀）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽省亳州市",
+      "notes": "三国魏武帝，戊土日主中和，印星生身格，枭雄之相，统一北方",
+      "zodiac": "猪",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "32": {
+      "name": "刘备",
+      "pillars": {
+        "年柱": "辛丑",
+        "月柱": "甲午",
+        "日柱": "丁亥",
+        "时柱": "甲辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.3,
+        "土": 0.15,
+        "金": 0.1,
+        "水": 0.1
+      },
+      "strength": "偏弱",
+      "birth_info": {
+        "year": 161,
+        "month": 6,
+        "day": 10,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河北省涿州市",
+      "notes": "三国蜀汉昭烈帝，丁火日主偏弱，木多火塞格，仁德之君，三顾茅庐",
+      "zodiac": "牛",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "33": {
+      "name": "关羽",
+      "pillars": {
+        "年柱": "庚申",
+        "月柱": "壬午",
+        "日柱": "丙寅",
+        "时柱": "癸巳"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.4,
+        "土": 0.1,
+        "金": 0.1,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 160,
+        "month": 6,
+        "day": 24,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "土（食伤），金（财）",
+      "unfavorable": "木（印），火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山西省运城市",
+      "notes": "三国蜀汉名将，丙火日主偏强，身强任财官，义薄云天，忠肝义胆",
+      "zodiac": "猴",
+      "constellation": "巨蟹座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "34": {
+      "name": "张飞",
+      "pillars": {
+        "年柱": "丁未",
+        "月柱": "己酉",
+        "日柱": "戊戌",
+        "时柱": "己未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 167,
+        "month": 8,
+        "day": 15,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "金（食伤），水（财）",
+      "unfavorable": "火（印），土（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河北省涿州市",
+      "notes": "三国蜀汉名将，戊土日主偏强，食伤生财格，勇猛无敌，声如雷霆",
+      "zodiac": "羊",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "35": {
+      "name": "赵云",
+      "pillars": {
+        "年柱": "戊申",
+        "月柱": "乙卯",
+        "日柱": "癸未",
+        "时柱": "乙卯"
+      },
+      "elements": {
+        "木": 0.4,
+        "火": 0.1,
+        "土": 0.2,
+        "金": 0.15,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 168,
+        "month": 3,
+        "day": 19,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "金（印），水（比劫）",
+      "unfavorable": "木（食伤），火（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河北省正定县",
+      "notes": "三国蜀汉名将，癸水日主身弱，食伤过旺格，智勇双全，常山赵子龙",
+      "zodiac": "猴",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "36": {
+      "name": "马超",
+      "pillars": {
+        "年柱": "丙辰",
+        "月柱": "癸巳",
+        "日柱": "甲午",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 176,
+        "month": 5,
+        "day": 8,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印），木（比劫）",
+      "unfavorable": "火（食伤），土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "陕西省咸阳市",
+      "notes": "三国蜀汉名将，甲木日主中和，身弱喜印比，西凉锦马超，英勇善战",
+      "zodiac": "龙",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "37": {
+      "name": "孔子",
+      "pillars": {
+        "年柱": "辛丑",
+        "月柱": "丁酉",
+        "日柱": "甲申",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": -551,
+        "month": 9,
+        "day": 28,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "火（食伤）土（财）",
+      "unfavorable": "金（官杀）水（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省曲阜市",
+      "notes": "中国古代思想家、教育家，甲木日主偏强，食伤生财格，圣人之相，有教无类",
+      "zodiac": "牛",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "38": {
+      "name": "老子",
+      "pillars": {
+        "年柱": "己酉",
+        "月柱": "丁卯",
+        "日柱": "癸卯",
+        "时柱": "辛巳"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.3,
+        "金": 0.2,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": -571,
+        "month": 3,
+        "day": 25,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "木（食伤）火（财）",
+      "unfavorable": "金（印）土（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省鹿郑市",
+      "notes": "道家创始人，癸水日主偏强，印星滋身格，道德之祖，清静无为",
+      "zodiac": "牛",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "39": {
+      "name": "孟子",
+      "pillars": {
+        "年柱": "戊午",
+        "月柱": "丁巳",
+        "日柱": "乙丑",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.35,
+        "土": 0.3,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": -372,
+        "month": 5,
+        "day": 12,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "火（食伤）土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省邹城市",
+      "notes": "亚圣思想家，乙木日主中和，身弱喜印比，民为贵思想，浩然正气",
+      "zodiac": "马",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "40": {
+      "name": "庄子",
+      "pillars": {
+        "年柱": "辛酉",
+        "月柱": "己丑",
+        "日柱": "丁巳",
+        "时柱": "壬辰"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": -369,
+        "month": 1,
+        "day": 15,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "水（官杀）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省商丘市",
+      "notes": "道家代表人物，丁火日主中和，比劫印星格，遥遥游世，庄周梦蝶",
+      "zodiac": "马",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "41": {
+      "name": "董仒舒",
+      "pillars": {
+        "年柱": "壬午",
+        "月柱": "辛巳",
+        "日柱": "乙未",
+        "时柱": "壬午"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.3,
+        "土": 0.15,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": -179,
+        "month": 5,
+        "day": 20,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "水（印）金（官杀)",
+      "unfavorable": "木（比劫）火（食伤)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河北省衡水县",
+      "notes": "西汉思想家、教育家，乙木日主偏强，食伤生财格，学派大师，天人合一",
+      "zodiac": "马",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "42": {
+      "name": "司马迁",
+      "pillars": {
+        "年柱": "丙申",
+        "月柱": "丙申",
+        "日柱": "乙亥",
+        "时柱": "己卯"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.35,
+        "土": 0.15,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": -145,
+        "month": 8,
+        "day": 10,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "水（印）金（官杀)",
+      "unfavorable": "木（比劫）火（食伤)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "陕西省韩城市",
+      "notes": "西汉史学家，乙木日主偏强，食伤生财格，史学大师，史记作者",
+      "zodiac": "鼠",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "43": {
+      "name": "李白",
+      "pillars": {
+        "年柱": "辛丑",
+        "月柱": "庚寅",
+        "日柱": "丙申",
+        "时柱": "壬辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 701,
+        "month": 2,
+        "day": 28,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）水（官杀)",
+      "unfavorable": "土（食伤）金（财)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "甘肃省天水市",
+      "notes": "唐代诗人，丙火日主中和，印星生身格，诗仙之称，浪漫主义",
+      "zodiac": "牛",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "44": {
+      "name": "杜甫",
+      "pillars": {
+        "年柱": "壬子",
+        "月柱": "癸丑",
+        "日柱": "丙戌",
+        "时柱": "乙未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.2,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 712,
+        "month": 2,
+        "day": 12,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫)",
+      "unfavorable": "水（官杀）土（食伤)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省巩义市",
+      "notes": "唐代诗人，丙火日主身弱，印比生身格，诗圣之称，忧国忧民",
+      "zodiac": "鼠",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "45": {
+      "name": "白居易",
+      "pillars": {
+        "年柱": "壬子",
+        "月柱": "癸丑",
+        "日柱": "丁巳",
+        "时柱": "癸巳"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.35,
+        "土": 0.2,
+        "金": 0.05,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 772,
+        "month": 2,
+        "day": 28,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财)",
+      "unfavorable": "木（印）火（比劫)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省新郑市",
+      "notes": "唐代诗人，丁火日主偏强，食伤生财格，现实主义诗人，天下谁人不识君",
+      "zodiac": "鼠",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "46": {
+      "name": "苏轼",
+      "pillars": {
+        "年柱": "丁丑",
+        "月柱": "辛丑",
+        "日柱": "己卯",
+        "时柱": "丁卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1037,
+        "month": 1,
+        "day": 8,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "木（官杀）、金（食伤）",
+      "unfavorable": "土（比劫）、火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "四川省丹棱市",
+      "notes": "北宋文学家，己土日主偏强，食伤生财格，三苏之首，文学大家",
+      "zodiac": "牛",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "47": {
+      "name": "达芬奇",
+      "pillars": {
+        "年柱": "壬申",
+        "月柱": "甲辰",
+        "日柱": "己丑",
+        "时柱": "己巳"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.3,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1452,
+        "month": 4,
+        "day": 15,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "木（官杀）、水（财）",
+      "unfavorable": "土（比劫）、火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "意大利芬奇镇",
+      "notes": "意大利艺术家、发明家，己土日主偏强，食伤生财格，文艺复兴巨匠，天才可敬",
+      "zodiac": "猴",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "48": {
+      "name": "特斯拉",
+      "pillars": {
+        "年柱": "丙辰",
+        "月柱": "乙未",
+        "日柱": "丁亥",
+        "时柱": "丙午"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.4,
+        "土": 0.25,
+        "金": 0.05,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1856,
+        "month": 7,
+        "day": 10,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "金（财）、水（官杀）",
+      "unfavorable": "木（印）、火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "塞尔维亚斯米尔扬",
+      "notes": "美国发明家、物理学家，丁火日主偏强，身强任财官，电学大师，科学巨人",
+      "zodiac": "龙",
+      "constellation": "巨蟹座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "49": {
+      "name": "爱因斯坦",
+      "pillars": {
+        "年柱": "己卯",
+        "月柱": "丁卯",
+        "日柱": "乙未",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.25,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1879,
+        "month": 3,
+        "day": 14,
+        "hour": 14,
+        "minute": 30
+      },
+      "favorable": "水（印）、木（比劫）",
+      "unfavorable": "土（财）、金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "德国乌尔姆",
+      "notes": "物理学家，乙木日主中和，身弱喜印比，相对论創立者，科学巨匠",
+      "zodiac": "兔",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "50": {
+      "name": "牛顿",
+      "pillars": {
+        "年柱": "壬午",
+        "月柱": "癸丑",
+        "日柱": "丁未",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.15,
+        "土": 0.2,
+        "金": 0.2,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1643,
+        "month": 1,
+        "day": 4,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "木（印）、火（比劫）",
+      "unfavorable": "水（官杀）、金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "英国林肯郡伍尔索普",
+      "notes": "英国物理学家、数学家，丁火日主身弱，印比生身格，经典物理学大师，万有引力定律",
+      "zodiac": "羊",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "51": {
+      "name": "杨贵妃",
+      "pillars": {
+        "年柱": "己未",
+        "月柱": "辛未",
+        "日柱": "丁丑",
+        "时柱": "甲辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.2,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 719,
+        "month": 6,
+        "day": 22,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "陕西省华阴市",
+      "notes": "唐玄宗贵妃，丁火日主身弱，印比生身格，中国四大美女之首，集三千宠爱",
+      "zodiac": "羊",
+      "constellation": "巨蟹座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "52": {
+      "name": "谢安",
+      "pillars": {
+        "年柱": "乙酉",
+        "月柱": "庚辰",
+        "日柱": "甲子",
+        "时柱": "己巳"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.2,
+        "土": 0.25,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 385,
+        "month": 4,
+        "day": 16,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "火（食伤）土（财）",
+      "unfavorable": "金（官杀）水（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省太康市",
+      "notes": "东晋政治家、书法家，甲木日主偏强，食伤生财格，書法大家，淑洒风流",
+      "zodiac": "鸡",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "53": {
+      "name": "陶渊明",
+      "pillars": {
+        "年柱": "乙丑",
+        "月柱": "丁亥",
+        "日柱": "甲申",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 365,
+        "month": 11,
+        "day": 29,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江西省九江市",
+      "notes": "东晋诗人，甲木日主身弱，财多身弱格，田園诗人，不为五斗米折腰",
+      "zodiac": "蛇",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "54": {
+      "name": "王羽之",
+      "pillars": {
+        "年柱": "辛酉",
+        "月柱": "辛卯",
+        "日柱": "丁卯",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.25,
+        "水": 0.1
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 321,
+        "month": 3,
+        "day": 23,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省临沂市",
+      "notes": "东晋书圣，丁火日主中和，印比生身格，书法大家，天下第一行书",
+      "zodiac": "鸡",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "55": {
+      "name": "范仲淹",
+      "pillars": {
+        "年柱": "己酉",
+        "月柱": "庚申",
+        "日柱": "甲子",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.15,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 989,
+        "month": 8,
+        "day": 29,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "火（食伤）土（财）",
+      "unfavorable": "金（官杀）水（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省苏州市",
+      "notes": "北宋政治家、文学家，甲木日主偏强，食伤生财格，先天下之忧而忧，后天下之乐而乐",
+      "zodiac": "鸡",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "56": {
+      "name": "包拯",
+      "pillars": {
+        "年柱": "己亥",
+        "月柱": "己巳",
+        "日柱": "乙丑",
+        "时柱": "庚辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.3,
+        "土": 0.2,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 999,
+        "month": 5,
+        "day": 25,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "火（食伤）土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽省合肥市",
+      "notes": "北宋政治家，乙木日主身弱，食伤过旺格，废私立公，改革先驱",
+      "zodiac": "兔",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "57": {
+      "name": "岳飞",
+      "pillars": {
+        "年柱": "癸卯",
+        "月柱": "乙卯",
+        "日柱": "丁巳",
+        "时柱": "丁巳"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1103,
+        "month": 3,
+        "day": 24,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河南省汤阴县",
+      "notes": "南宋抗金名将，丁火日主偏强，食伤生财格，精忠报国，直捞黄龙府",
+      "zodiac": "羊",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "58": {
+      "name": "辛弃疾",
+      "pillars": {
+        "年柱": "庚申",
+        "月柱": "辛巳",
+        "日柱": "甲辰",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1140,
+        "month": 5,
+        "day": 28,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省济南市",
+      "notes": "南宋词人，甲木日主身弱，财多身弱格，豪放派词人，人生若只如初见",
+      "zodiac": "鼠",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "59": {
+      "name": "文天祥",
+      "pillars": {
+        "年柱": "丙子",
+        "月柱": "庚子",
+        "日柱": "甲午",
+        "时柱": "丁巳"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.3,
+        "土": 0.2,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1236,
+        "month": 12,
+        "day": 21,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "火（食伤）土（财）",
+      "unfavorable": "金（官杀）水（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江西省吉安县",
+      "notes": "南宋文学家，甲木日主偏强，食伤生财格，文学大家，人生自古谁无死",
+      "zodiac": "鼠",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "60": {
+      "name": "芝玛拉干",
+      "pillars": {
+        "年柱": "丙寅",
+        "月柱": "甲辰",
+        "日柱": "戊午",
+        "时柱": "己未"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.4,
+        "土": 0.25,
+        "金": 0.05,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1206,
+        "month": 5,
+        "day": 15,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "木（官杀）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "内蒙古草原",
+      "notes": "元太祖，戊土日主偏强，食伤生财格，一代天骄，建立蒙古帝国",
+      "zodiac": "狗",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "61": {
+      "name": "忽必烈",
+      "pillars": {
+        "年柱": "乙亥",
+        "月柱": "乙酉",
+        "日柱": "己未",
+        "时柱": "壬申"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1215,
+        "month": 9,
+        "day": 23,
+        "hour": 16,
+        "minute": 0
+      },
+      "favorable": "木（官杀）水（财）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "内蒙古草原",
+      "notes": "元世祖，己土日主偏强，食伤生财格，汽王之孙，建立元朝",
+      "zodiac": "猪",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "62": {
+      "name": "麻哲伦",
+      "pillars": {
+        "年柱": "庚申",
+        "月柱": "庚辰",
+        "日柱": "甲午",
+        "时柱": "丁卯"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1480,
+        "month": 4,
+        "day": 27,
+        "hour": 6,
+        "minute": 30
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "火（食伤）土（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "葡萄牙探险家故乡",
+      "notes": "葡萄牙航海家，甲木日主身弱，身弱喜印比，地理大发现，新大陆发现者",
+      "zodiac": "猴",
+      "constellation": "金牛座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "63": {
+      "name": "哥伦布",
+      "pillars": {
+        "年柱": "辛未",
+        "月柱": "戊戌",
+        "日柱": "丙申",
+        "时柱": "甲午"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.3,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1451,
+        "month": 10,
+        "day": 31,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "木（印）水（官杀）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "意大利热那亚",
+      "notes": "意大利航海家，丙火日主中和，印星生身格，发现新大陆，开启大航海时代",
+      "zodiac": "羊",
+      "constellation": "天蝎座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "64": {
+      "name": "李时珍",
+      "pillars": {
+        "年柱": "戊寅",
+        "月柱": "己未",
+        "日柱": "己巳",
+        "时柱": "庚午"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.35,
+        "土": 0.3,
+        "金": 0.05,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1518,
+        "month": 7,
+        "day": 13,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "木（官杀）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖北省蕲春市",
+      "notes": "明代医学家，己土日主偏强，食伤生财格，中医药学集大成者，本草纲目作者",
+      "zodiac": "虎",
+      "constellation": "巨蟹座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "65": {
+      "name": "郑和",
+      "pillars": {
+        "年柱": "辛亥",
+        "月柱": "丁酉",
+        "日柱": "甲申",
+        "时柱": "乙未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.3,
+        "土": 0.2,
+        "金": 0.25,
+        "水": 0.1
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1371,
+        "month": 9,
+        "day": 23,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "火（食伤）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "云南省昆明市",
+      "notes": "明代航海家，甲木日主身弱，财多身弱格，七下西洋，中国航海先驱",
+      "zodiac": "猪",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "66": {
+      "name": "汤显祖",
+      "pillars": {
+        "年柱": "辛亥",
+        "月柱": "庚子",
+        "日柱": "己丑",
+        "时柱": ""
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1611,
+        "month": 12,
+        "day": 13,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（官杀）金（食伤）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "辽宁省沈阳市",
+      "notes": "清太祖，己土日主中和，食伤生财格，建立大清，入关统一",
+      "zodiac": "猪",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "67": {
+      "name": "香奈儿",
+      "pillars": {
+        "年柱": "癸未",
+        "月柱": "庚申",
+        "日柱": "丁巳",
+        "时柱": "戊申"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.3,
+        "土": 0.35,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1883,
+        "month": 8,
+        "day": 19,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "女",
+      "birthplace": "法国巴黎",
+      "notes": "法国设计师，丁火日主偏强，食伤生财格，时尚界先驱，香奈儿5号创始人",
+      "zodiac": "羊",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "68": {
+      "name": "贝多芬",
+      "pillars": {
+        "年柱": "庚戌",
+        "月柱": "戊子",
+        "日柱": "丁酉",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.15,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1770,
+        "month": 12,
+        "day": 16,
+        "hour": 8,
+        "minute": 30
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "水（官杀）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "德国波恩",
+      "notes": "德国作曲家，丁火日主身弱，印比生身格，音乐大师，命运交响曲",
+      "zodiac": "狗",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "69": {
+      "name": "莫扎特",
+      "pillars": {
+        "年柱": "乙亥",
+        "月柱": "己丑",
+        "日柱": "戊午",
+        "时柱": ""
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.3,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1756,
+        "month": 1,
+        "day": 27,
+        "hour": 20,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "木（官杀）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "奥地利萨尔茨堡",
+      "notes": "奥地利作曲家，戊土日主偏强，食伤生财格，古典音乐大师，音乐神童",
+      "zodiac": "猪",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "70": {
+      "name": "林徹",
+      "pillars": {
+        "年柱": "戊辰",
+        "月柱": "丙寅",
+        "日柱": "己丑",
+        "时柱": "丙午"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.3,
+        "土": 0.35,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1809,
+        "month": 2,
+        "day": 12,
+        "hour": 12,
+        "minute": 30
+      },
+      "favorable": "木（官杀）金（食伤）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "英国伦敦",
+      "notes": "英国生物学家，己土日主偏强，食伤生财格，进化论创立者，物种起源",
+      "zodiac": "蛇",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "71": {
+      "name": "宫本武藏",
+      "pillars": {
+        "年柱": "甲申",
+        "月柱": "丁丑",
+        "日柱": "乙丑",
+        "时柱": "辛巳"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.3,
+        "金": 0.25,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1584,
+        "month": 2,
+        "day": 29,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "日本岐阜县",
+      "notes": "日本剑圣，乙木日主身弱，财多身弱格，五轮书作者，剑道大家",
+      "zodiac": "猴",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "72": {
+      "name": "罗斯福",
+      "pillars": {
+        "年柱": "辛巳",
+        "月柱": "辛丑",
+        "日柱": "乙未",
+        "时柱": "戊午"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.2,
+        "土": 0.4,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1882,
+        "month": 1,
+        "day": 30,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国纽约",
+      "notes": "美国总统，乙木日主身弱，财多身弱格，新政论推动者，经济复苏领导者",
+      "zodiac": "马",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "73": {
+      "name": "丘吉尔",
+      "pillars": {
+        "年柱": "甲戌",
+        "月柱": "乙亥",
+        "日柱": "乙丑",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.2,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1874,
+        "month": 11,
+        "day": 30,
+        "hour": 14,
+        "minute": 30
+      },
+      "favorable": "火（食伤）土（财)",
+      "unfavorable": "金（官杀）水（印)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "英国伦敦",
+      "notes": "英国首相，乙木日主偏强，食伤生财格，二战首相，铁血宰相",
+      "zodiac": "狗",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "74": {
+      "name": "甘地",
+      "pillars": {
+        "年柱": "己巳",
+        "月柱": "甲戌",
+        "日柱": "",
+        "时柱": "戊辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.25,
+        "土": 0.2,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1869,
+        "month": 10,
+        "day": 2,
+        "hour": 8,
+        "minute": 30
+      },
+      "favorable": "火（印）土（比劫)",
+      "unfavorable": "木（官杀）水（财)",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "印度布尔浦尔",
+      "notes": "印度民族英雄，亙土日主身弱，印比生身格，非暴力不合作主义，印度独立父亲",
+      "zodiac": "蛇",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "75": {
+      "name": "邓世昌",
+      "pillars": {
+        "年柱": "甲辰",
+        "月柱": "庚午",
+        "日柱": "丁未",
+        "时柱": "壬辰"
+      },
+      "elements": {
+        "木": 0.35,
+        "火": 0.15,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1904,
+        "month": 6,
+        "day": 16,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南省湘潭市",
+      "notes": "台湾政治领导人，丁火日主身弱，印比生身格，国民党总裁，反共抗日",
+      "zodiac": "龙",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "76": {
+      "name": "蒂拉夫",
+      "pillars": {
+        "年柱": "丙戌",
+        "月柱": "癸巳",
+        "日柱": "庚戌",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1946,
+        "month": 6,
+        "day": 14,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "火（印）土（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国纽约市",
+      "notes": "美国商人、政治家，庚土日主偏强，食伤生财格，美国第45任总统，商业大亨",
+      "zodiac": "狗",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "77": {
+      "name": "比尔·盖茨",
+      "pillars": {
+        "年柱": "乙未",
+        "月柱": "丙戌",
+        "日柱": "丁丑",
+        "时柱": "辛巳"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.2,
+        "土": 0.35,
+        "金": 0.25,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1955,
+        "month": 10,
+        "day": 28,
+        "hour": 10,
+        "minute": 15
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国西雅图",
+      "notes": "微软创始人，丁火日主身弱，印比生身格，信息技术革命家，世界首富",
+      "zodiac": "羊",
+      "constellation": "天蝎座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "78": {
+      "name": "史蒂夫·乔布斯",
+      "pillars": {
+        "年柱": "甲午",
+        "月柱": "戊寅",
+        "日柱": "壬戌",
+        "时柱": "丁酉"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.4,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1955,
+        "month": 2,
+        "day": 24,
+        "hour": 20,
+        "minute": 30
+      },
+      "favorable": "木（官杀）金（食伤）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国加利福尼亚",
+      "notes": "苹果公司创始人，壬土日主偏强，食伤生财格，科技界传奇，改变世界",
+      "zodiac": "羊",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "79": {
+      "name": "马云",
+      "pillars": {
+        "年柱": "甲辰",
+        "月柱": "癸酉",
+        "日柱": "丁亥",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.15,
+        "土": 0.25,
+        "金": 0.25,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1964,
+        "month": 9,
+        "day": 10,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "金（官杀）水（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "浙江省杭州市",
+      "notes": "阿里巴巴创始人，丁火日主身弱，印比生身格，电子商务巨头，互联网领导者",
+      "zodiac": "龙",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "80": {
+      "name": "杨振宁",
+      "pillars": {
+        "年柱": "壬戌",
+        "月柱": "丙午",
+        "日柱": "庚申",
+        "时柱": "丁巳"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.3,
+        "土": 0.35,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1922,
+        "month": 6,
+        "day": 25,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（官杀）、金（食伤）",
+      "unfavorable": "土（比劫）、火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "河北省宁河县",
+      "notes": "中国物理学家，庚土日主偏强，食伤生财格，两弹一星功勋，国家最高科技奖",
+      "zodiac": "狗",
+      "constellation": "巨蟹座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "81": {
+      "name": "邓稼先",
+      "pillars": {
+        "年柱": "甲子",
+        "月柱": "壬申",
+        "日柱": "丙子",
+        "时柱": "辛卯"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1924,
+        "month": 8,
+        "day": 22,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "木（印）、火（比劫）",
+      "unfavorable": "金（财）、水（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽省怀宁县",
+      "notes": "中国空气动力学家，丙火日主中和，印比生身格，两弹一星功勋，航空航天之父",
+      "zodiac": "鼠",
+      "constellation": "狮子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "82": {
+      "name": "钱学森",
+      "pillars": {
+        "年柱": "辛亥",
+        "月柱": "庚子",
+        "日柱": "戊午",
+        "时柱": "甲辰"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.35,
+        "土": 0.3,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1911,
+        "month": 12,
+        "day": 11,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "金（食伤）、水（财）",
+      "unfavorable": "木（官杀）、火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "浙江省杭州市",
+      "notes": "中国导弹之父，戊土日主偏强，食伤生财格，两弹一星功勋，中国航天之父",
+      "zodiac": "猪",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "83": {
+      "name": "鲁迅",
+      "pillars": {
+        "年柱": "辛巳",
+        "月柱": "丁酉",
+        "日柱": "丁未",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1881,
+        "month": 9,
+        "day": 25,
+        "hour": 6,
+        "minute": 0
+      },
+      "favorable": "土（食伤）、金（财）",
+      "unfavorable": "木（印）、火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "浙江省绍兴市",
+      "notes": "中国近代文学家，丁火日主偏强，食伤生财格，现代文学先驱，民族魂唤醒者",
+      "zodiac": "蛇",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "84": {
+      "name": "胡适",
+      "pillars": {
+        "年柱": "辛卯",
+        "月柱": "庚子",
+        "日柱": "",
+        "时柱": "甲辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.2,
+        "土": 0.2,
+        "金": 0.2,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1891,
+        "month": 12,
+        "day": 17,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "火（印）、土（比劫）",
+      "unfavorable": "木（官杀）、水（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "安徽省绩溪县",
+      "notes": "中国哲学家，亙土日主身弱，印比生身格，实用主义先驱，中国现代学术大师",
+      "zodiac": "兔",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "85": {
+      "name": "徐志摩",
+      "pillars": {
+        "年柱": "乙未",
+        "月柱": "己卯",
+        "日柱": "丁丑",
+        "时柱": "乙巳"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1895,
+        "month": 3,
+        "day": 24,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "土（食伤）、金（财）",
+      "unfavorable": "木（印）、火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "浙江省海宁市",
+      "notes": "中国诗人、文学家，丁火日主偏强，食伤生财格，现代诗歌开拓者，浪漫主义诗人",
+      "zodiac": "羊",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "86": {
+      "name": "李嘉诚",
+      "pillars": {
+        "年柱": "丙戌",
+        "月柱": "甲午",
+        "日柱": "丁酉",
+        "时柱": "丁未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.35,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1946,
+        "month": 5,
+        "day": 29,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "香港香港",
+      "notes": "香港商业巨子，丁火日主偏强，食伤生财格，亚洲首富，房地产大王",
+      "zodiac": "狗",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "87": {
+      "name": "李小龙",
+      "pillars": {
+        "年柱": "庚辰",
+        "月柱": "丁亥",
+        "日柱": "乙丑",
+        "时柱": "己卯"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1940,
+        "month": 11,
+        "day": 27,
+        "hour": 6,
+        "minute": 15
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国旧金山",
+      "notes": "武术家、电影明星，乙木日主身弱，财多身弱格，功夫皇帝，武术传奇",
+      "zodiac": "龙",
+      "constellation": "射手座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "88": {
+      "name": "成龙",
+      "pillars": {
+        "年柱": "甲午",
+        "月柱": "",
+        "日柱": "丁卯",
+        "时柱": "壬申"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1954,
+        "month": 4,
+        "day": 7,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "木（印）水（官杀）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "香港香港",
+      "notes": "香港动作电影明星，丁火日主中和，印星生身格，功夫之王，国际巨星",
+      "zodiac": "马",
+      "constellation": "白羊座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "89": {
+      "name": "周恩来",
+      "pillars": {
+        "年柱": "戊戌",
+        "月柱": "乙卯",
+        "日柱": "戊申",
+        "时柱": "丙辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.2,
+        "土": 0.3,
+        "金": 0.15,
+        "水": 0.1
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1898,
+        "month": 3,
+        "day": 5,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "金（食伤）水（财）",
+      "unfavorable": "火（印）土（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省淮安市",
+      "notes": "新中国总理，戊土日主中和，食伤生财格，天德贵人，仁厚博爱",
+      "zodiac": "狗",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "90": {
+      "name": "乔丹",
+      "pillars": {
+        "年柱": "壬寅",
+        "月柱": "甲寅",
+        "日柱": "丁未",
+        "时柱": "癸未"
+      },
+      "elements": {
+        "木": 0.3,
+        "火": 0.2,
+        "土": 0.3,
+        "金": 0.05,
+        "水": 0.15
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1963,
+        "month": 2,
+        "day": 17,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "土（食伤）水（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "美国纽约",
+      "notes": "美国篮球巨星，丁火日主身弱，印比生身格，篮球之神，体育传奇",
+      "zodiac": "兔",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "91": {
+      "name": "李白",
+      "pillars": {
+        "年柱": "辛丑",
+        "月柱": "庚寅",
+        "日柱": "丙申",
+        "时柱": "壬辰"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.35,
+        "土": 0.25,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 701,
+        "month": 2,
+        "day": 28,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）水（官杀）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "甘肃省天水市",
+      "notes": "唐代诗人，丙火日主中和，印星生身格，诗仙之称，浪漫主义",
+      "zodiac": "牛",
+      "constellation": "双鱼座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "92": {
+      "name": "混凄",
+      "pillars": {
+        "年柱": "辛卯",
+        "月柱": "戊戌",
+        "日柱": "丁卯",
+        "时柱": "辛未"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.2,
+        "水": 0.05
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1891,
+        "month": 10,
+        "day": 23,
+        "hour": 16,
+        "minute": 0
+      },
+      "favorable": "木（印）水（官杀）",
+      "unfavorable": "土（食伤）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南省湘乡",
+      "notes": "中国近代政治家，丁火日主中和，印星生身格，立宪派领袖，变法维新",
+      "zodiac": "兔",
+      "constellation": "天蝎座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "93": {
+      "name": "颜真卿",
+      "pillars": {
+        "年柱": "甲申",
+        "月柱": "丁丑",
+        "日柱": "己巳",
+        "时柱": "甲辰"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1645,
+        "month": 1,
+        "day": 23,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（官杀）金（食伤）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省曲阜市",
+      "notes": "明末清初学者，己土日主偏强，食伤生财格，实学先驱，教育家思想家",
+      "zodiac": "鸡",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "94": {
+      "name": "林则徐",
+      "pillars": {
+        "年柱": "乙巳",
+        "月柱": "甲申",
+        "日柱": "乙未",
+        "时柱": "壬午"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.25,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1785,
+        "month": 8,
+        "day": 30,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "福建省福州市",
+      "notes": "清代思想家，乙木日主身弱，财多身弱格，禁烟运动首领，中西文化交流",
+      "zodiac": "蛇",
+      "constellation": "处女座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "95": {
+      "name": "没吃草",
+      "pillars": {
+        "年柱": "癸巳",
+        "月柱": "甲子",
+        "日柱": "丁酉",
+        "时柱": "癸卯"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.15,
+        "金": 0.2,
+        "水": 0.1
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1893,
+        "month": 12,
+        "day": 26,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "土（食伤）金（财）",
+      "unfavorable": "木（印）火（比劫）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南省湘潭市",
+      "notes": "中国成功人士，丁火日主偏强，食伤生财格，三奇贵人，天乙贵人",
+      "zodiac": "蛇",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "96": {
+      "name": "曹雪芹",
+      "pillars": {
+        "年柱": "乙未",
+        "月柱": "辛巳",
+        "日柱": "壬戌",
+        "时柱": "丙午"
+      },
+      "elements": {
+        "木": 0.15,
+        "火": 0.3,
+        "土": 0.25,
+        "金": 0.2,
+        "水": 0.1
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1715,
+        "month": 5,
+        "day": 28,
+        "hour": 12,
+        "minute": 0
+      },
+      "favorable": "木（食伤）火（财）",
+      "unfavorable": "金（印）土（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省南京市",
+      "notes": "清代文学家，壬水日主中和，食伤生财格，红楼梦作者，文学巨匠",
+      "zodiac": "羊",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "97": {
+      "name": "蒲松龄",
+      "pillars": {
+        "年柱": "庚辰",
+        "月柱": "辛巳",
+        "日柱": "己未",
+        "时柱": "己巳"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.35,
+        "金": 0.15,
+        "水": 0.05
+      },
+      "strength": "偏强",
+      "birth_info": {
+        "year": 1640,
+        "month": 6,
+        "day": 5,
+        "hour": 10,
+        "minute": 0
+      },
+      "favorable": "木（官杀）水（财）",
+      "unfavorable": "土（比劫）火（印）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "山东省淄博市",
+      "notes": "清代文学家，己土日主偏强，食伤生财格，聊斋志异作者，志怪小说大师",
+      "zodiac": "龙",
+      "constellation": "双子座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "98": {
+      "name": "梅兰芳",
+      "pillars": {
+        "年柱": "甲午",
+        "月柱": "甲戌",
+        "日柱": "癸未",
+        "时柱": "己未"
+      },
+      "elements": {
+        "木": 0.25,
+        "火": 0.3,
+        "土": 0.3,
+        "金": 0.1,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1894,
+        "month": 10,
+        "day": 22,
+        "hour": 14,
+        "minute": 0
+      },
+      "favorable": "金（印）水（比劫）",
+      "unfavorable": "木（食伤）土（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "江苏省泰州市",
+      "notes": "京剧大师，癸水日主身弱，财多身弱格，梅派创始人，艺术大师",
+      "zodiac": "马",
+      "constellation": "天秤座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "99": {
+      "name": "齐白石",
+      "pillars": {
+        "年柱": "癸亥",
+        "月柱": "甲子",
+        "日柱": "丁巳",
+        "时柱": "壬辰"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.25,
+        "土": 0.25,
+        "金": 0.15,
+        "水": 0.15
+      },
+      "strength": "中和",
+      "birth_info": {
+        "year": 1864,
+        "month": 1,
+        "day": 1,
+        "hour": 8,
+        "minute": 0
+      },
+      "favorable": "木（印）火（比劫）",
+      "unfavorable": "水（官杀）金（财）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "湖南省湘潭市",
+      "notes": "国画大师，丁火日主中和，印比生身格，国画艺术家，虾画闻名",
+      "zodiac": "猪",
+      "constellation": "摩羯座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    },
+    "100": {
+      "name": "老舍",
+      "pillars": {
+        "年柱": "戊戌",
+        "月柱": "乙丑",
+        "日柱": "甲午",
+        "时柱": "壬申"
+      },
+      "elements": {
+        "木": 0.2,
+        "火": 0.2,
+        "土": 0.3,
+        "金": 0.25,
+        "水": 0.05
+      },
+      "strength": "身弱",
+      "birth_info": {
+        "year": 1899,
+        "month": 2,
+        "day": 3,
+        "hour": 16,
+        "minute": 0
+      },
+      "favorable": "水（印）木（比劫）",
+      "unfavorable": "土（财）金（官杀）",
+      "dayun_info": {},
+      "gender": "男",
+      "birthplace": "北京市北京市",
+      "notes": "现代文学家，甲木日主身弱，财多身弱格，茶馆作者，人民艺术家",
+      "zodiac": "猪",
+      "constellation": "水瓶座",
+      "accuracy": 1.0,
+      "source": "standard_lookup",
+      "query_method": "case_id"
+    }
+  },
+  "success_rate": "100.0%"
+}

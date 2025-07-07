@@ -25,10 +25,14 @@ def get_current_user(
     try:
         # 解码 JWT token
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-        username: str = payload.get("sub")
-        if username is None:
+        username = payload.get("sub")
+        if not isinstance(username, str) or not username:
             raise credentials_exception
-        token_data = user_schemas.UserBase(username=username) # 使用 UserBase 来验证 sub
+        token_data = user_schemas.UserBase(
+            username=username,
+            email="test@example.com",   # 合法邮箱
+            phone="+8613800138000"      # 合法手机号
+        ) # 使用 UserBase 来验证 sub
     except JWTError:
         raise credentials_exception
 
@@ -36,7 +40,7 @@ def get_current_user(
     user = crud_user.get_user_by_username(db, username=token_data.username)
     if user is None:
         raise credentials_exception
-    if not user.is_active:
+    if not bool(getattr(user, "is_active", False)):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="用户已被禁用",

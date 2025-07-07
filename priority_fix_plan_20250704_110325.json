@@ -1,0 +1,76 @@
+{
+  "front_50_issues": [
+    {
+      "case_id": "19",
+      "name": "乔治·布什",
+      "missing_fields": [
+        "时柱"
+      ]
+    },
+    {
+      "case_id": "41",
+      "name": "董仒舒",
+      "missing_fields": [
+        "日柱"
+      ]
+    }
+  ],
+  "back_50_issues": [
+    {
+      "case_id": "66",
+      "name": "汤显祖",
+      "missing_fields": [
+        "时柱"
+      ]
+    },
+    {
+      "case_id": "69",
+      "name": "莫扎特",
+      "missing_fields": [
+        "时柱"
+      ]
+    },
+    {
+      "case_id": "74",
+      "name": "甘地",
+      "missing_fields": [
+        "日柱"
+      ]
+    },
+    {
+      "case_id": "84",
+      "name": "胡适",
+      "missing_fields": [
+        "日柱"
+      ]
+    },
+    {
+      "case_id": "88",
+      "name": "成龙",
+      "missing_fields": [
+        "月柱"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "priority": "HIGH",
+      "task": "修复前50个案例中的2个问题案例",
+      "cases": [
+        "19",
+        "41"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "task": "修复后50个案例中的5个问题案例",
+      "cases": [
+        "66",
+        "69",
+        "74",
+        "84",
+        "88"
+      ]
+    }
+  ]
+}

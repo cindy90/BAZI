@@ -15,9 +15,18 @@
 /backend/*.pyc
 /backend/*.pyo
 /backend/pip-log.txt
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+.env
+*.env
 
 # Environment variables
-/backend/.env # <-- 确保这一行是 /backend/.env 而不是 .env
 .env.*.local
 
 # macOS
